@@ -1,0 +1,7 @@
+Name: Keny Nguyen
+Course and Section: CSC 6370, 002
+Assignment: Coursework 02: Introduction to HTML
+Website URL: http://codd.cs.gsu.edu/~knguyen207/WP/CW/2/index.html
+
+Site Topic:
+This website is a personal software engineering portfolio highlighting my education, technical skills, professional experience, and selected projects.
