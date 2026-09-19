@@ -160,8 +160,6 @@ img {
     font-size: 2rem;
 }
 
-/* about */
-
 .section-heading {
     margin-bottom: 2.5rem;
 }
@@ -178,6 +176,13 @@ img {
 .section-heading h2 {
     margin: 0;
 }
+
+.section-description {
+    max-width: 700px;
+    color: #43526a;
+}
+
+/* about */
 
 .about-grid {
     display: grid;
@@ -244,6 +249,59 @@ img {
 .school-name {
     margin: 0.25rem 0;
     font-weight: 700;
+}
+
+/* coursework */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.course-card {
+    padding: 2rem;
+    border: 1px solid #d6dde5;
+    border-top: 5px solid #087f8c;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+}
+
+.course-number {
+    margin: 0;
+    color: #087f8c;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+}
+
+.course-card h3 {
+    margin: 0.5rem 0;
+    color: #102a43;
+    font-size: 1.35rem;
+}
+
+.course-card > p:not(.course-number) {
+    color: #43526a;
+}
+
+.assignment-list {
+    margin: 1.25rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.assignment-list li {
+    margin: 0.5rem 0;
+}
+
+.assignment-list a {
+    color: #087f8c;
+    font-weight: 700;
+}
+
+.assignment-list a:hover,
+.assignment-list a:focus {
+    color: #102a43;
 }
 
 /* footer */
