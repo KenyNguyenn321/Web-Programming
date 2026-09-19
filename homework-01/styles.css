@@ -146,7 +146,7 @@ img {
     box-shadow: 16px 16px 0 #bfe8e3;
 }
 
-/* placeholders */
+/* page sections */
 
 .page-section {
     width: min(1100px, 90%);
@@ -159,6 +159,94 @@ img {
     color: #102a43;
     font-size: 2rem;
 }
+
+/* about */
+
+.section-heading {
+    margin-bottom: 2.5rem;
+}
+
+.section-label {
+    margin: 0 0 0.4rem;
+    color: #087f8c;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    text-transform: uppercase;
+}
+
+.section-heading h2 {
+    margin: 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.about-content p {
+    color: #43526a;
+}
+
+.about-intro {
+    margin-top: 0;
+    color: #17233b;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.focus-box {
+    padding: 1.5rem;
+    border-left: 5px solid #087f8c;
+    background-color: #e9f5f3;
+}
+
+.focus-box h3 {
+    margin-top: 0;
+    color: #102a43;
+}
+
+.focus-box ul {
+    margin-bottom: 0;
+    padding-left: 1.25rem;
+}
+
+.education-list {
+    margin-top: 3.5rem;
+    border-top: 1px solid #d6dde5;
+}
+
+.education-item {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #d6dde5;
+}
+
+.education-year {
+    margin: 0;
+    color: #087f8c;
+    font-weight: 700;
+}
+
+.education-item h3 {
+    margin: 0;
+    color: #102a43;
+}
+
+.education-item p {
+    color: #43526a;
+}
+
+.school-name {
+    margin: 0.25rem 0;
+    font-weight: 700;
+}
+
+/* footer */
 
 footer {
     padding: 2rem 5%;
