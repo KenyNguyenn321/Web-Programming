@@ -46,6 +46,11 @@ a {
         border-color 0.2s ease;
 }
 
+a:focus-visible {
+    outline: 3px solid #f4b942;
+    outline-offset: 4px;
+}
+
 /* top nav */
 
 .site-header {
@@ -483,4 +488,158 @@ footer a {
 footer a:hover,
 footer a:focus {
     color: var(--white);
+}
+
+/* tablet */
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 1rem 0;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1.25rem;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .hero::before {
+        top: auto;
+        right: 50%;
+        bottom: -15%;
+        width: 400px;
+        height: 400px;
+        transform: translateX(50%);
+    }
+
+    .hero-description {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .hero-links {
+        justify-content: center;
+    }
+
+    .profile-photo {
+        width: min(320px, 85%);
+        margin: 0 auto;
+    }
+
+    .about-grid,
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .interest-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .page-section {
+        scroll-margin-top: 125px;
+    }
+}
+
+/* phone */
+
+@media (max-width: 600px) {
+    .navbar {
+        width: 92%;
+    }
+
+    .nav-links {
+        gap: 0.5rem 1rem;
+        font-size: 0.92rem;
+    }
+
+    .hero {
+        width: 88%;
+        min-height: auto;
+        padding: 3.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        letter-spacing: -0.05rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-links {
+        flex-direction: column;
+    }
+
+    .primary-link,
+    .secondary-link {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profile-photo {
+        box-shadow: 10px 10px 0 var(--light-teal);
+    }
+
+    .page-section {
+        width: 88%;
+        padding: 3.5rem 0;
+        scroll-margin-top: 150px;
+    }
+
+    .about-intro {
+        font-size: 1.1rem;
+    }
+
+    .education-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .course-card,
+    .interest-card {
+        padding: 1.5rem;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-link {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .contact-link strong {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* less motion */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    a,
+    .course-card,
+    .interest-card {
+        transition: none;
+    }
 }
