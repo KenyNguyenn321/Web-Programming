@@ -1,0 +1,17 @@
+/* basic page setup */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header,
+main,
+footer {
+    padding: 1rem;
+}
