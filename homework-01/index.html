@@ -11,17 +11,75 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <p>Keny Nguyen</p>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Main navigation">
+            <a class="site-name" href="#home">Keny Nguyen</a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#coursework">Coursework</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <h1>Personal Homepage</h1>
-        <p>Welcome to my personal homepage.</p>
+        <!-- intro -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">Computer Science Graduate Student</p>
+
+                <h1>Hi, I’m Keny Nguyen.</h1>
+
+                <p class="hero-description">
+                    I am a software engineer and graduate student interested
+                    in building reliable technology that solves meaningful
+                    problems.
+                </p>
+
+                <div class="hero-links">
+                    <a class="primary-link" href="#about">Learn About Me</a>
+                    <a class="secondary-link" href="#coursework">
+                        View Coursework
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-container">
+                <img
+                    class="profile-photo"
+                    src="images/profile.jpg"
+                    alt="Professional portrait of Keny Nguyen"
+                >
+            </div>
+        </section>
+
+        <!-- sections added next -->
+        <section id="about" class="page-section">
+            <h2>About Me</h2>
+            <p>More information about my background is coming next.</p>
+        </section>
+
+        <section id="coursework" class="page-section">
+            <h2>Coursework</h2>
+            <p>My coursework and assignments will be added here.</p>
+        </section>
+
+        <section id="interests" class="page-section">
+            <h2>Interests</h2>
+            <p>My hobbies and interests will be added here.</p>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h2>Contact</h2>
+            <p>My contact information will be added here.</p>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Keny Nguyen</p>
+        <p>&copy; 2026 Keny Nguyen. All rights reserved.</p>
     </footer>
 </body>
 </html>
