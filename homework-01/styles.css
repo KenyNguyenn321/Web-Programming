@@ -51,6 +51,25 @@ a:focus-visible {
     outline-offset: 4px;
 }
 
+/* skip link */
+
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    background-color: var(--teal);
+    font-weight: 700;
+    text-decoration: none;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
 /* top nav */
 
 .site-header {
@@ -315,6 +334,48 @@ a:focus-visible {
     font-weight: 700;
 }
 
+/* experience */
+
+.experience-list {
+    border-top: 1px solid var(--border);
+}
+
+.experience-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-date span {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border: 2px solid var(--teal);
+    color: var(--teal);
+    font-weight: 700;
+}
+
+.experience-content h3 {
+    margin: 0.2rem 0 0.75rem;
+    color: var(--navy);
+}
+
+.experience-company {
+    margin: 0;
+    color: var(--teal);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+.experience-content > p:last-child {
+    max-width: 750px;
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
 /* coursework */
 
 .course-grid {
@@ -551,7 +612,7 @@ footer a:focus {
     }
 
     .page-section {
-        scroll-margin-top: 125px;
+        scroll-margin-top: 150px;
     }
 }
 
@@ -599,14 +660,15 @@ footer a:focus {
     .page-section {
         width: 88%;
         padding: 3.5rem 0;
-        scroll-margin-top: 150px;
+        scroll-margin-top: 180px;
     }
 
     .about-intro {
         font-size: 1.1rem;
     }
 
-    .education-item {
+    .education-item,
+    .experience-item {
         grid-template-columns: 1fr;
         gap: 0.5rem;
     }
