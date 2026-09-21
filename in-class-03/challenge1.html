@@ -7,25 +7,44 @@
 
     <style>
         body {
+            padding: 40px;
             font-family: Calibri, sans-serif;
             font-size: 3em;
+            background-color: #f4f4f4;
         }
 
         #answer {
-            color: black;
             width: 100px;
-
-            /* add animation here */
+            color: black;
+            animation: moveFraction 3s ease 1s forwards;
         }
 
-        /* add keyframes here */
+        @keyframes moveFraction {
+            0% {
+                color: yellow;
+                transform: translate(-355px, 60px);
+            }
+
+            50% {
+                transform: translate(0, 60px);
+            }
+
+            100% {
+                color: red;
+                transform: translate(0, 0);
+            }
+        }
 
         #question {
-            /* add question style here */
+            padding: 10px;
+            transition:
+                color 0.3s ease,
+                background-color 0.3s ease;
         }
 
         #question:hover {
-            /* add hover style here */
+            color: white;
+            background-color: navy;
         }
 
         span {
