@@ -3,21 +3,51 @@ Critical Thinking Responses
 
 Student Name: Keny Nguyen
 
+
 1. Positioning Context
 
-Response will be added after completing Challenge 2.
+Removing position: relative from the parent div would cause the .first,
+.heart, and .last elements to stop using the shirt container as their
+positioning anchor. An absolutely positioned element searches its
+ancestors for the nearest element whose position is not static. If the
+browser cannot find a positioned ancestor, it uses the page's initial
+containing block. Therefore, the I, heart, and NY text would be positioned
+relative to the page instead of the shirt and would likely move away from
+the chest area.
 
 
 2. Layering Logic
 
-Response will be added after completing Challenge 2.
+Z-index alone can fail when an element's position remains static because
+the intended stacking order in this assignment depends on positioned
+elements. The image uses position: relative with z-index: 1, while the
+text uses position: absolute with z-index: 2. For example, if the .heart
+element remained static, its z-index would not create the intended
+positioned layer. The shirt image could then appear over the heart,
+causing the heart to disappear behind the shirt instead of appearing on
+its chest.
 
 
 3. Animation Performance
 
-Response will be added after completing Challenge 1.
+Animating transform: translate() is more performant than animating top
+and left because the browser can usually move the rendered element with
+the compositor without recalculating the layout of the surrounding
+content. Animating top and left can require repeated layout and painting
+operations during every animation frame. On a page with many moving
+elements, those repeated calculations could cause delayed movement,
+dropped frames, and visible stuttering. Using transform keeps the fraction
+animation smoother and avoids shifting the layout of the question.
 
 
 4. Design Transfer
 
-Response will be added after completing Challenge 2.
+Reusing the Challenge 2 technique on a hoodie would require changing the
+image width, font sizes, and the top and left values for .first, .heart,
+and .last so the logo aligns with the hoodie's chest area. I might also
+change the image padding, border, and container dimensions. The relative
+parent, absolute text positioning, and z-index layering approach would
+remain the same. The z-index values could also remain the same as long as
+the text stays above the image. This shows that image-specific positions
+and sizes may need to be hard-coded for one design, while the positioning
+and layering structure should remain flexible and reusable.
