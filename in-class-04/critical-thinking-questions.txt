@@ -1,0 +1,24 @@
+In-Class 04: Grid and Flexbox
+Critical Thinking Responses
+Keny Nguyen
+
+1. At a 320px viewport, the ingredients should use a column layout rather than a row or wrapping row. The .main-content selector uses display: flex and flex-wrap: wrap, while the media query changes both .ingredients and .directions to flex-basis: 100%. The page has approximately 290px of usable content width after the 15px padding on each side. The longest ingredient wraps within that space instead of producing horizontal scrolling. Keeping a row with a 45% flex basis would make both columns too narrow. The tradeoff is that stacking makes the page longer, but the default 45% basis restores the side-by-side layout at wider viewport sizes.
+
+2. The Tic-Tac-Toe board becomes wider because of the long content inside the square, not because of the grid container or the square's internal alignment. The #board selector continues to report three 100px column tracks, so the track definition remains fixed and the board remains centered. The smallest correction is to add min-width: 0 and overflow-wrap: anywhere to #board > div. These declarations allow the label to wrap inside its assigned 100px cell. Changing align-items or justify-content would only reposition the label and would not prevent wide text from overflowing.
+
+3. For a page containing a two-dimensional shell, a one-dimensional recipe card, and a board with equal cells, I would use Grid for the page shell and game board while using Flexbox for the recipe components. The page shell's Grid invariant is that its row and column relationships remain defined as the viewport changes. The recipe's Flexbox invariant is that related content remains in normal flow, can share available space, and can wrap without overlapping. The board's Grid invariant is that it always has three equal columns and three equal rows.
+
+At 320px, the recipe has approximately 290px of usable width and its major sections stack. At 768px, the responsive rule still stacks the recipe sections. At 1440px, the 70% main-content basis, 20% related-content basis, and 45% ingredient and direction bases produce the wider multi-column layout. The board remains three 100px columns with two 10px gaps at every viewport, giving it a total track-and-gap width of 320px.
+
+4. If the board is centered but its cells appear unequal after the viewport changes, the possible causes include unequal grid tracks or content overflowing a fixed track. I inspected the computed styles for #board and found that all three columns remained 100px wide. That observation ruled out unequal track definitions and showed that the apparent width difference came from the content inside a square.
+
+The causal chain was a long unbroken label, the cell's minimum content size, visible overflow beyond the cell, and the appearance of an enlarged square. Applying min-width: 0 and overflow-wrap: anywhere to #board > div repairs the problem without hard-coded positioning. Reducing the font size would be unreliable because a longer label could still overflow. Absolute positioning would also fail when the content length or viewport changes.
+
+Testing Evidence
+
+- The recipe was checked at 320px, 768px, and 1440px.
+- At 320px, the recipe sections stacked and no horizontal scrollbar appeared.
+- At 1440px, the ingredients and directions displayed side by side.
+- The board displayed three 100px columns and three 100px rows.
+- The board used two 10px gaps across each direction and remained horizontally centered.
+- A temporary long label wrapped inside its square without changing the grid track widths.
