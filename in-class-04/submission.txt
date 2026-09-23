@@ -1,0 +1,14 @@
+In-Class 04: Grid and Flexbox
+Keny Nguyen
+
+Recipe Page:
+https://codd.cs.gsu.edu/~knguyen207/WP/INC/04/recipe/oatmeal_cookies.html
+
+Tic-Tac-Toe Page:
+https://codd.cs.gsu.edu/~knguyen207/WP/INC/04/tic-tac-toe/tic-tac-toe.html
+
+Critical Thinking Responses:
+https://codd.cs.gsu.edu/~knguyen207/WP/INC/04/critical-thinking-questions.txt
+
+GitHub Repository:
+https://github.com/KenyNguyenn321/Web-Programming/tree/main/in-class-04
