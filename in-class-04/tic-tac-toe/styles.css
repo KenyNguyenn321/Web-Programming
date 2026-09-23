@@ -1,4 +1,9 @@
+* {
+   box-sizing: border-box;
+}
+
 body {
+   margin: 0;
    font-family: Roboto, Helvetica, sans-serif;
    text-align: center;
 }
@@ -9,17 +14,31 @@ body {
 
 .o {
    color: blue;
- }
- 
-#board {
-   font: 85px arial, sans-serif;
-   margin: 3px;
-   
-   /* Your solution goes here */      
+}
 
+#board {
+   display: grid;
+   grid-template-columns: repeat(3, 100px);
+   grid-template-rows: repeat(3, 100px);
+   gap: 10px;
+   justify-content: center;
+   width: 100%;
+   margin: 3px 0;
+   font: 85px Arial, sans-serif;
 }
 
 #board > div {
-   border: 1px solid LightSkyBlue;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-width: 0;
+   overflow-wrap: anywhere;
+   background-color: white;
+   border: 2px solid LightSkyBlue;
    text-align: center;
+   transition: background-color 0.2s ease;
+}
+
+#board > div:hover {
+   background-color: #eaf7ff;
 }
