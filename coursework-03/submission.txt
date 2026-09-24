@@ -1,0 +1,20 @@
+CW 03: CSS Foundations Lab
+Keny Nguyen
+September 24, 2026
+
+Published Codd Page:
+https://codd.cs.gsu.edu/~knguyen207/WP/CW/03/nguyen_keny_cw03.html
+
+GitHub Repository:
+https://github.com/KenyNguyenn321/Web-Programming/tree/main/coursework-03
+
+Submission Contents:
+- Exercises 1 through 5
+- Undergraduate investigations UG 01 through UG 04
+- Graduate investigations GR 01 and GR 02
+- External CSS stylesheets
+- Performance experiment JavaScript
+- Evidence screenshots with alt text and captions
+
+The published page was tested in a browser, including its navigation,
+stylesheets, evidence images, responsive layout, and performance experiment.
