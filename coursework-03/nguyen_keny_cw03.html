@@ -38,22 +38,18 @@
                <dt>Student</dt>
                <dd>Keny Nguyen</dd>
             </div>
-
             <div>
                <dt>Course</dt>
                <dd>CSC 6370 Web Programming</dd>
             </div>
-
             <div>
                <dt>Section</dt>
                <dd>002</dd>
             </div>
-
             <div>
                <dt>Date</dt>
                <dd>September 24, 2026</dd>
             </div>
-
             <div>
                <dt>Assignment</dt>
                <dd>CW 03 CSS Foundations Lab</dd>
@@ -88,11 +84,6 @@
          <h3>Stylesheet Link</h3>
 
          <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
-
-         <p>
-            Using an external stylesheet separates the page content from
-            its visual presentation and allows CSS rules to be reused.
-         </p>
       </section>
 
       <section id="exercise2" class="content-section">
@@ -100,9 +91,8 @@
 
          <p>
             The provided CSS contains three declarations without ending
-            semicolons. Although browsers may accept a missing semicolon
-            on the final declaration in a block, including it makes the
-            code safer when additional properties are added.
+            semicolons. Including the semicolons makes the code safer when
+            additional properties are added.
          </p>
 
          <div class="css-debug-report">
@@ -110,49 +100,43 @@
 
             <article class="debug-finding">
                <h4>Finding 1: Body Text Color</h4>
+               <p><strong>Original:</strong> <code>color: red</code></p>
+               <p><strong>Correction:</strong> <code>color: red;</code></p>
                <p>
-                  <strong>Original declaration:</strong>
-                  <code>color: red</code>
-               </p>
-               <p>
-                  <strong>Corrected declaration:</strong>
-                  <code>color: red;</code>
-               </p>
-               <p>
-                  Adding the terminator prevents a later property from
-                  being parsed incorrectly.
+                  The semicolon keeps a future property from being joined
+                  to the color declaration.
                </p>
             </article>
 
             <article class="debug-finding">
                <h4>Finding 2: Container Box Sizing</h4>
                <p>
-                  <strong>Original declaration:</strong>
+                  <strong>Original:</strong>
                   <code>box-sizing: border-box</code>
                </p>
                <p>
-                  <strong>Corrected declaration:</strong>
+                  <strong>Correction:</strong>
                   <code>box-sizing: border-box;</code>
                </p>
                <p>
-                  Adding the semicolon separates the box-sizing declaration
-                  from any property added after it.
+                  The semicolon clearly separates the box-sizing property
+                  from later declarations.
                </p>
             </article>
 
             <article class="debug-finding">
                <h4>Finding 3: Link Underline</h4>
                <p>
-                  <strong>Original declaration:</strong>
+                  <strong>Original:</strong>
                   <code>text-decoration: underline</code>
                </p>
                <p>
-                  <strong>Corrected declaration:</strong>
+                  <strong>Correction:</strong>
                   <code>text-decoration: underline;</code>
                </p>
                <p>
-                  The link declaration needs a terminator so future
-                  declarations remain separate.
+                  The terminator keeps future link styling declarations
+                  separate.
                </p>
             </article>
          </div>
@@ -192,8 +176,8 @@ a {
          <h2>Exercise 3: Song Lyrics Styling</h2>
 
          <p>
-            The following example uses separate classes for the song
-            title, artist, album, year, verses, and chorus lines.
+            This example uses separate classes for the song title, artist,
+            album, year, verses, and chorus lines.
          </p>
 
          <div class="lyrics-demo">
@@ -253,25 +237,16 @@ a {
 
          <p>
             The song presentation is stored in the external
-            <code>lyrics.css</code> stylesheet rather than inside the HTML
-            document or the main website stylesheet.
+            <code>lyrics.css</code> file. The stylesheet is connected
+            using:
          </p>
-
-         <h3>External Stylesheet Link</h3>
 
          <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
 
          <p>
-            The link appears inside the document head. The browser loads
-            the song classes from <code>lyrics.css</code> and applies them
-            to the matching elements in Exercise 3.
-         </p>
-
-         <p>
-            Since all five exercises must appear in one HTML document, the
-            chocolate background is applied to the
-            <code>.lyrics-demo</code> container instead of the entire body.
-            This keeps the song design isolated from the main green theme.
+            Since every exercise appears on one page, the chocolate
+            background is applied to the song container instead of the
+            complete body element.
          </p>
 
          <h3>External Lyrics CSS</h3>
@@ -333,7 +308,201 @@ a {
 
       <section id="exercise5" class="content-section">
          <h2>Exercise 5: School Website Design</h2>
-         <p>This exercise will be completed in the next commit.</p>
+
+         <p>
+            This timetable uses semantic HTML, an external stylesheet,
+            CSS variables, and classes for different schedule activities.
+            Text abbreviations ensure that color is not the only way the
+            activity types are identified.
+         </p>
+
+         <div class="school-site">
+            <header class="school-header">
+               <div>
+                  <p class="school-label">Fall 2026</p>
+                  <h3>Computer Science Weekly Schedule</h3>
+                  <p>Georgia State University</p>
+               </div>
+
+               <div class="student-summary">
+                  <strong>Keny Nguyen</strong>
+                  <span>Graduate Student</span>
+               </div>
+            </header>
+
+            <nav class="school-nav" aria-label="School schedule navigation">
+               <a href="#weekly-timetable">Weekly Timetable</a>
+               <a href="#schedule-key">Schedule Key</a>
+            </nav>
+
+            <section class="schedule-section">
+               <h3 id="weekly-timetable">Weekly Timetable</h3>
+
+               <div class="table-wrapper">
+                  <table class="timetable">
+                     <caption>
+                        Weekly class, laboratory, study, and break schedule
+                     </caption>
+
+                     <thead>
+                        <tr>
+                           <th scope="col">Time</th>
+                           <th scope="col">Monday</th>
+                           <th scope="col">Tuesday</th>
+                           <th scope="col">Wednesday</th>
+                           <th scope="col">Thursday</th>
+                           <th scope="col">Friday</th>
+                        </tr>
+                     </thead>
+
+                     <tbody>
+                        <tr>
+                           <th scope="row">9:00 AM</th>
+                           <td class="schedule-course">
+                              <span class="activity-code">CLS</span>
+                              Programming Languages
+                           </td>
+                           <td class="schedule-study">
+                              <span class="activity-code">STD</span>
+                              Research
+                           </td>
+                           <td class="schedule-course">
+                              <span class="activity-code">CLS</span>
+                              Programming Languages
+                           </td>
+                           <td class="schedule-study">
+                              <span class="activity-code">STD</span>
+                              Research
+                           </td>
+                           <td class="schedule-course">
+                              <span class="activity-code">CLS</span>
+                              Programming Languages
+                           </td>
+                        </tr>
+
+                        <tr>
+                           <th scope="row">11:00 AM</th>
+                           <td class="schedule-lab">
+                              <span class="activity-code">LAB</span>
+                              Web Programming Lab
+                           </td>
+                           <td class="schedule-course">
+                              <span class="activity-code">CLS</span>
+                              Image Processing
+                           </td>
+                           <td class="schedule-lab">
+                              <span class="activity-code">LAB</span>
+                              Web Programming Lab
+                           </td>
+                           <td class="schedule-course">
+                              <span class="activity-code">CLS</span>
+                              Image Processing
+                           </td>
+                           <td class="schedule-lab">
+                              <span class="activity-code">LAB</span>
+                              Project Testing
+                           </td>
+                        </tr>
+
+                        <tr>
+                           <th scope="row">1:00 PM</th>
+                           <td class="schedule-break">
+                              <span class="activity-code">BRK</span>
+                              Lunch
+                           </td>
+                           <td class="schedule-break">
+                              <span class="activity-code">BRK</span>
+                              Lunch
+                           </td>
+                           <td class="schedule-break">
+                              <span class="activity-code">BRK</span>
+                              Lunch
+                           </td>
+                           <td class="schedule-break">
+                              <span class="activity-code">BRK</span>
+                              Lunch
+                           </td>
+                           <td class="schedule-break">
+                              <span class="activity-code">BRK</span>
+                              Lunch
+                           </td>
+                        </tr>
+
+                        <tr>
+                           <th scope="row">2:30 PM</th>
+                           <td class="schedule-study">
+                              <span class="activity-code">STD</span>
+                              Assignment Work
+                           </td>
+                           <td class="schedule-lab">
+                              <span class="activity-code">LAB</span>
+                              Image Processing Lab
+                           </td>
+                           <td class="schedule-study">
+                              <span class="activity-code">STD</span>
+                              Assignment Work
+                           </td>
+                           <td class="schedule-lab">
+                              <span class="activity-code">LAB</span>
+                              Image Processing Lab
+                           </td>
+                           <td class="schedule-study">
+                              <span class="activity-code">STD</span>
+                              Weekly Review
+                           </td>
+                        </tr>
+
+                        <tr>
+                           <th scope="row">4:30 PM</th>
+                           <td class="schedule-course">
+                              <span class="activity-code">CLS</span>
+                              Web Programming
+                           </td>
+                           <td class="schedule-study">
+                              <span class="activity-code">STD</span>
+                              Office Hours
+                           </td>
+                           <td class="schedule-course">
+                              <span class="activity-code">CLS</span>
+                              Web Programming
+                           </td>
+                           <td class="schedule-study">
+                              <span class="activity-code">STD</span>
+                              Office Hours
+                           </td>
+                           <td class="schedule-break">
+                              <span class="activity-code">BRK</span>
+                              Personal Time
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </section>
+
+            <section id="schedule-key" class="schedule-key">
+               <h3>Schedule Key</h3>
+
+               <ul>
+                  <li class="key-course">
+                     <span class="activity-code">CLS</span>
+                     Class meeting
+                  </li>
+                  <li class="key-lab">
+                     <span class="activity-code">LAB</span>
+                     Laboratory work
+                  </li>
+                  <li class="key-study">
+                     <span class="activity-code">STD</span>
+                     Independent study
+                  </li>
+                  <li class="key-break">
+                     <span class="activity-code">BRK</span>
+                     Break or personal time
+                  </li>
+               </ul>
+            </section>
+         </div>
       </section>
 
       <section id="critical-thinking" class="content-section">

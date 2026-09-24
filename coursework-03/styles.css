@@ -10,6 +10,14 @@
     --border: #b8d7c6;
     --text-green: #263b32;
     --shadow: 0 4px 12px rgba(18, 60, 47, 0.14);
+    --course-bg: #dcefe4;
+    --course-border: #176b4d;
+    --lab-bg: #fff1c7;
+    --lab-border: #8b5d00;
+    --study-bg: #e4ebfa;
+    --study-border: #355ba6;
+    --break-bg: #f3e4ef;
+    --break-border: #81426e;
  }
  
  * {
@@ -196,6 +204,178 @@
     color: inherit;
  }
  
+ /* Exercise 5 */
+ 
+ .school-site {
+    overflow: hidden;
+    color: var(--text-green);
+    background-color: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+ }
+ 
+ .school-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px;
+    color: white;
+    background-color: var(--dark-green);
+ }
+ 
+ .school-header h3 {
+    margin: 4px 0;
+    color: white;
+    font-size: 1.6rem;
+ }
+ 
+ .school-header p {
+    margin: 0;
+ }
+ 
+ .school-label {
+    color: #b8f0d3;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+ }
+ 
+ .student-summary {
+    display: flex;
+    flex-direction: column;
+    min-width: 170px;
+    padding: 12px 16px;
+    color: var(--dark-green);
+    background-color: white;
+    border-radius: 8px;
+ }
+ 
+ .school-nav {
+    justify-content: flex-start;
+    background-color: #176b4d;
+ }
+ 
+ .school-nav a:hover,
+ .school-nav a:focus {
+    color: var(--dark-green);
+    background-color: white;
+ }
+ 
+ .schedule-section {
+    padding: 24px;
+ }
+ 
+ .table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+ }
+ 
+ .timetable {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+ }
+ 
+ .timetable caption {
+    margin-bottom: 12px;
+    color: var(--dark-green);
+    font-weight: bold;
+    text-align: left;
+ }
+ 
+ .timetable th,
+ .timetable td {
+    padding: 12px;
+    border: 1px solid #9fb9aa;
+    vertical-align: top;
+    text-align: left;
+ }
+ 
+ .timetable thead th {
+    color: white;
+    background-color: var(--dark-green);
+    text-align: center;
+ }
+ 
+ .timetable tbody th {
+    width: 110px;
+    color: var(--dark-green);
+    background-color: var(--light-green);
+ }
+ 
+ .schedule-course {
+    background-color: var(--course-bg);
+    border-left: 5px solid var(--course-border) !important;
+ }
+ 
+ .schedule-lab {
+    background-color: var(--lab-bg);
+    border-left: 5px solid var(--lab-border) !important;
+ }
+ 
+ .schedule-study {
+    background-color: var(--study-bg);
+    border-left: 5px solid var(--study-border) !important;
+ }
+ 
+ .schedule-break {
+    background-color: var(--break-bg);
+    border-left: 5px solid var(--break-border) !important;
+ }
+ 
+ .activity-code {
+    display: block;
+    width: fit-content;
+    margin-bottom: 5px;
+    padding: 2px 6px;
+    color: white;
+    background-color: #263b32;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    letter-spacing: 0.06em;
+ }
+ 
+ .schedule-key {
+    padding: 0 24px 24px;
+ }
+ 
+ .schedule-key ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+ }
+ 
+ .schedule-key li {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-left-width: 5px;
+ }
+ 
+ .key-course {
+    background-color: var(--course-bg);
+    border-left-color: var(--course-border) !important;
+ }
+ 
+ .key-lab {
+    background-color: var(--lab-bg);
+    border-left-color: var(--lab-border) !important;
+ }
+ 
+ .key-study {
+    background-color: var(--study-bg);
+    border-left-color: var(--study-border) !important;
+ }
+ 
+ .key-break {
+    background-color: var(--break-bg);
+    border-left-color: var(--break-border) !important;
+ }
+ 
  footer {
     padding: 24px;
     color: white;
@@ -226,5 +406,18 @@
  
     .css-debug-report {
        padding: 18px;
+    }
+ 
+    .school-header {
+       align-items: flex-start;
+       flex-direction: column;
+    }
+ 
+    .student-summary {
+       width: 100%;
+    }
+ 
+    .schedule-key ul {
+       grid-template-columns: 1fr;
     }
  }
