@@ -134,6 +134,34 @@
     border-radius: 8px;
  }
  
+ /* Exercise 2 */
+ 
+ .css-debug-report {
+    padding: 24px;
+    color: var(--text-green);
+    background-color: var(--pale-green);
+    border: 2px solid var(--green);
+    border-radius: 10px;
+    box-shadow: 0 5px 14px rgba(31, 111, 84, 0.22);
+ }
+ 
+ .css-debug-report > h3 {
+    margin-top: 0;
+ }
+ 
+ .debug-finding {
+    margin-top: 18px;
+    padding: 16px;
+    color: var(--text-green);
+    background-color: white;
+    border-left: 5px solid var(--medium-green);
+    border-radius: 5px;
+ }
+ 
+ .debug-finding h4 {
+    margin-top: 0;
+ }
+ 
  code {
     font-family: "Courier New", monospace;
  }
@@ -186,5 +214,9 @@
  
     .content-section {
        padding: 20px;
+    }
+ 
+    .css-debug-report {
+       padding: 18px;
     }
  }
