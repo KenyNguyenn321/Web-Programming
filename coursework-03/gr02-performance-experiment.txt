@@ -95,11 +95,3 @@ The Grid median was 0.800 ms higher than the Flexbox median. These results
 apply only to this browser, computer, viewport, item count, and specific
 implementation. They do not prove that Flexbox is always faster than Grid.
 
-Instructor-Selected Rerun
-
-This section will be completed during the live defense after the instructor
-selects which implementation to rerun.
-
-Rerun requested: Pending instructor selection
-Rerun measurement: Pending instructor selection
-Observation: Pending instructor selection

@@ -69,5 +69,4 @@ same even if the visual design changes later.
 Evidence
 
 The combined evidence image contains the local version-history diff,
-selector and declaration counts, and the naming decision used during the
-live explanation.
+selector and declaration counts, and the component naming decision.
