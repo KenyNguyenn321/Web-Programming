@@ -282,7 +282,31 @@ figcaption {
    font-size: 0.9rem;
 }
 
+.text-evidence {
+   margin-top: 20px;
+   padding: 20px;
+   background-color: white;
+   border: 1px solid var(--border);
+   border-left: 5px solid var(--green);
+   border-radius: 8px;
+}
+
+.text-evidence h4 {
+   margin-top: 0;
+}
+
+.text-evidence a {
+   color: var(--green);
+   font-weight: bold;
+}
+
+.text-evidence a:hover,
+.text-evidence a:focus {
+   color: var(--dark-green);
+}
+
 /* cascade test */
+
 p {
    color: #7f1d1d;
 }
@@ -293,6 +317,53 @@ p {
 
 #cascade-target {
    color: #6a1b9a;
+}
+
+/* box model test */
+
+.pixel-stage {
+   width: 100%;
+   margin: 20px 0;
+   overflow-x: auto;
+   padding: 10px;
+   background-color: #edf7f2;
+   border-radius: 8px;
+}
+
+.pixel-panel {
+   min-height: 170px;
+   margin: 0 auto;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: var(--shadow);
+}
+
+.pixel-panel h4 {
+   margin-top: 0;
+}
+
+.content-box-demo {
+   box-sizing: content-box;
+   width: 40vw;
+   padding: 27px;
+   border: 3px solid #176b4d;
+}
+
+.border-box-demo {
+   box-sizing: border-box;
+   width: calc(40vw + 60px);
+   padding: 27px;
+   border: 3px solid #176b4d;
+}
+
+.calculation {
+   padding: 14px;
+   background-color: #e0f2e9;
+   color: var(--dark-green);
+   border-left: 4px solid var(--green);
+   border-radius: 5px;
+   font-family: "Courier New", monospace;
+   font-weight: bold;
 }
 
 .site-footer {
@@ -325,5 +396,10 @@ p {
    nav {
        align-items: center;
        flex-direction: column;
+   }
+
+   .content-box-demo,
+   .border-box-demo {
+       width: auto;
    }
 }

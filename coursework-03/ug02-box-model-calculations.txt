@@ -1,0 +1,61 @@
+CW 03: UG 02 Pixel Budget Under Constraint
+Keny Nguyen
+
+Objective
+
+Create a content panel with an exact rendered outer width of 420px at a
+900px viewport without declaring width: 420px.
+
+Content-Box Version
+
+CSS:
+
+.content-box-demo {
+    box-sizing: content-box;
+    width: 40vw;
+    padding: 27px;
+    border: 3px solid #176b4d;
+}
+
+Calculation at a 900px viewport:
+
+40vw = 40% of 900px
+40vw = 360px
+
+Content width = 360px
+Left and right padding = 27px + 27px = 54px
+Left and right border = 3px + 3px = 6px
+
+Outer width = content + padding + border
+Outer width = 360px + 54px + 6px
+Outer width = 420px
+
+Measured content-box outer width: 420px
+
+Border-Box Version
+
+CSS:
+
+.border-box-demo {
+    box-sizing: border-box;
+    width: calc(40vw + 60px);
+    padding: 27px;
+    border: 3px solid #176b4d;
+}
+
+Calculation at a 900px viewport:
+
+40vw = 360px
+360px + 60px = 420px
+
+Because box-sizing is border-box, the padding and borders are included
+inside the declared width.
+
+Measured border-box outer width: 420px
+
+Tradeoff
+
+The content-box version requires adding the content width, horizontal
+padding, and borders to determine the final outer width. The border-box
+version includes the padding and border inside its declared width, which
+makes controlling the rendered outer width easier.

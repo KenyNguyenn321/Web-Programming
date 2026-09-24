@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>CW 03 | Keny Nguyen</title>
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="lyrics.css">
 </head>
@@ -29,12 +31,18 @@
     <main id="home">
         <section class="hero">
             <p class="eyebrow">Web Programming • Applied Studio</p>
+
             <h2>CW 03: CSS Foundations Lab</h2>
-            <p>Build, inspect, explain, and defend the CSS decisions behind a responsive page.</p>
+
+            <p>
+                Build, inspect, explain, and defend the CSS decisions behind a
+                responsive page.
+            </p>
 
             <div class="overview-grid">
                 <article>
                     <h3>Assignment Details</h3>
+
                     <p><strong>Student:</strong> Keny Nguyen</p>
                     <p><strong>Assignment:</strong> Coursework 03</p>
                     <p><strong>Format:</strong> One organized HTML document</p>
@@ -42,6 +50,7 @@
 
                 <article>
                     <h3>Exercises Overview</h3>
+
                     <ul>
                         <li>External style sheet and text color</li>
                         <li>Debugging CSS code</li>
@@ -55,6 +64,7 @@
 
         <section id="exercise-1" class="content-section">
             <h2>Exercise 1: External Style Sheet</h2>
+
             <p>Changing text color to dark red using external CSS.</p>
 
             <div class="answer-card">
@@ -67,44 +77,51 @@
 }</code></pre>
 
                 <h3>Implementation</h3>
+
                 <p>
-                    This page links to <code>styles.css</code> inside the document
-                    <code>&lt;head&gt;</code>. The body selector changes the normal
-                    text color to dark red.
+                    This page links to <code>styles.css</code> inside the
+                    document <code>&lt;head&gt;</code>. The body selector changes
+                    the normal text color to dark red.
                 </p>
             </div>
         </section>
 
         <section id="exercise-2" class="content-section">
             <h2>Exercise 2: Debugging CSS</h2>
+
             <p>Finding and correcting three common CSS mistakes.</p>
 
             <div class="debug-container">
                 <h3>Debugging Analysis</h3>
 
                 <article class="debug-item">
-                    <h4>Mistake 1: Invalid margin declaration</h4>
+                    <h4>Mistake 1: Incorrect margin property</h4>
+
                     <p>
-                        The original rule contained <code>margin-left: 20%;</code>
-                        twice when the second declaration should have been
+                        The original rule contained
+                        <code>margin-left: 20%;</code> twice. The second
+                        declaration was corrected to
                         <code>margin-right: 20%;</code>.
                     </p>
                 </article>
 
                 <article class="debug-item">
                     <h4>Mistake 2: Missing unit</h4>
+
                     <p>
                         The declaration <code>font-size: 2.5</code> was invalid
-                        because a unit was missing. It was corrected to
+                        because it did not include a unit. It was corrected to
                         <code>font-size: 2.5em</code>.
                     </p>
                 </article>
 
                 <article class="debug-item">
-                    <h4>Mistake 3: Invalid width value</h4>
+                    <h4>Mistake 3: Missing semicolon</h4>
+
                     <p>
-                        The declaration <code>width: 100%</code> was missing a
-                        semicolon. It was corrected to <code>width: 100%;</code>.
+                        The declaration <code>width: 100%</code> did not end
+                        with a semicolon. It was corrected to
+                        <code>width: 100%;</code>.
                     </p>
                 </article>
 
@@ -140,6 +157,7 @@ a {
 
         <section id="exercise-3" class="content-section">
             <h2>Exercise 3: Song Lyrics Styling</h2>
+
             <p>Styling song information using the required CSS classes.</p>
 
             <div class="lyrics-demo">
@@ -148,14 +166,26 @@ a {
                 <p class="album">After Hours</p>
                 <p class="year">2020</p>
 
-                <p class="verse">I have been trying to call</p>
-                <p class="verse">I have been on my own for long enough</p>
-                <p class="chorus">Maybe you can show me how to love</p>
-                <p class="chorus">I am going through withdrawals</p>
+                <p class="verse">
+                    I have been trying to call
+                </p>
+
+                <p class="verse">
+                    I have been on my own for long enough
+                </p>
+
+                <p class="chorus">
+                    Maybe you can show me how to love
+                </p>
+
+                <p class="chorus">
+                    I am going through withdrawals
+                </p>
             </div>
 
             <div class="answer-card">
                 <h3>CSS Classes Used</h3>
+
                 <ul>
                     <li><code>.artist</code></li>
                     <li><code>.song-title</code></li>
@@ -169,7 +199,11 @@ a {
 
         <section id="exercise-4" class="content-section">
             <h2>Exercise 4: External Stylesheet</h2>
-            <p>The song lyric styles were moved into a separate file named <code>lyrics.css</code>.</p>
+
+            <p>
+                The song lyric styles were moved into a separate file named
+                <code>lyrics.css</code>.
+            </p>
 
             <div class="answer-card">
                 <h3>Implementation</h3>
@@ -177,19 +211,23 @@ a {
                 <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
 
                 <p>
-                    Separating the lyric styles keeps the HTML cleaner and allows
-                    the same formatting to be reused on other pages.
+                    Separating the lyric styles keeps the HTML cleaner and
+                    allows the same formatting to be reused on other pages.
                 </p>
             </div>
         </section>
 
         <section id="exercise-5" class="content-section">
             <h2>Exercise 5: School Website Design</h2>
-            <p>A responsive school timetable created with HTML and CSS.</p>
+
+            <p>
+                A responsive school timetable created with HTML and CSS.
+            </p>
 
             <div class="concept-grid">
                 <article>
                     <h3>Key Concepts</h3>
+
                     <ul>
                         <li>External CSS for consistent styling</li>
                         <li>CSS variables for the green color scheme</li>
@@ -200,9 +238,11 @@ a {
 
                 <article>
                     <h3>Essential HTML and CSS</h3>
+
                     <p>
                         <strong>HTML:</strong> header, nav, main, section, table
                     </p>
+
                     <p>
                         <strong>CSS:</strong> color, background-color, padding,
                         margin, border
@@ -228,11 +268,17 @@ a {
                     <tbody>
                         <tr>
                             <th scope="row">9:00 AM</th>
-                            <td class="computer-science">Computer Science</td>
+                            <td class="computer-science">
+                                Computer Science
+                            </td>
                             <td class="study">Study Time</td>
-                            <td class="computer-science">Computer Science</td>
+                            <td class="computer-science">
+                                Computer Science
+                            </td>
                             <td class="study">Study Time</td>
-                            <td class="computer-science">Computer Science</td>
+                            <td class="computer-science">
+                                Computer Science
+                            </td>
                         </tr>
 
                         <tr>
@@ -284,11 +330,13 @@ a {
                 </p>
 
                 <h4>Prediction</h4>
+
                 <p>
                     The <code>#cascade-target</code> declaration should win
                     because an ID selector has greater specificity than a class
-                    selector or an element selector. I predict the paragraph's
-                    computed color will be <code>rgb(106, 27, 154)</code>.
+                    selector or an element selector. I predict that the
+                    paragraph's computed color will be
+                    <code>rgb(106, 27, 154)</code>.
                 </p>
 
                 <div class="investigation-panel">
@@ -320,6 +368,7 @@ a {
                 </ol>
 
                 <h4>Computed Result</h4>
+
                 <p>
                     The Computed panel reported
                     <code>rgb(106, 27, 154)</code>. The ID rule won, while the
@@ -327,12 +376,13 @@ a {
                 </p>
 
                 <h4>Reflection</h4>
+
                 <p>
                     The browser result matched my prediction because the ID
                     selector had the highest specificity. The Styles and
-                    Computed panels also showed that the two lower-specificity
-                    declarations still matched the paragraph, but their color
-                    values were overridden.
+                    Computed panels showed that the two lower-specificity
+                    declarations matched the paragraph, but their color values
+                    were overridden.
                 </p>
 
                 <div class="evidence-grid">
@@ -341,24 +391,166 @@ a {
                             src="images/ug01-devtools.png"
                             alt="Browser DevTools showing the computed color and overridden CSS rules"
                         >
+
                         <figcaption>
                             DevTools evidence showing the winning ID rule,
-                            overridden declarations, computed color, and desktop
-                            timestamp.
+                            overridden declarations, computed color, and
+                            desktop timestamp.
+                        </figcaption>
+                    </figure>
+
+                    <article class="text-evidence">
+                        <h4>Prediction and Specificity File</h4>
+
+                        <p>
+                            The prediction, specificity calculations, actual
+                            result, and reflection are documented in the
+                            following text file.
+                        </p>
+
+                        <p>
+                            <a href="ug01-prediction-and-specificity.txt">
+                                View UG 01 Prediction and Specificity Evidence
+                            </a>
+                        </p>
+                    </article>
+                </div>
+            </article>
+
+            <article class="investigation">
+                <h3>UG 02: Pixel Budget Under Constraint</h3>
+
+                <p>
+                    This investigation creates a panel with an outer width of
+                    exactly 420 pixels at a 900-pixel viewport without using
+                    <code>width: 420px</code>.
+                </p>
+
+                <h4>Content-Box Version</h4>
+
+                <p>
+                    At a 900-pixel viewport, <code>40vw</code> equals 360
+                    pixels. The horizontal padding adds 54 pixels and the
+                    borders add 6 pixels, producing an outer width of 420
+                    pixels.
+                </p>
+
+                <div class="pixel-stage">
+                    <div class="pixel-panel content-box-demo">
+                        <h4>Content-Box Panel</h4>
+
+                        <p>
+                            The declared width controls only the content area.
+                            Padding and borders are added outside that width.
+                        </p>
+                    </div>
+                </div>
+
+                <pre><code>.content-box-demo {
+    box-sizing: content-box;
+    width: 40vw;
+    padding: 27px;
+    border: 3px solid #176b4d;
+}</code></pre>
+
+                <p class="calculation">
+                    360px content + 54px padding + 6px border = 420px outer width
+                </p>
+
+                <h4>Border-Box Version</h4>
+
+                <p>
+                    After switching to <code>border-box</code>, the declared
+                    width includes the content, padding, and borders. The
+                    declaration <code>calc(40vw + 60px)</code> evaluates to 420
+                    pixels at a 900-pixel viewport.
+                </p>
+
+                <div class="pixel-stage">
+                    <div class="pixel-panel border-box-demo">
+                        <h4>Border-Box Panel</h4>
+
+                        <p>
+                            The padding and borders are included inside the
+                            declared width instead of being added outside it.
+                        </p>
+                    </div>
+                </div>
+
+                <pre><code>.border-box-demo {
+    box-sizing: border-box;
+    width: calc(40vw + 60px);
+    padding: 27px;
+    border: 3px solid #176b4d;
+}</code></pre>
+
+                <p class="calculation">
+                    40vw at 900px = 360px<br>
+                    360px + 60px = 420px declared and outer width
+                </p>
+
+                <h4>Measured Results</h4>
+
+                <ul>
+                    <li>
+                        Content-box outer width at 900px:
+                        <strong>420px</strong>
+                    </li>
+
+                    <li>
+                        Border-box outer width at 900px:
+                        <strong>420px</strong>
+                    </li>
+                </ul>
+
+                <h4>Reflection</h4>
+
+                <p>
+                    With <code>content-box</code>, padding and borders increase
+                    the rendered size beyond the declared width, so I included
+                    them in the arithmetic. With <code>border-box</code>, those
+                    values are included inside the declared width, which makes
+                    controlling the outer size more direct.
+                </p>
+
+                <div class="evidence-grid">
+                    <figure>
+                        <img
+                            src="images/ug02-content-box.png"
+                            alt="DevTools box model showing the content-box panel measuring 420 pixels wide"
+                        >
+
+                        <figcaption>
+                            Content-box measurement at a 900-pixel viewport.
                         </figcaption>
                     </figure>
 
                     <figure>
                         <img
-                            src="images/ug01-specificity.jpg"
-                            alt="Handwritten calculation comparing element, class, and ID selector specificity"
+                            src="images/ug02-border-box.png"
+                            alt="DevTools box model showing the border-box panel measuring 420 pixels wide"
                         >
+
                         <figcaption>
-                            Handwritten specificity calculation ranking the three
-                            conflicting selectors.
+                            Border-box measurement at a 900-pixel viewport.
                         </figcaption>
                     </figure>
                 </div>
+
+                <article class="text-evidence">
+                    <h4>Box-Model Calculations</h4>
+
+                    <p>
+                        The calculations and measured results are documented in
+                        the following text file.
+                    </p>
+
+                    <p>
+                        <a href="ug02-box-model-calculations.txt">
+                            View UG 02 Box-Model Calculations
+                        </a>
+                    </p>
+                </article>
             </article>
         </section>
 
@@ -366,10 +558,21 @@ a {
             <h2>Submission</h2>
 
             <ul>
-                <li>All exercises are contained in one HTML document.</li>
-                <li>CSS is stored in external stylesheets.</li>
-                <li>Evidence images are stored in the images folder.</li>
-                <li>The completed page will be tested before submission.</li>
+                <li>
+                    All exercises are contained in one HTML document.
+                </li>
+
+                <li>
+                    CSS is stored in external stylesheets.
+                </li>
+
+                <li>
+                    Evidence images are stored in the images folder.
+                </li>
+
+                <li>
+                    The completed page will be tested before submission.
+                </li>
             </ul>
         </section>
     </main>

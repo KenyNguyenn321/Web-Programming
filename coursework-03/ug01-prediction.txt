@@ -34,6 +34,12 @@ Predicted Computed Color
 
 rgb(106, 27, 154)
 
+Reason
+
+An ID selector has greater specificity than a class selector and an element
+selector. Therefore, the purple ID declaration should override the green class
+declaration and the dark red element declaration.
+
 Actual Result After Testing
 
 The #cascade-target rule won. The Computed panel displayed the color as
