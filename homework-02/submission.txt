@@ -3,7 +3,7 @@ Homework Assignment 2 Submission
 Name: Keny Nguyen
 
 Live URL:
-https://codd.cs.gsu.edu/~knguyen207/web/hw2/index.html
+https://codd.cs.gsu.edu/~knguyen207/WP/HW/02/index.html
 
 GitHub Repository:
 https://github.com/KenyNguyenn321/Web-Programming/tree/main/homework-02
