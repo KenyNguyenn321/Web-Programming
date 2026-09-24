@@ -9,6 +9,28 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="lyrics.css">
     <script src="performance-test.js" defer></script>
+
+    <style>
+        .evidence {
+            margin: 24px 0;
+            padding: 12px;
+            border: 1px solid #999999;
+        }
+
+        .evidence img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .evidence figcaption {
+            margin-top: 10px;
+            color: #333333;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -79,7 +101,8 @@
                 <h3>Mistake 3: Missing semicolon</h3>
 
                 <p>
-                    The declaration <code>width: 100%</code> was corrected to
+                    The declaration <code>width: 100%</code> did not end with a
+                    semicolon. It was corrected to
                     <code>width: 100%;</code>.
                 </p>
             </div>
@@ -128,8 +151,12 @@ a {
                 <p class="chorus">I am going through withdrawals</p>
                 <p class="verse">I'm looking for something that I can't see</p>
                 <p class="verse">Maybe you can show it to me, maybe</p>
-                <p class="chorus">I'm going through a crisis, I thought I'd see the light</p>
-                <p class="chorus">But there's nothing but blinding lights</p>
+                <p class="chorus">
+                    I'm going through a crisis, I thought I'd see the light
+                </p>
+                <p class="chorus">
+                    But there's nothing but blinding lights
+                </p>
             </div>
 
             <h3>Classes Used</h3>
@@ -363,6 +390,18 @@ a {
                     prediction because the ID selector had the highest
                     specificity.
                 </p>
+
+                <figure class="evidence">
+                    <img
+                        src="images/ug01-devtools.png"
+                        alt="DevTools showing the winning ID selector, overridden color declarations, and computed purple color"
+                    >
+
+                    <figcaption>
+                        UG 01 evidence showing the cascade winner, overridden
+                        rules, specificity result, and computed color.
+                    </figcaption>
+                </figure>
             </article>
 
             <article id="ug-02" class="investigation">
@@ -422,6 +461,25 @@ a {
                     40vw at 900px = 360px<br>
                     360px + 60px = 420px
                 </p>
+
+                <p>
+                    Both versions measured an outer width of 420 pixels. The
+                    content-box version adds padding and borders outside the
+                    content width, while border-box includes them inside the
+                    declared width.
+                </p>
+
+                <figure class="evidence">
+                    <img
+                        src="images/ug02-contentborder-box.png"
+                        alt="Combined box-model measurements for the content-box and border-box panels at a 900-pixel viewport"
+                    >
+
+                    <figcaption>
+                        UG 02 evidence comparing the content-box and border-box
+                        calculations and measured outer widths.
+                    </figcaption>
+                </figure>
             </article>
 
             <article id="ug-03" class="investigation">
@@ -470,6 +528,18 @@ a {
                     The repair removed the overflow at 775 pixels and preserved
                     the three-column layout at 1201 pixels.
                 </p>
+
+                <figure class="evidence">
+                    <img
+                        src="images/ug03-sizing.png"
+                        alt="Combined before and after breakpoint testing at 775 pixels with a desktop regression check at 1201 pixels"
+                    >
+
+                    <figcaption>
+                        UG 03 evidence showing the failed layout, repaired
+                        layout, and desktop regression check.
+                    </figcaption>
+                </figure>
             </article>
 
             <article id="ug-04" class="investigation">
@@ -491,6 +561,11 @@ a {
                         <strong>10.72:1</strong>
                     </li>
                 </ul>
+
+                <p>
+                    Both color combinations exceed the WCAG AA contrast
+                    requirement of 4.5:1 for normal text.
+                </p>
 
                 <div class="state-samples">
                     <div class="state-sample computer-science">
@@ -519,6 +594,18 @@ a {
                     different border patterns remain visible in grayscale.
                     Peer LN correctly interpreted the revised states.
                 </p>
+
+                <figure class="evidence">
+                    <img
+                        src="images/ug04-contrast-greyscale.png"
+                        alt="Combined contrast test results and grayscale timetable review with peer initials LN"
+                    >
+
+                    <figcaption>
+                        UG 04 evidence showing the contrast ratios, grayscale
+                        test, revised non-color cues, and peer initials LN.
+                    </figcaption>
+                </figure>
             </article>
 
             <article id="gr-01" class="investigation">
@@ -549,7 +636,9 @@ a {
                     <thead>
                         <tr>
                             <th class="u-border u-pad u-center u-head">Time</th>
-                            <th class="u-border u-pad u-center u-head">Course</th>
+                            <th class="u-border u-pad u-center u-head">
+                                Course
+                            </th>
                         </tr>
                     </thead>
 
@@ -656,6 +745,19 @@ a {
                     appearance. The class can keep the same name if the visual
                     design changes later.
                 </p>
+
+                <figure class="evidence">
+                    <img
+                        src="images/gr01-architecture.png"
+                        alt="Combined comparison of the utility-oriented and component-oriented CSS architectures with selector and declaration counts"
+                    >
+
+                    <figcaption>
+                        GR 01 evidence showing the version-history difference,
+                        architecture comparison, rule counts, and naming
+                        decision.
+                    </figcaption>
+                </figure>
             </article>
 
             <article id="gr-02" class="investigation">
@@ -715,14 +817,83 @@ a {
                     aria-hidden="true"
                 ></div>
 
-                <h4>Interpretation Rule</h4>
+                <h4>Recorded Results</h4>
+
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Trial</th>
+                            <th scope="col">Flexbox</th>
+                            <th scope="col">Grid</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>5.400 ms</td>
+                            <td>5.000 ms</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>4.100 ms</td>
+                            <td>8.200 ms</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>4.200 ms</td>
+                            <td>6.300 ms</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>3.500 ms</td>
+                            <td>3.600 ms</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>5.200 ms</td>
+                            <td>3.700 ms</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Median</th>
+                            <td><strong>4.200 ms</strong></td>
+                            <td><strong>5.000 ms</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Interpretation</h4>
 
                 <p>
-                    The claim is supported only if the Grid median is lower
-                    than the Flexbox median. The result applies only to this
-                    browser, device, test size, and implementation. It does not
-                    prove that one layout system is always faster.
+                    The Grid median was not lower than the Flexbox median.
+                    Flexbox had a median of 4.200 milliseconds, while Grid had
+                    a median of 5.000 milliseconds. Therefore, the claim was
+                    not supported by these five trials.
                 </p>
+
+                <p>
+                    The Grid median was 0.800 milliseconds higher than the
+                    Flexbox median. These results apply only to this browser,
+                    computer, viewport, item count, and implementation. They
+                    do not prove that Flexbox is always faster than Grid.
+                </p>
+
+                <figure class="evidence">
+                    <img
+                        src="images/gr02-performance.png"
+                        alt="Five Flexbox and Grid performance trials showing medians of 4.200 and 5.000 milliseconds"
+                    >
+
+                    <figcaption>
+                        GR 02 evidence showing the five raw trials, calculated
+                        medians, and unsupported performance claim.
+                    </figcaption>
+                </figure>
             </article>
         </section>
 
@@ -734,7 +905,7 @@ a {
                 <li>UG 01 through UG 04 are complete.</li>
                 <li>GR 01 and GR 02 are complete.</li>
                 <li>CSS is stored in external stylesheets.</li>
-                <li>Evidence is stored separately in the images folder.</li>
+                <li>Evidence images include relative paths, alt text, and captions.</li>
                 <li>The page will be tested before submission.</li>
             </ul>
         </section>
