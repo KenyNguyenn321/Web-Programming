@@ -5,7 +5,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>CW 03 CSS Foundations Lab</title>
    <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="lyrics.css">
 </head>
 
 <body>
@@ -65,21 +64,20 @@
          <h2>Exercise 1: External Style Sheet</h2>
 
          <p>
-            This page links to the external stylesheet
-            <code>styles.css</code> in the document head. The stylesheet
-            applies a dark-red text color, a sans-serif font, and readable
-            line spacing to the body element.
+            Exercise 1 requires an external stylesheet that changes the
+            text within the body element to dark red.
          </p>
 
          <div class="example-panel">
             <h3>External CSS Demonstration</h3>
+
             <p>
-               This paragraph inherits its dark-red text color from the
-               external stylesheet.
+               This paragraph inherits the dark-red text color from the
+               body rule inside the external stylesheet.
             </p>
          </div>
 
-         <h3>CSS Rule</h3>
+         <h3>External CSS</h3>
 
          <pre><code>body {
    color: darkred;
@@ -87,294 +85,55 @@
    line-height: 1.6;
 }</code></pre>
 
+         <h3>Stylesheet Link</h3>
+
          <p>
-            The stylesheet is connected to this page using the following
-            element:
+            The stylesheet is connected to this HTML document using the
+            following link element in the document head:
          </p>
 
          <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+
+         <p>
+            Using an external stylesheet separates the page content from
+            its visual presentation and allows the same CSS rules to be
+            reused by other HTML pages.
+         </p>
       </section>
 
       <section id="exercise2" class="content-section">
          <h2>Exercise 2: Debugging CSS</h2>
-
-         <div class="debugging-card">
-            <h3>My Debugging Analysis</h3>
-
-            <article class="finding">
-               <h4>Finding 1: Missing Declaration Terminator</h4>
-
-               <p>
-                  <strong>Original:</strong>
-                  <code>color: red</code>
-               </p>
-
-               <p>
-                  <strong>Correction:</strong>
-                  <code>color: darkred;</code>
-               </p>
-
-               <p>
-                  A browser can accept the final declaration without a
-                  semicolon, but omitting it is fragile because a new
-                  declaration added afterward may not parse correctly.
-                  The correction adds the terminator and uses a darker red
-                  for stronger contrast against the ivory background.
-               </p>
-            </article>
-
-            <article class="finding">
-               <h4>Finding 2: Missing Generic Font Fallback</h4>
-
-               <p>
-                  <strong>Original:</strong>
-                  <code>font-family: "Times New Roman";</code>
-               </p>
-
-               <p>
-                  <strong>Correction:</strong>
-                  <code>font-family: "Times New Roman", Times, serif;</code>
-               </p>
-
-               <p>
-                  The original declaration depends on one installed font.
-                  Adding fallback fonts allows the browser to use another
-                  serif typeface if Times New Roman is unavailable.
-               </p>
-            </article>
-
-            <article class="finding">
-               <h4>Finding 3: All Headings Use the Same Size</h4>
-
-               <p>
-                  <strong>Original:</strong>
-                  <code>h1, h2, h3 { font-size: 2.5em; }</code>
-               </p>
-
-               <p>
-                  <strong>Correction:</strong>
-                  Use separate font sizes for <code>h1</code>,
-                  <code>h2</code>, and <code>h3</code>.
-               </p>
-
-               <p>
-                  Giving every heading the same size removes the visible
-                  hierarchy between page titles and subsection headings.
-                  Separate sizes make the page structure easier to scan.
-               </p>
-            </article>
-         </div>
-
-         <h3>Corrected CSS</h3>
-
-         <pre><code>body {
-   font-family: "Times New Roman", Times, serif;
-   max-width: 1100px;
-   margin: 0 auto;
-   padding: 20px;
-   text-align: left;
-   background: ivory;
-   color: darkred;
-}
-
-h1 {
-   color: #9b0000;
-   font-size: 2.5em;
-   margin: 20px 0;
-}
-
-h2 {
-   color: #9b0000;
-   font-size: 2em;
-   margin: 20px 0;
-}
-
-h3 {
-   color: #9b0000;
-   font-size: 1.5em;
-   margin: 20px 0;
-}
-
-.container {
-   width: 100%;
-   padding: 20px;
-   box-sizing: border-box;
-}
-
-a {
-   color: #0000ff;
-   text-decoration: underline;
-}</code></pre>
+         <p>This exercise will be completed in the next commit.</p>
       </section>
 
       <section id="exercise3" class="content-section">
          <h2>Exercise 3: Song Lyrics Styling</h2>
-
-         <p>
-            This example uses separate CSS classes to style the song title,
-            artist, album, year, verses, and chorus lines.
-         </p>
-
-         <div class="lyrics-demo">
-            <p class="song-title">Blinding Lights</p>
-            <p class="artist">The Weeknd</p>
-            <p class="album">After Hours</p>
-            <p class="year">2020</p>
-
-            <div class="lyrics-text">
-               <p class="verse">
-                  I been tryna call, I been on my own for long enough
-               </p>
-
-               <p class="verse">
-                  Maybe you can show me how to love, maybe
-               </p>
-
-               <p class="chorus">
-                  I'm going through a crisis, I thought I'd see the light
-               </p>
-
-               <p class="chorus">
-                  But there's nothing but blinding lights
-               </p>
-
-               <p class="verse">
-                  I'm looking for something that I can't see
-               </p>
-
-               <p class="verse">
-                  Maybe you can show it to me, maybe
-               </p>
-
-               <p class="chorus">
-                  I'm going through a crisis, I thought I'd see the light
-               </p>
-
-               <p class="chorus">
-                  But there's nothing but blinding lights
-               </p>
-            </div>
-         </div>
-
-         <h3>CSS Classes Used</h3>
-
-         <ul class="class-list">
-            <li>
-               <code>.artist</code>: 14pt Arial, bold, and moccasin
-            </li>
-            <li>
-               <code>.song-title</code>: 14pt Arial, normal, and khaki
-            </li>
-            <li>
-               <code>.album</code>: 12pt Arial, normal, and khaki
-            </li>
-            <li>
-               <code>.year</code>: 12pt Arial, bold, and ivory
-            </li>
-            <li>
-               <code>.verse</code>: 14pt Trebuchet MS, bold, gold, and
-               2cm horizontal margins
-            </li>
-            <li>
-               <code>.chorus</code>: 14pt Trebuchet MS, bold, italic,
-               gold, and 4cm horizontal margins
-            </li>
-         </ul>
+         <p>This exercise will be completed in a later commit.</p>
       </section>
 
       <section id="exercise4" class="content-section">
          <h2>Exercise 4: External Stylesheet</h2>
-
-         <p>
-            The song example is styled using the external
-            <code>lyrics.css</code> file. The stylesheet is linked in the
-            document head using:
-         </p>
-
-         <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
-
-         <p>
-            Because every exercise must appear on one HTML page, the
-            chocolate background is applied to the
-            <code>.lyrics-demo</code> container instead of the entire
-            body. This keeps the song design separate from the green
-            website theme.
-         </p>
-
-         <h3>External Lyrics CSS</h3>
-
-         <pre><code>.lyrics-demo {
-   background-color: chocolate;
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 20px;
-}
-
-.artist {
-   font-size: 14pt;
-   font-family: Arial, sans-serif;
-   font-weight: bold;
-   color: moccasin;
-}
-
-.song-title {
-   font-size: 14pt;
-   font-family: Arial, sans-serif;
-   font-weight: normal;
-   color: khaki;
-}
-
-.album {
-   font-size: 12pt;
-   font-family: Arial, sans-serif;
-   font-weight: normal;
-   color: khaki;
-}
-
-.year {
-   font-size: 12pt;
-   font-family: Arial, sans-serif;
-   font-weight: bold;
-   color: ivory;
-}
-
-.verse {
-   font-size: 14pt;
-   font-family: "Trebuchet MS", sans-serif;
-   font-weight: bold;
-   color: gold;
-   margin-left: 2cm;
-   margin-right: 2cm;
-}
-
-.chorus {
-   font-size: 14pt;
-   font-family: "Trebuchet MS", sans-serif;
-   font-weight: bold;
-   font-style: italic;
-   color: gold;
-   margin-left: 4cm;
-   margin-right: 4cm;
-}</code></pre>
+         <p>This exercise will be completed in a later commit.</p>
       </section>
 
       <section id="exercise5" class="content-section">
          <h2>Exercise 5: School Website Design</h2>
-         <p>This exercise will be completed in the next commit.</p>
+         <p>This exercise will be completed in a later commit.</p>
       </section>
 
       <section id="critical-thinking" class="content-section">
          <h2>Critical Thinking</h2>
          <p>
-            The six investigations and their browser evidence will be
-            added after the working examples are complete.
+            The required investigations will be completed after the five
+            exercises are working.
          </p>
       </section>
 
       <section id="evidence" class="content-section">
          <h2>Evidence</h2>
          <p>
-            Testing screenshots and measurements will be added here.
+            Browser screenshots and measurements will be added during the
+            critical-thinking investigations.
          </p>
       </section>
 

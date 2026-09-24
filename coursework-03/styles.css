@@ -8,8 +8,7 @@
     --pale-green: #f4faf6;
     --cream: #fffdf8;
     --border: #b8d7c6;
-    --dark-red: #7f1d1d;
-    --text: #263b32;
+    --text-green: #263b32;
     --shadow: 0 4px 12px rgba(18, 60, 47, 0.14);
  }
  
@@ -88,7 +87,6 @@
  .content-section {
     margin-bottom: 28px;
     padding: 28px;
-    color: var(--text);
     background-color: var(--cream);
     border: 1px solid var(--border);
     border-radius: 10px;
@@ -131,38 +129,9 @@
  
  .example-panel {
     padding: 20px;
-    color: var(--dark-red);
     background-color: ivory;
     border: 2px solid var(--green);
     border-radius: 8px;
- }
- 
- .debugging-card {
-    padding: 24px;
-    color: var(--text);
-    background-color: var(--pale-green);
-    border: 2px solid var(--green);
-    border-radius: 10px;
-    box-shadow: 0 5px 14px rgba(31, 111, 84, 0.2);
- }
- 
- .finding {
-    margin-top: 18px;
-    padding: 16px;
-    background-color: white;
-    border-left: 4px solid var(--medium-green);
- }
- 
- .finding h4 {
-    margin-top: 0;
- }
- 
- .class-list {
-    padding-left: 24px;
- }
- 
- .class-list li {
-    margin-bottom: 8px;
  }
  
  code {
