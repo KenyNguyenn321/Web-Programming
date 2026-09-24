@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>CW 03 CSS Foundations Lab</title>
    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="lyrics.css">
 </head>
 
 <body>
@@ -71,12 +72,14 @@
          </p>
 
          <div class="example-panel">
-            <h3>External CSS demonstration</h3>
+            <h3>External CSS Demonstration</h3>
             <p>
                This paragraph inherits its dark-red text color from the
-               body rule in the external stylesheet.
+               external stylesheet.
             </p>
          </div>
+
+         <h3>CSS Rule</h3>
 
          <pre><code>body {
    color: darkred;
@@ -99,7 +102,7 @@
             <h3>My Debugging Analysis</h3>
 
             <article class="finding">
-               <h4>Finding 1: Missing declaration terminator</h4>
+               <h4>Finding 1: Missing Declaration Terminator</h4>
 
                <p>
                   <strong>Original:</strong>
@@ -121,7 +124,7 @@
             </article>
 
             <article class="finding">
-               <h4>Finding 2: Missing generic font fallback</h4>
+               <h4>Finding 2: Missing Generic Font Fallback</h4>
 
                <p>
                   <strong>Original:</strong>
@@ -141,7 +144,7 @@
             </article>
 
             <article class="finding">
-               <h4>Finding 3: All headings use the same size</h4>
+               <h4>Finding 3: All Headings Use the Same Size</h4>
 
                <p>
                   <strong>Original:</strong>
@@ -206,17 +209,158 @@ a {
 
       <section id="exercise3" class="content-section">
          <h2>Exercise 3: Song Lyrics Styling</h2>
-         <p>This exercise will be completed in the next commit.</p>
+
+         <p>
+            This example uses separate CSS classes to style the song title,
+            artist, album, year, verses, and chorus lines.
+         </p>
+
+         <div class="lyrics-demo">
+            <p class="song-title">Blinding Lights</p>
+            <p class="artist">The Weeknd</p>
+            <p class="album">After Hours</p>
+            <p class="year">2020</p>
+
+            <div class="lyrics-text">
+               <p class="verse">
+                  I been tryna call, I been on my own for long enough
+               </p>
+
+               <p class="verse">
+                  Maybe you can show me how to love, maybe
+               </p>
+
+               <p class="chorus">
+                  I'm going through a crisis, I thought I'd see the light
+               </p>
+
+               <p class="chorus">
+                  But there's nothing but blinding lights
+               </p>
+
+               <p class="verse">
+                  I'm looking for something that I can't see
+               </p>
+
+               <p class="verse">
+                  Maybe you can show it to me, maybe
+               </p>
+
+               <p class="chorus">
+                  I'm going through a crisis, I thought I'd see the light
+               </p>
+
+               <p class="chorus">
+                  But there's nothing but blinding lights
+               </p>
+            </div>
+         </div>
+
+         <h3>CSS Classes Used</h3>
+
+         <ul class="class-list">
+            <li>
+               <code>.artist</code>: 14pt Arial, bold, and moccasin
+            </li>
+            <li>
+               <code>.song-title</code>: 14pt Arial, normal, and khaki
+            </li>
+            <li>
+               <code>.album</code>: 12pt Arial, normal, and khaki
+            </li>
+            <li>
+               <code>.year</code>: 12pt Arial, bold, and ivory
+            </li>
+            <li>
+               <code>.verse</code>: 14pt Trebuchet MS, bold, gold, and
+               2cm horizontal margins
+            </li>
+            <li>
+               <code>.chorus</code>: 14pt Trebuchet MS, bold, italic,
+               gold, and 4cm horizontal margins
+            </li>
+         </ul>
       </section>
 
       <section id="exercise4" class="content-section">
          <h2>Exercise 4: External Stylesheet</h2>
-         <p>This exercise will be completed in the next commit.</p>
+
+         <p>
+            The song example is styled using the external
+            <code>lyrics.css</code> file. The stylesheet is linked in the
+            document head using:
+         </p>
+
+         <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
+
+         <p>
+            Because every exercise must appear on one HTML page, the
+            chocolate background is applied to the
+            <code>.lyrics-demo</code> container instead of the entire
+            body. This keeps the song design separate from the green
+            website theme.
+         </p>
+
+         <h3>External Lyrics CSS</h3>
+
+         <pre><code>.lyrics-demo {
+   background-color: chocolate;
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 20px;
+}
+
+.artist {
+   font-size: 14pt;
+   font-family: Arial, sans-serif;
+   font-weight: bold;
+   color: moccasin;
+}
+
+.song-title {
+   font-size: 14pt;
+   font-family: Arial, sans-serif;
+   font-weight: normal;
+   color: khaki;
+}
+
+.album {
+   font-size: 12pt;
+   font-family: Arial, sans-serif;
+   font-weight: normal;
+   color: khaki;
+}
+
+.year {
+   font-size: 12pt;
+   font-family: Arial, sans-serif;
+   font-weight: bold;
+   color: ivory;
+}
+
+.verse {
+   font-size: 14pt;
+   font-family: "Trebuchet MS", sans-serif;
+   font-weight: bold;
+   color: gold;
+   margin-left: 2cm;
+   margin-right: 2cm;
+}
+
+.chorus {
+   font-size: 14pt;
+   font-family: "Trebuchet MS", sans-serif;
+   font-weight: bold;
+   font-style: italic;
+   color: gold;
+   margin-left: 4cm;
+   margin-right: 4cm;
+}</code></pre>
       </section>
 
       <section id="exercise5" class="content-section">
          <h2>Exercise 5: School Website Design</h2>
-         <p>This exercise will be completed in a later commit.</p>
+         <p>This exercise will be completed in the next commit.</p>
       </section>
 
       <section id="critical-thinking" class="content-section">

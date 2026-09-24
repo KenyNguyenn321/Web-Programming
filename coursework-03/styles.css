@@ -1,14 +1,16 @@
 /* Main page styles */
 
 :root {
-    --navy: #17324d;
-    --blue: #236fa1;
-    --light-blue: #eaf4f8;
+    --dark-green: #123c2f;
+    --green: #1f6f54;
+    --medium-green: #2f8f6b;
+    --light-green: #e7f4ed;
+    --pale-green: #f4faf6;
     --cream: #fffdf8;
-    --border: #bfd2dc;
+    --border: #b8d7c6;
     --dark-red: #7f1d1d;
-    --text: #263746;
-    --shadow: 0 4px 12px rgba(23, 50, 77, 0.12);
+    --text: #263b32;
+    --shadow: 0 4px 12px rgba(18, 60, 47, 0.14);
  }
  
  * {
@@ -22,14 +24,14 @@
  body {
     margin: 0;
     color: darkred;
-    background-color: #edf4f6;
+    background-color: #edf6f1;
     font-family: Roboto, Arial, sans-serif;
     line-height: 1.6;
  }
  
  .site-header {
     color: white;
-    background-color: var(--navy);
+    background-color: var(--dark-green);
  }
  
  .header-content {
@@ -40,6 +42,7 @@
  
  .header-content h1 {
     margin: 4px 0;
+    color: white;
     font-size: 2.2rem;
  }
  
@@ -48,6 +51,7 @@
  }
  
  .course-label {
+    color: #b8f0d3;
     font-size: 0.8rem;
     font-weight: bold;
     letter-spacing: 0.08em;
@@ -60,7 +64,7 @@
     justify-content: center;
     gap: 8px;
     padding: 12px 20px;
-    background-color: #10273a;
+    background-color: #0d2d23;
  }
  
  nav a {
@@ -72,8 +76,8 @@
  
  nav a:hover,
  nav a:focus {
-    color: var(--navy);
-    background-color: white;
+    color: var(--dark-green);
+    background-color: #b8f0d3;
  }
  
  main {
@@ -93,14 +97,14 @@
  
  .content-section h2 {
     margin-top: 0;
-    color: var(--navy);
-    border-bottom: 2px solid var(--light-blue);
     padding-bottom: 10px;
+    color: var(--dark-green);
+    border-bottom: 2px solid var(--light-green);
  }
  
  .content-section h3,
  .content-section h4 {
-    color: var(--navy);
+    color: var(--dark-green);
  }
  
  .assignment-details {
@@ -112,12 +116,12 @@
  
  .assignment-details div {
     padding: 14px;
-    background-color: var(--light-blue);
-    border-left: 4px solid var(--blue);
+    background-color: var(--light-green);
+    border-left: 4px solid var(--green);
  }
  
  .assignment-details dt {
-    color: var(--navy);
+    color: var(--dark-green);
     font-weight: bold;
  }
  
@@ -129,28 +133,36 @@
     padding: 20px;
     color: var(--dark-red);
     background-color: ivory;
-    border: 2px solid var(--dark-red);
+    border: 2px solid var(--green);
     border-radius: 8px;
  }
  
  .debugging-card {
     padding: 24px;
-    color: #263746;
-    background-color: #eef8f4;
-    border: 2px solid #24846b;
+    color: var(--text);
+    background-color: var(--pale-green);
+    border: 2px solid var(--green);
     border-radius: 10px;
-    box-shadow: 0 5px 14px rgba(36, 132, 107, 0.2);
+    box-shadow: 0 5px 14px rgba(31, 111, 84, 0.2);
  }
  
  .finding {
     margin-top: 18px;
     padding: 16px;
     background-color: white;
-    border-left: 4px solid #24846b;
+    border-left: 4px solid var(--medium-green);
  }
  
  .finding h4 {
     margin-top: 0;
+ }
+ 
+ .class-list {
+    padding-left: 24px;
+ }
+ 
+ .class-list li {
+    margin-bottom: 8px;
  }
  
  code {
@@ -160,8 +172,8 @@
  p code,
  li code {
     padding: 2px 5px;
-    color: #7f1d1d;
-    background-color: #f2e8e5;
+    color: #14533e;
+    background-color: #dff2e7;
     border-radius: 4px;
  }
  
@@ -169,8 +181,9 @@
     max-width: 100%;
     padding: 20px;
     overflow-x: auto;
-    color: #f8fafc;
-    background-color: #263746;
+    color: #f4fff8;
+    background-color: #173b2e;
+    border-left: 5px solid var(--medium-green);
     border-radius: 8px;
  }
  
@@ -181,7 +194,7 @@
  footer {
     padding: 24px;
     color: white;
-    background-color: var(--navy);
+    background-color: var(--dark-green);
     text-align: center;
  }
  
