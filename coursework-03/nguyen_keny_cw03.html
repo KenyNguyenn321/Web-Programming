@@ -8,15 +8,13 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="lyrics.css">
+    <script src="performance-test.js" defer></script>
 </head>
 
 <body>
     <header>
         <h1>CW 03: CSS Foundations Lab</h1>
-
-        <p>
-            Keny Nguyen | Web Programming | September 2026
-        </p>
+        <p>Keny Nguyen | Web Programming | September 2026</p>
     </header>
 
     <nav aria-label="Assignment navigation">
@@ -29,6 +27,8 @@
         <a href="#ug-02">UG 02</a>
         <a href="#ug-03">UG 03</a>
         <a href="#ug-04">UG 04</a>
+        <a href="#gr-01">GR 01</a>
+        <a href="#gr-02">GR 02</a>
     </nav>
 
     <main>
@@ -40,15 +40,11 @@
                 using an external CSS file.
             </p>
 
-            <h3>CSS</h3>
-
             <pre><code>body {
     color: darkred;
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }</code></pre>
-
-            <h3>Explanation</h3>
 
             <p>
                 The document links to <code>styles.css</code> inside the
@@ -59,11 +55,6 @@
 
         <section id="exercise-2">
             <h2>Exercise 2: Debugging CSS</h2>
-
-            <p>
-                The original CSS contained three mistakes that needed to be
-                identified and corrected.
-            </p>
 
             <div class="debug-answer">
                 <h3>Mistake 1: Incorrect margin property</h3>
@@ -79,9 +70,8 @@
                 <h3>Mistake 2: Missing unit</h3>
 
                 <p>
-                    The declaration <code>font-size: 2.5</code> was invalid
-                    because it did not include a unit. It was corrected to
-                    <code>font-size: 2.5em</code>.
+                    The declaration <code>font-size: 2.5</code> was invalid.
+                    It was corrected to <code>font-size: 2.5em</code>.
                 </p>
             </div>
 
@@ -89,8 +79,7 @@
                 <h3>Mistake 3: Missing semicolon</h3>
 
                 <p>
-                    The declaration <code>width: 100%</code> did not end with a
-                    semicolon. It was corrected to
+                    The declaration <code>width: 100%</code> was corrected to
                     <code>width: 100%;</code>.
                 </p>
             </div>
@@ -126,11 +115,6 @@ a {
 
         <section id="exercise-3">
             <h2>Exercise 3: Song Lyrics Styling</h2>
-
-            <p>
-                The following example uses separate classes for the artist,
-                title, album, year, verse, and chorus.
-            </p>
 
             <div class="lyrics-demo">
                 <p class="song-title">Blinding Lights</p>
@@ -332,18 +316,16 @@ a {
                 <h3>UG 01: Forensic Cascade Reconstruction</h3>
 
                 <p>
-                    Three conflicting color declarations target the paragraph
-                    below through an element selector, a class selector, and an
-                    ID selector.
+                    Three conflicting declarations target the paragraph through
+                    an element selector, a class selector, and an ID selector.
                 </p>
 
                 <h4>Prediction</h4>
 
                 <p>
                     The <code>#cascade-target</code> declaration should win
-                    because an ID selector has greater specificity than a class
-                    selector or an element selector. I predict that the
-                    computed color will be
+                    because an ID selector has greater specificity. I predict
+                    the computed color will be
                     <code>rgb(106, 27, 154)</code>.
                 </p>
 
@@ -352,8 +334,6 @@ a {
                         This paragraph is the cascade testing element.
                     </p>
                 </div>
-
-                <h4>CSS Tested</h4>
 
                 <pre><code>p {
     color: #7f1d1d;
@@ -367,23 +347,17 @@ a {
     color: #6a1b9a;
 }</code></pre>
 
-                <h4>Specificity Ranking</h4>
-
                 <ol>
                     <li><code>#cascade-target</code>: 1-0-0</li>
                     <li><code>.cascade-sample</code>: 0-1-0</li>
                     <li><code>p</code>: 0-0-1</li>
                 </ol>
 
-                <h4>Result and Reflection</h4>
-
                 <p>
                     The Computed panel reported
                     <code>rgb(106, 27, 154)</code>. The result matched my
                     prediction because the ID selector had the highest
-                    specificity. The class and element declarations still
-                    matched the paragraph, but their color values were
-                    overridden.
+                    specificity.
                 </p>
             </article>
 
@@ -391,8 +365,8 @@ a {
                 <h3>UG 02: Pixel Budget Under Constraint</h3>
 
                 <p>
-                    This investigation creates a panel with an outer width of
-                    exactly 420 pixels at a 900-pixel viewport without using
+                    Both panels produce an outer width of exactly 420 pixels at
+                    a 900-pixel viewport without declaring
                     <code>width: 420px</code>.
                 </p>
 
@@ -403,8 +377,8 @@ a {
                         <strong>Content-Box Panel</strong>
 
                         <p>
-                            The declared width controls the content area.
-                            Padding and borders are added outside that width.
+                            Padding and borders are added outside the declared
+                            content width.
                         </p>
                     </div>
                 </div>
@@ -417,7 +391,7 @@ a {
 }</code></pre>
 
                 <p class="calculation">
-                    360px content + 54px padding + 6px border = 420px
+                    360px + 54px padding + 6px border = 420px
                 </p>
 
                 <h4>Border-Box Version</h4>
@@ -427,8 +401,8 @@ a {
                         <strong>Border-Box Panel</strong>
 
                         <p>
-                            The padding and borders are included inside the
-                            declared width.
+                            Padding and borders are included inside the declared
+                            width.
                         </p>
                     </div>
                 </div>
@@ -444,70 +418,39 @@ a {
                     40vw at 900px = 360px<br>
                     360px + 60px = 420px
                 </p>
-
-                <h4>Result and Reflection</h4>
-
-                <p>
-                    Both versions measured 420 pixels at a 900-pixel viewport.
-                    With <code>content-box</code>, padding and borders were added
-                    outside the content width. With <code>border-box</code>,
-                    those values were included inside the declared width.
-                </p>
             </article>
 
             <article id="ug-03" class="investigation">
                 <h3>UG 03: Breakpoint Failure Study</h3>
 
                 <p>
-                    I tested the following three-card layout while reducing the
-                    viewport from desktop size. The first tested odd-numbered
-                    width that failed my layout test was 775 pixels.
-                </p>
-
-                <h4>Readability Test</h4>
-
-                <p>
-                    The layout passes when every card remains inside its
-                    container without horizontal overflow. It fails when the
-                    minimum card widths force the grid beyond the available
-                    content width.
+                    The three-card layout first failed my tested layout
+                    condition at an odd-numbered width of 775 pixels.
                 </p>
 
                 <div class="breakpoint-demo">
                     <article class="breakpoint-card">
                         <h4>Structure</h4>
-                        <p>Semantic HTML organizes the page content.</p>
+                        <p>Semantic HTML organizes the content.</p>
                     </article>
 
                     <article class="breakpoint-card">
                         <h4>Presentation</h4>
-                        <p>External CSS controls the visual design.</p>
+                        <p>External CSS controls the design.</p>
                     </article>
 
                     <article class="breakpoint-card">
                         <h4>Testing</h4>
-                        <p>Responsive testing identifies layout failures.</p>
+                        <p>Responsive testing finds failures.</p>
                     </article>
                 </div>
 
-                <h4>Original CSS</h4>
-
-                <pre><code>.breakpoint-demo {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-    gap: 18px;
-}</code></pre>
-
-                <h4>Cause</h4>
-
                 <p>
-                    The three columns required 660 pixels and the two gaps
-                    required 36 pixels. The grid needed at least 696 pixels of
-                    internal space. At a 775-pixel viewport, the page margins
-                    and section padding left less than 696 pixels for the grid.
+                    Three 220-pixel columns and two 18-pixel gaps require at
+                    least 696 pixels of internal space. At a 775-pixel
+                    viewport, the surrounding margins and padding left less
+                    than 696 pixels for the grid.
                 </p>
-
-                <h4>Repair</h4>
 
                 <pre><code>@media (max-width: 775px) {
     .breakpoint-demo {
@@ -519,13 +462,9 @@ a {
     }
 }</code></pre>
 
-                <h4>Result and Reflection</h4>
-
                 <p>
-                    The repair stacked the cards at 775 pixels and removed the
-                    overflow. The desktop layout remained three columns at
-                    1201 pixels, so the repair did not affect layouts above
-                    1000 pixels.
+                    The repair removed the overflow at 775 pixels and preserved
+                    the three-column layout at 1201 pixels.
                 </p>
             </article>
 
@@ -533,11 +472,9 @@ a {
                 <h3>UG 04: Color Is Not the Message</h3>
 
                 <p>
-                    I audited the color-coded timetable and redesigned its
-                    states so that color is not the only way to identify them.
+                    I audited the timetable and added non-color cues so its
+                    meaning does not depend only on background color.
                 </p>
-
-                <h4>Contrast Results</h4>
 
                 <ul>
                     <li>
@@ -550,13 +487,6 @@ a {
                         <strong>10.72:1</strong>
                     </li>
                 </ul>
-
-                <p>
-                    Both combinations exceed the WCAG AA requirement of 4.5:1
-                    for normal text.
-                </p>
-
-                <h4>Revised States</h4>
 
                 <div class="state-samples">
                     <div class="state-sample computer-science">
@@ -580,34 +510,214 @@ a {
                     </div>
                 </div>
 
-                <h4>Non-Color Cues</h4>
+                <p>
+                    The full labels, abbreviation markers, bold text, and
+                    different border patterns remain visible in grayscale.
+                    Peer LN correctly interpreted the revised states.
+                </p>
+            </article>
+
+            <article id="gr-01" class="investigation">
+                <h3>GR 01: Refactor With a Measured Tradeoff</h3>
+
+                <h4>Evaluation Criteria Defined Before Coding</h4>
+
+                <ol>
+                    <li>
+                        <strong>Readability:</strong> A reader should understand
+                        the purpose of a rule from its class name.
+                    </li>
+
+                    <li>
+                        <strong>Reuse:</strong> A style should be reusable
+                        without duplicating declarations.
+                    </li>
+
+                    <li>
+                        <strong>Editing effort:</strong> A visual change should
+                        require editing as few locations as possible.
+                    </li>
+                </ol>
+
+                <h4>Utility-Oriented Version</h4>
+
+                <table class="utility-table u-full u-collapse">
+                    <thead>
+                        <tr>
+                            <th class="u-border u-pad u-center u-head">Time</th>
+                            <th class="u-border u-pad u-center u-head">Course</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th class="u-border u-pad u-center u-subhead">
+                                9:00 AM
+                            </th>
+
+                            <td class="u-border u-pad u-center u-course">
+                                Computer Science
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th class="u-border u-pad u-center u-subhead">
+                                10:30 AM
+                            </th>
+
+                            <td class="u-border u-pad u-center u-course">
+                                Web Programming
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Component-Oriented Version</h4>
+
+                <table class="component-schedule">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Course</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th>9:00 AM</th>
+                            <td class="schedule-course">Computer Science</td>
+                        </tr>
+
+                        <tr>
+                            <th>10:30 AM</th>
+                            <td class="schedule-course">Web Programming</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Measured Comparison</h4>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Criterion</th>
+                            <th>Utility</th>
+                            <th>Component</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th>CSS rule sets</th>
+                            <td>7</td>
+                            <td>5</td>
+                        </tr>
+
+                        <tr>
+                            <th>CSS declarations</th>
+                            <td>12</td>
+                            <td>12</td>
+                        </tr>
+
+                        <tr>
+                            <th>Classes on course cell</th>
+                            <td>4</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Final Choice</h4>
+
+                <p>
+                    I selected the component-oriented architecture because
+                    names such as <code>.component-schedule</code> and
+                    <code>.schedule-course</code> describe the role of each
+                    element. It requires fewer classes in the HTML and keeps
+                    related timetable declarations together.
+                </p>
+
+                <p>
+                    One disadvantage is that the component rules are less
+                    reusable outside the timetable. A utility class such as
+                    <code>.u-center</code> could be reused anywhere, while
+                    <code>.schedule-course</code> is tied to one component.
+                </p>
+
+                <h4>Naming Decision</h4>
+
+                <p>
+                    I chose <code>.schedule-course</code> because it describes
+                    the element's purpose instead of its current color or
+                    appearance. The class can keep the same name if the visual
+                    design changes later.
+                </p>
+            </article>
+
+            <article id="gr-02" class="investigation">
+                <h3>GR 02: CSS Performance Experiment</h3>
+
+                <h4>Falsifiable Claim</h4>
+
+                <p>
+                    For 1,000 visually equivalent boxes, the Grid
+                    implementation will have a lower median creation and forced
+                    layout time than the Flexbox implementation across five
+                    trials in the same browser environment.
+                </p>
+
+                <h4>Controlled Variables</h4>
 
                 <ul>
-                    <li>Full course or activity name</li>
-                    <li>Two-letter abbreviation markers</li>
-                    <li>Solid, dashed, double, and dotted borders</li>
-                    <li>Bold course and activity labels</li>
+                    <li>Same computer and browser</li>
+                    <li>Same viewport size</li>
+                    <li>Same number of boxes</li>
+                    <li>Same box dimensions and content</li>
+                    <li>Same colors, borders, and container width</li>
+                    <li>Alternating test order to reduce order bias</li>
                 </ul>
 
-                <h4>Peer Interpretation</h4>
+                <h4>Implementations</h4>
 
-                <p>
-                    My peer identified the timetable states using the visible
-                    course names, abbreviation markers, and border patterns
-                    while viewing the grayscale version.
+                <pre><code>.perf-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.perf-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 60px);
+}</code></pre>
+
+                <div class="experiment-controls">
+                    <button id="run-performance-test" type="button">
+                        Run Five Trials
+                    </button>
+
+                    <button id="clear-performance-test" type="button">
+                        Clear Results
+                    </button>
+                </div>
+
+                <p id="experiment-status" aria-live="polite">
+                    Select Run Five Trials to begin.
                 </p>
 
-                <p>
-                    <strong>Peer initials:</strong>
-                    <span class="peer-initials">LN</span>
-                </p>
+                <div id="performance-results"></div>
 
-                <h4>Result and Reflection</h4>
+                <div
+                    id="performance-container"
+                    class="perf-container"
+                    aria-hidden="true"
+                ></div>
+
+                <h4>Interpretation Rule</h4>
 
                 <p>
-                    Color makes the timetable easier to scan, but the revised
-                    text labels, markers, and border patterns preserve its
-                    meaning when color is removed.
+                    The claim is supported only if the Grid median is lower
+                    than the Flexbox median. The result applies only to this
+                    browser, device, test size, and implementation. It does not
+                    prove that one layout system is always faster.
                 </p>
             </article>
         </section>
@@ -618,6 +728,7 @@ a {
             <ul>
                 <li>Exercises 1 through 5 are complete.</li>
                 <li>UG 01 through UG 04 are complete.</li>
+                <li>GR 01 and GR 02 are complete.</li>
                 <li>CSS is stored in external stylesheets.</li>
                 <li>Evidence is stored separately in the images folder.</li>
                 <li>The page will be tested before submission.</li>

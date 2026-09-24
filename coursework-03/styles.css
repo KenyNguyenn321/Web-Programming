@@ -93,6 +93,20 @@ li code {
    color: var(--dark-red);
 }
 
+button {
+   padding: 10px 16px;
+   color: white;
+   background-color: var(--green);
+   border: 1px solid var(--dark-green);
+   cursor: pointer;
+   font: inherit;
+}
+
+button:hover,
+button:focus {
+   background-color: var(--dark-green);
+}
+
 .debug-answer {
    margin: 18px 0;
    padding-left: 18px;
@@ -104,11 +118,18 @@ li code {
    margin-top: 20px;
 }
 
-.timetable {
+.timetable,
+.utility-table,
+.component-schedule,
+.comparison-table,
+.results-table {
    width: 100%;
-   min-width: 760px;
    border-collapse: collapse;
    background-color: white;
+}
+
+.timetable {
+   min-width: 760px;
 }
 
 .timetable caption {
@@ -120,13 +141,19 @@ li code {
 }
 
 .timetable th,
-.timetable td {
+.timetable td,
+.comparison-table th,
+.comparison-table td,
+.results-table th,
+.results-table td {
    padding: 12px;
    border: 1px solid #999999;
    text-align: center;
 }
 
-.timetable thead th {
+.timetable thead th,
+.comparison-table thead th,
+.results-table thead th {
    color: white;
    background-color: var(--green);
 }
@@ -297,12 +324,127 @@ p {
    border-bottom: 1px solid #999999;
 }
 
-.peer-initials {
-   display: inline-block;
-   min-width: 150px;
-   padding: 2px 6px;
+/* utility architecture */
+
+.u-full {
+   width: 100%;
+}
+
+.u-collapse {
+   border-collapse: collapse;
+}
+
+.u-border {
+   border: 1px solid #777777;
+}
+
+.u-pad {
+   padding: 10px;
+}
+
+.u-center {
+   text-align: center;
+}
+
+.u-head {
+   color: white;
+   background-color: var(--dark-green);
+}
+
+.u-subhead {
    color: var(--dark-green);
-   border-bottom: 1px solid var(--dark-green);
+   background-color: #eeeeee;
+}
+
+.u-course {
+   color: var(--dark-green);
+   background-color: #d7f2e4;
+   font-weight: bold;
+}
+
+/* component architecture */
+
+.component-schedule {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+.component-schedule th,
+.component-schedule td {
+   padding: 10px;
+   border: 1px solid #777777;
+   text-align: center;
+}
+
+.component-schedule thead th {
+   color: white;
+   background-color: var(--dark-green);
+}
+
+.component-schedule tbody th {
+   color: var(--dark-green);
+   background-color: #eeeeee;
+}
+
+.component-schedule .schedule-course {
+   color: var(--dark-green);
+   background-color: #d7f2e4;
+   font-weight: bold;
+}
+
+.utility-table,
+.component-schedule,
+.comparison-table {
+   margin: 16px 0 28px;
+}
+
+/* performance experiment */
+
+.experiment-controls {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 10px;
+   margin: 16px 0;
+}
+
+#experiment-status {
+   padding: 10px;
+   color: var(--dark-green);
+   background-color: #f3f3f3;
+   border-left: 4px solid var(--green);
+}
+
+#performance-results {
+   margin: 18px 0;
+}
+
+.perf-container {
+   position: absolute;
+   left: -10000px;
+   top: 0;
+   width: 600px;
+   contain: layout style paint;
+}
+
+.perf-flex {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.perf-grid {
+   display: grid;
+   grid-template-columns: repeat(10, 60px);
+}
+
+.perf-item {
+   width: 60px;
+   height: 20px;
+   color: var(--dark-green);
+   background-color: #d7f2e4;
+   border: 1px solid var(--dark-green);
+   font-size: 10px;
+   line-height: 18px;
+   text-align: center;
 }
 
 footer {

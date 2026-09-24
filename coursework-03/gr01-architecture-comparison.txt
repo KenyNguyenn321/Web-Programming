@@ -1,0 +1,73 @@
+CW 03: GR 01 Refactor With a Measured Tradeoff
+Keny Nguyen
+
+Evaluation Criteria Defined Before Coding
+
+1. Readability
+A reader should understand the purpose of a CSS rule from its class name.
+
+2. Reuse
+A style should be reusable without duplicating declarations.
+
+3. Editing Effort
+A visual change should require editing as few locations as possible.
+
+Utility-Oriented Architecture
+
+The utility implementation uses small classes that each perform a specific
+styling job. Examples include .u-border, .u-pad, .u-center, and .u-head.
+
+Measured values:
+
+CSS rule sets: 7
+CSS declarations: 12
+Classes on a course data cell: 4
+
+Advantages:
+
+The individual utility classes are reusable throughout the page. A class such
+as .u-center can be applied to many unrelated elements.
+
+Disadvantages:
+
+The HTML contains several classes per element. Understanding the complete
+appearance of one element requires reading multiple class names.
+
+Component-Oriented Architecture
+
+The component implementation uses classes that represent the timetable and
+its parts. Examples include .component-schedule and .schedule-course.
+
+Measured values:
+
+CSS rule sets: 5
+CSS declarations: 12
+Classes on a course data cell: 1
+
+Advantages:
+
+The class names explain the role of each element. Related declarations remain
+grouped together, and the HTML uses fewer class names.
+
+Disadvantages:
+
+The component classes are less reusable outside the schedule component.
+
+Final Choice
+
+I selected the component-oriented architecture. It used fewer rule sets and
+fewer classes in the HTML while keeping related declarations together. The
+main disadvantage is that classes such as .schedule-course are designed for
+one component and are less reusable than general utility classes.
+
+Naming Decision
+
+I selected the name .schedule-course because it describes the element's
+purpose rather than its color or current appearance. The name can remain the
+same even if the visual design changes later.
+
+Evidence
+
+The combined evidence image contains the local version-history diff,
+selector and declaration counts, and the naming decision used during the
+live explanation.

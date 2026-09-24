@@ -1,0 +1,105 @@
+CW 03: GR 02 CSS Performance Experiment
+Keny Nguyen
+
+Falsifiable Claim
+
+For 1,000 visually equivalent boxes, the Grid implementation will have a
+lower median creation and forced layout time than the Flexbox implementation
+across five trials in the same browser environment.
+
+Implementations
+
+Flexbox:
+
+.perf-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+Grid:
+
+.perf-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 60px);
+}
+
+Controlled Variables
+
+1. The same computer and browser were used for all trials.
+2. The viewport size remained unchanged.
+3. Each trial created exactly 1,000 boxes.
+4. Every box used the same dimensions, text, colors, and border.
+5. Both containers used the same 600px width.
+6. The trial order alternated to reduce order bias.
+7. One warm-up run for each implementation was excluded.
+
+Test Environment
+
+Computer: MacBook Air
+Operating system: macOS
+Browser: Google Chrome
+Item count: 1,000 boxes
+Date and time: September 24, 2026 at 2:38 PM
+
+Raw Flexbox Measurements
+
+Trial 1: 5.400 ms
+Trial 2: 4.100 ms
+Trial 3: 4.200 ms
+Trial 4: 3.500 ms
+Trial 5: 5.200 ms
+
+Sorted Flexbox Measurements
+
+3.500 ms
+4.100 ms
+4.200 ms
+5.200 ms
+5.400 ms
+
+Flexbox median: 4.200 ms
+
+Raw Grid Measurements
+
+Trial 1: 5.000 ms
+Trial 2: 8.200 ms
+Trial 3: 6.300 ms
+Trial 4: 3.600 ms
+Trial 5: 3.700 ms
+
+Sorted Grid Measurements
+
+3.600 ms
+3.700 ms
+5.000 ms
+6.300 ms
+8.200 ms
+
+Grid median: 5.000 ms
+
+Median Calculation
+
+The five results for each implementation were sorted from smallest to largest.
+The third value in each sorted list was selected as the median.
+
+The third Flexbox value was 4.200 ms.
+The third Grid value was 5.000 ms.
+
+Interpretation
+
+The Grid median was not lower than the Flexbox median. Flexbox had a median
+of 4.200 ms, while Grid had a median of 5.000 ms. Therefore, the claim was not
+supported by these five trials.
+
+The Grid median was 0.800 ms higher than the Flexbox median. These results
+apply only to this browser, computer, viewport, item count, and specific
+implementation. They do not prove that Flexbox is always faster than Grid.
+
+Instructor-Selected Rerun
+
+This section will be completed during the live defense after the instructor
+selects which implementation to rerun.
+
+Rerun requested: Pending instructor selection
+Rerun measurement: Pending instructor selection
+Observation: Pending instructor selection
