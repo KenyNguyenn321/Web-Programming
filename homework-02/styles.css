@@ -2,7 +2,7 @@
     Name: Keny Nguyen
     Section: Web Programming
     Description: Main styles for the TMNT movie review page
-    Contents: Banner, movie layout, reviews, overview, and validator links
+    Contents: Banner, movie layout, reviews, overview, and responsive rules
 */
 
 * {
@@ -289,4 +289,100 @@ main > h1 {
 a:focus-visible {
     outline: 3px solid #0000cc;
     outline-offset: 2px;
+}
+
+/* mobile layout */
+
+@media screen and (max-width: 700px) {
+    .page-banner img {
+        width: 100%;
+        height: 50px;
+        object-fit: cover;
+    }
+
+    main > h1 {
+        margin: 16px 10px;
+        font-size: 21pt;
+    }
+
+    .movie-review {
+        width: calc(100% - 20px);
+        margin-bottom: 70px;
+        grid-template-areas:
+            "rating"
+            "reviews"
+            "overview"
+            "counter";
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .rating-section,
+    .reviews,
+    .movie-overview,
+    .review-counter {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .reviews {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        padding: 12px;
+    }
+
+    .review {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .review-quote {
+        overflow-wrap: anywhere;
+    }
+
+    .movie-overview {
+        padding: 10px;
+    }
+
+    .overview-image {
+        width: 250px;
+        max-width: 100%;
+        height: auto;
+        margin: -10px auto 10px;
+    }
+
+    .validators {
+        right: 5px;
+        bottom: 5px;
+    }
+
+    .validators a {
+        padding: 5px 7px;
+        font-size: 7pt;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .rating-section > img {
+        flex-basis: 82px;
+        width: 82px;
+        object-fit: cover;
+        object-position: left;
+    }
+
+    .rating-details {
+        gap: 5px;
+    }
+
+    .rating-score {
+        font-size: 36pt;
+    }
+
+    .review-total {
+        white-space: normal;
+    }
+
+    .movie-overview dd {
+        margin-left: 20px;
+    }
 }
