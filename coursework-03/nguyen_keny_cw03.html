@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CW 03 CSS Foundations Lab</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+   <header class="site-header">
+      <div class="header-content">
+         <p class="course-label">CSC 6370 Web Programming</p>
+         <h1>CW 03 CSS Foundations Lab</h1>
+         <p>CSS exercises, debugging, responsive design, and testing evidence</p>
+      </div>
+
+      <nav aria-label="Coursework sections">
+         <a href="#assignment-info">Information</a>
+         <a href="#exercise1">Exercise 1</a>
+         <a href="#exercise2">Exercise 2</a>
+         <a href="#exercise3">Exercise 3</a>
+         <a href="#exercise4">Exercise 4</a>
+         <a href="#exercise5">Exercise 5</a>
+         <a href="#critical-thinking">Critical Thinking</a>
+         <a href="#evidence">Evidence</a>
+         <a href="#sources">Sources</a>
+      </nav>
+   </header>
+
+   <main>
+      <section id="assignment-info" class="content-section">
+         <h2>Assignment Information</h2>
+
+         <dl class="assignment-details">
+            <div>
+               <dt>Student</dt>
+               <dd>Keny Nguyen</dd>
+            </div>
+
+            <div>
+               <dt>Course</dt>
+               <dd>CSC 6370 Web Programming</dd>
+            </div>
+
+            <div>
+               <dt>Section</dt>
+               <dd>002</dd>
+            </div>
+
+            <div>
+               <dt>Date</dt>
+               <dd>September 24, 2026</dd>
+            </div>
+
+            <div>
+               <dt>Assignment</dt>
+               <dd>CW 03 CSS Foundations Lab</dd>
+            </div>
+         </dl>
+      </section>
+
+      <section id="exercise1" class="content-section">
+         <h2>Exercise 1: External Style Sheet</h2>
+
+         <p>
+            This page links to the external stylesheet
+            <code>styles.css</code> in the document head. The stylesheet
+            applies a dark-red text color, a sans-serif font, and readable
+            line spacing to the body element.
+         </p>
+
+         <div class="example-panel">
+            <h3>External CSS demonstration</h3>
+            <p>
+               This paragraph inherits its dark-red text color from the
+               body rule in the external stylesheet.
+            </p>
+         </div>
+
+         <pre><code>body {
+   color: darkred;
+   font-family: Roboto, Arial, sans-serif;
+   line-height: 1.6;
+}</code></pre>
+
+         <p>
+            The stylesheet is connected to this page using the following
+            element:
+         </p>
+
+         <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+      </section>
+
+      <section id="exercise2" class="content-section">
+         <h2>Exercise 2: Debugging CSS</h2>
+
+         <div class="debugging-card">
+            <h3>My Debugging Analysis</h3>
+
+            <article class="finding">
+               <h4>Finding 1: Missing declaration terminator</h4>
+
+               <p>
+                  <strong>Original:</strong>
+                  <code>color: red</code>
+               </p>
+
+               <p>
+                  <strong>Correction:</strong>
+                  <code>color: darkred;</code>
+               </p>
+
+               <p>
+                  A browser can accept the final declaration without a
+                  semicolon, but omitting it is fragile because a new
+                  declaration added afterward may not parse correctly.
+                  The correction adds the terminator and uses a darker red
+                  for stronger contrast against the ivory background.
+               </p>
+            </article>
+
+            <article class="finding">
+               <h4>Finding 2: Missing generic font fallback</h4>
+
+               <p>
+                  <strong>Original:</strong>
+                  <code>font-family: "Times New Roman";</code>
+               </p>
+
+               <p>
+                  <strong>Correction:</strong>
+                  <code>font-family: "Times New Roman", Times, serif;</code>
+               </p>
+
+               <p>
+                  The original declaration depends on one installed font.
+                  Adding fallback fonts allows the browser to use another
+                  serif typeface if Times New Roman is unavailable.
+               </p>
+            </article>
+
+            <article class="finding">
+               <h4>Finding 3: All headings use the same size</h4>
+
+               <p>
+                  <strong>Original:</strong>
+                  <code>h1, h2, h3 { font-size: 2.5em; }</code>
+               </p>
+
+               <p>
+                  <strong>Correction:</strong>
+                  Use separate font sizes for <code>h1</code>,
+                  <code>h2</code>, and <code>h3</code>.
+               </p>
+
+               <p>
+                  Giving every heading the same size removes the visible
+                  hierarchy between page titles and subsection headings.
+                  Separate sizes make the page structure easier to scan.
+               </p>
+            </article>
+         </div>
+
+         <h3>Corrected CSS</h3>
+
+         <pre><code>body {
+   font-family: "Times New Roman", Times, serif;
+   max-width: 1100px;
+   margin: 0 auto;
+   padding: 20px;
+   text-align: left;
+   background: ivory;
+   color: darkred;
+}
+
+h1 {
+   color: #9b0000;
+   font-size: 2.5em;
+   margin: 20px 0;
+}
+
+h2 {
+   color: #9b0000;
+   font-size: 2em;
+   margin: 20px 0;
+}
+
+h3 {
+   color: #9b0000;
+   font-size: 1.5em;
+   margin: 20px 0;
+}
+
+.container {
+   width: 100%;
+   padding: 20px;
+   box-sizing: border-box;
+}
+
+a {
+   color: #0000ff;
+   text-decoration: underline;
+}</code></pre>
+      </section>
+
+      <section id="exercise3" class="content-section">
+         <h2>Exercise 3: Song Lyrics Styling</h2>
+         <p>This exercise will be completed in the next commit.</p>
+      </section>
+
+      <section id="exercise4" class="content-section">
+         <h2>Exercise 4: External Stylesheet</h2>
+         <p>This exercise will be completed in the next commit.</p>
+      </section>
+
+      <section id="exercise5" class="content-section">
+         <h2>Exercise 5: School Website Design</h2>
+         <p>This exercise will be completed in a later commit.</p>
+      </section>
+
+      <section id="critical-thinking" class="content-section">
+         <h2>Critical Thinking</h2>
+         <p>
+            The six investigations and their browser evidence will be
+            added after the working examples are complete.
+         </p>
+      </section>
+
+      <section id="evidence" class="content-section">
+         <h2>Evidence</h2>
+         <p>
+            Testing screenshots and measurements will be added here.
+         </p>
+      </section>
+
+      <section id="sources" class="content-section">
+         <h2>Sources and Assistance</h2>
+         <p>
+            Course assignment instructions and browser developer tools
+            were used while completing this coursework.
+         </p>
+      </section>
+   </main>
+
+   <footer>
+      <p>CSC 6370 Web Programming | CW 03 | Keny Nguyen</p>
+   </footer>
+</body>
+</html>

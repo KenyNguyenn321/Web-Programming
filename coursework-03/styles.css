@@ -1,0 +1,208 @@
+/* Main page styles */
+
+:root {
+    --navy: #17324d;
+    --blue: #236fa1;
+    --light-blue: #eaf4f8;
+    --cream: #fffdf8;
+    --border: #bfd2dc;
+    --dark-red: #7f1d1d;
+    --text: #263746;
+    --shadow: 0 4px 12px rgba(23, 50, 77, 0.12);
+ }
+ 
+ * {
+    box-sizing: border-box;
+ }
+ 
+ html {
+    scroll-behavior: smooth;
+ }
+ 
+ body {
+    margin: 0;
+    color: darkred;
+    background-color: #edf4f6;
+    font-family: Roboto, Arial, sans-serif;
+    line-height: 1.6;
+ }
+ 
+ .site-header {
+    color: white;
+    background-color: var(--navy);
+ }
+ 
+ .header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 20px;
+ }
+ 
+ .header-content h1 {
+    margin: 4px 0;
+    font-size: 2.2rem;
+ }
+ 
+ .header-content p {
+    margin: 0;
+ }
+ 
+ .course-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+ }
+ 
+ nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background-color: #10273a;
+ }
+ 
+ nav a {
+    padding: 7px 10px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+ }
+ 
+ nav a:hover,
+ nav a:focus {
+    color: var(--navy);
+    background-color: white;
+ }
+ 
+ main {
+    width: min(1100px, calc(100% - 32px));
+    margin: 30px auto;
+ }
+ 
+ .content-section {
+    margin-bottom: 28px;
+    padding: 28px;
+    color: var(--text);
+    background-color: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+ }
+ 
+ .content-section h2 {
+    margin-top: 0;
+    color: var(--navy);
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 10px;
+ }
+ 
+ .content-section h3,
+ .content-section h4 {
+    color: var(--navy);
+ }
+ 
+ .assignment-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin: 0;
+ }
+ 
+ .assignment-details div {
+    padding: 14px;
+    background-color: var(--light-blue);
+    border-left: 4px solid var(--blue);
+ }
+ 
+ .assignment-details dt {
+    color: var(--navy);
+    font-weight: bold;
+ }
+ 
+ .assignment-details dd {
+    margin: 4px 0 0;
+ }
+ 
+ .example-panel {
+    padding: 20px;
+    color: var(--dark-red);
+    background-color: ivory;
+    border: 2px solid var(--dark-red);
+    border-radius: 8px;
+ }
+ 
+ .debugging-card {
+    padding: 24px;
+    color: #263746;
+    background-color: #eef8f4;
+    border: 2px solid #24846b;
+    border-radius: 10px;
+    box-shadow: 0 5px 14px rgba(36, 132, 107, 0.2);
+ }
+ 
+ .finding {
+    margin-top: 18px;
+    padding: 16px;
+    background-color: white;
+    border-left: 4px solid #24846b;
+ }
+ 
+ .finding h4 {
+    margin-top: 0;
+ }
+ 
+ code {
+    font-family: "Courier New", monospace;
+ }
+ 
+ p code,
+ li code {
+    padding: 2px 5px;
+    color: #7f1d1d;
+    background-color: #f2e8e5;
+    border-radius: 4px;
+ }
+ 
+ pre {
+    max-width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    color: #f8fafc;
+    background-color: #263746;
+    border-radius: 8px;
+ }
+ 
+ pre code {
+    color: inherit;
+ }
+ 
+ footer {
+    padding: 24px;
+    color: white;
+    background-color: var(--navy);
+    text-align: center;
+ }
+ 
+ @media (max-width: 650px) {
+    .header-content h1 {
+       font-size: 1.7rem;
+    }
+ 
+    nav {
+       flex-direction: column;
+    }
+ 
+    nav a {
+       text-align: center;
+    }
+ 
+    main {
+       width: min(100% - 20px, 1100px);
+    }
+ 
+    .content-section {
+       padding: 20px;
+    }
+ }
