@@ -1,0 +1,47 @@
+CW 03: UG 01 Forensic Cascade Reconstruction
+Keny Nguyen
+
+Prediction Before Testing
+
+I predict that the #cascade-target rule will win and make the paragraph
+purple because an ID selector has higher specificity than a class selector
+and an element selector.
+
+Specificity Calculation
+
+p
+Specificity: 0-0-1
+
+.cascade-sample
+Specificity: 0-1-0
+
+#cascade-target
+Specificity: 1-0-0
+
+Specificity Ranking
+
+1. #cascade-target: 1-0-0
+2. .cascade-sample: 0-1-0
+3. p: 0-0-1
+
+Predicted Winner
+
+#cascade-target {
+    color: #6a1b9a;
+}
+
+Predicted Computed Color
+
+rgb(106, 27, 154)
+
+Actual Result After Testing
+
+The #cascade-target rule won. The Computed panel displayed the color as
+rgb(106, 27, 154). The .cascade-sample and p color declarations were
+overridden because they had lower specificity.
+
+Reflection
+
+The browser result matched my prediction because the ID selector had the
+highest specificity. The lower-specificity rules still matched the paragraph,
+but the browser crossed out their color declarations in the Styles panel.

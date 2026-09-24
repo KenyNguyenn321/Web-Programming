@@ -1,537 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>CW 03 CSS Foundations Lab</title>
-   <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="lyrics.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CW 03 | Keny Nguyen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lyrics.css">
 </head>
 
 <body>
-   <header class="site-header">
-      <div class="header-content">
-         <p class="course-label">CSC 6370 Web Programming</p>
-         <h1>CW 03 CSS Foundations Lab</h1>
-         <p>CSS exercises, debugging, responsive design, and testing evidence</p>
-      </div>
+    <header class="site-header">
+        <div class="header-content">
+            <h1>Web Programming</h1>
 
-      <nav aria-label="Coursework sections">
-         <a href="#assignment-info">Information</a>
-         <a href="#exercise1">Exercise 1</a>
-         <a href="#exercise2">Exercise 2</a>
-         <a href="#exercise3">Exercise 3</a>
-         <a href="#exercise4">Exercise 4</a>
-         <a href="#exercise5">Exercise 5</a>
-         <a href="#critical-thinking">Critical Thinking</a>
-         <a href="#evidence">Evidence</a>
-         <a href="#sources">Sources</a>
-      </nav>
-   </header>
+            <nav aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#exercise-1">Exercise 1</a>
+                <a href="#exercise-2">Exercise 2</a>
+                <a href="#exercise-3">Exercise 3</a>
+                <a href="#exercise-4">Exercise 4</a>
+                <a href="#exercise-5">Exercise 5</a>
+                <a href="#critical-thinking">Thinking Lab</a>
+                <a href="#submission">Submission</a>
+            </nav>
+        </div>
+    </header>
 
-   <main>
-      <section id="assignment-info" class="content-section">
-         <h2>Assignment Information</h2>
+    <main id="home">
+        <section class="hero">
+            <p class="eyebrow">Web Programming • Applied Studio</p>
+            <h2>CW 03: CSS Foundations Lab</h2>
+            <p>Build, inspect, explain, and defend the CSS decisions behind a responsive page.</p>
 
-         <dl class="assignment-details">
-            <div>
-               <dt>Student</dt>
-               <dd>Keny Nguyen</dd>
+            <div class="overview-grid">
+                <article>
+                    <h3>Assignment Details</h3>
+                    <p><strong>Student:</strong> Keny Nguyen</p>
+                    <p><strong>Assignment:</strong> Coursework 03</p>
+                    <p><strong>Format:</strong> One organized HTML document</p>
+                </article>
+
+                <article>
+                    <h3>Exercises Overview</h3>
+                    <ul>
+                        <li>External style sheet and text color</li>
+                        <li>Debugging CSS code</li>
+                        <li>Song lyrics styling</li>
+                        <li>External lyrics stylesheet</li>
+                        <li>School timetable design</li>
+                    </ul>
+                </article>
             </div>
-            <div>
-               <dt>Course</dt>
-               <dd>CSC 6370 Web Programming</dd>
-            </div>
-            <div>
-               <dt>Section</dt>
-               <dd>002</dd>
-            </div>
-            <div>
-               <dt>Date</dt>
-               <dd>September 24, 2026</dd>
-            </div>
-            <div>
-               <dt>Assignment</dt>
-               <dd>CW 03 CSS Foundations Lab</dd>
-            </div>
-         </dl>
-      </section>
+        </section>
 
-      <section id="exercise1" class="content-section">
-         <h2>Exercise 1: External Style Sheet</h2>
+        <section id="exercise-1" class="content-section">
+            <h2>Exercise 1: External Style Sheet</h2>
+            <p>Changing text color to dark red using external CSS.</p>
 
-         <p>
-            Exercise 1 requires an external stylesheet that changes the
-            text within the body element to dark red.
-         </p>
+            <div class="answer-card">
+                <h3>External CSS File</h3>
 
-         <div class="example-panel">
-            <h3>External CSS Demonstration</h3>
-            <p>
-               This paragraph inherits the dark-red text color from the
-               body rule inside the external stylesheet.
-            </p>
-         </div>
-
-         <h3>External CSS</h3>
-
-         <pre><code>body {
-   color: darkred;
-   font-family: Roboto, Arial, sans-serif;
-   line-height: 1.6;
+                <pre><code>body {
+    color: darkred;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }</code></pre>
 
-         <h3>Stylesheet Link</h3>
+                <h3>Implementation</h3>
+                <p>
+                    This page links to <code>styles.css</code> inside the document
+                    <code>&lt;head&gt;</code>. The body selector changes the normal
+                    text color to dark red.
+                </p>
+            </div>
+        </section>
 
-         <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
-      </section>
+        <section id="exercise-2" class="content-section">
+            <h2>Exercise 2: Debugging CSS</h2>
+            <p>Finding and correcting three common CSS mistakes.</p>
 
-      <section id="exercise2" class="content-section">
-         <h2>Exercise 2: Debugging CSS</h2>
+            <div class="debug-container">
+                <h3>Debugging Analysis</h3>
 
-         <p>
-            The provided CSS contains three declarations without ending
-            semicolons. Including the semicolons makes the code safer when
-            additional properties are added.
-         </p>
+                <article class="debug-item">
+                    <h4>Mistake 1: Invalid margin declaration</h4>
+                    <p>
+                        The original rule contained <code>margin-left: 20%;</code>
+                        twice when the second declaration should have been
+                        <code>margin-right: 20%;</code>.
+                    </p>
+                </article>
 
-         <div class="css-debug-report">
-            <h3>My Debugging Analysis</h3>
+                <article class="debug-item">
+                    <h4>Mistake 2: Missing unit</h4>
+                    <p>
+                        The declaration <code>font-size: 2.5</code> was invalid
+                        because a unit was missing. It was corrected to
+                        <code>font-size: 2.5em</code>.
+                    </p>
+                </article>
 
-            <article class="debug-finding">
-               <h4>Finding 1: Body Text Color</h4>
-               <p><strong>Original:</strong> <code>color: red</code></p>
-               <p><strong>Correction:</strong> <code>color: red;</code></p>
-               <p>
-                  The semicolon keeps a future property from being joined
-                  to the color declaration.
-               </p>
-            </article>
+                <article class="debug-item">
+                    <h4>Mistake 3: Invalid width value</h4>
+                    <p>
+                        The declaration <code>width: 100%</code> was missing a
+                        semicolon. It was corrected to <code>width: 100%;</code>.
+                    </p>
+                </article>
 
-            <article class="debug-finding">
-               <h4>Finding 2: Container Box Sizing</h4>
-               <p>
-                  <strong>Original:</strong>
-                  <code>box-sizing: border-box</code>
-               </p>
-               <p>
-                  <strong>Correction:</strong>
-                  <code>box-sizing: border-box;</code>
-               </p>
-               <p>
-                  The semicolon clearly separates the box-sizing property
-                  from later declarations.
-               </p>
-            </article>
+                <h3>Corrected CSS</h3>
 
-            <article class="debug-finding">
-               <h4>Finding 3: Link Underline</h4>
-               <p>
-                  <strong>Original:</strong>
-                  <code>text-decoration: underline</code>
-               </p>
-               <p>
-                  <strong>Correction:</strong>
-                  <code>text-decoration: underline;</code>
-               </p>
-               <p>
-                  The terminator keeps future link styling declarations
-                  separate.
-               </p>
-            </article>
-         </div>
-
-         <h3>Corrected CSS</h3>
-
-         <pre><code>body {
-   font-family: "Times New Roman";
-   margin-left: 20%;
-   margin-right: 20%;
-   text-align: justify;
-   background: ivory;
-   color: red;
+                <pre><code>body {
+    font-family: "Times New Roman";
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    background: ivory;
+    color: red;
 }
 
-h1,
-h2,
-h3 {
-   color: #ff0000;
-   font-size: 2.5em;
-   margin: 20px 0 20px 0;
+h1, h2, h3 {
+    color: #ff0000;
+    font-size: 2.5em;
+    margin: 20px 0 20px 0;
 }
 
 .container {
-   width: 100%;
-   padding: 20px;
-   box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 a {
-   color: #0000ff;
-   text-decoration: underline;
+    color: #0000ff;
+    text-decoration: underline;
 }</code></pre>
-      </section>
-
-      <section id="exercise3" class="content-section">
-         <h2>Exercise 3: Song Lyrics Styling</h2>
-
-         <p>
-            This example uses separate classes for the song title, artist,
-            album, year, verses, and chorus lines.
-         </p>
-
-         <div class="lyrics-demo">
-            <p class="song-title">Blinding Lights</p>
-            <p class="artist">The Weeknd</p>
-            <p class="album">After Hours</p>
-            <p class="year">2020</p>
-
-            <div class="lyrics-text">
-               <p class="verse">
-                  I been tryna call, I been on my own for long enough
-               </p>
-               <p class="verse">
-                  Maybe you can show me how to love, maybe
-               </p>
-               <p class="chorus">
-                  I'm going through a crisis, I thought I'd see the light
-               </p>
-               <p class="chorus">
-                  But there's nothing but blinding lights
-               </p>
-               <p class="verse">
-                  I'm looking for something that I can't see
-               </p>
-               <p class="verse">
-                  Maybe you can show it to me, maybe
-               </p>
-               <p class="chorus">
-                  I'm going through a crisis, I thought I'd see the light
-               </p>
-               <p class="chorus">
-                  But there's nothing but blinding lights
-               </p>
             </div>
-         </div>
+        </section>
 
-         <h3>CSS Classes Used</h3>
+        <section id="exercise-3" class="content-section">
+            <h2>Exercise 3: Song Lyrics Styling</h2>
+            <p>Styling song information using the required CSS classes.</p>
 
-         <ul class="class-list">
-            <li><code>.artist</code>: 14pt Arial, bold, and moccasin</li>
-            <li><code>.song-title</code>: 14pt Arial, normal, and khaki</li>
-            <li><code>.album</code>: 12pt Arial, normal, and khaki</li>
-            <li><code>.year</code>: 12pt Arial, bold, and ivory</li>
-            <li>
-               <code>.verse</code>: 14pt Trebuchet MS, bold, gold, and
-               2cm horizontal margins
-            </li>
-            <li>
-               <code>.chorus</code>: 14pt Trebuchet MS, bold, italic,
-               gold, and 4cm horizontal margins
-            </li>
-         </ul>
-      </section>
+            <div class="lyrics-demo">
+                <p class="song-title">Blinding Lights</p>
+                <p class="artist">The Weeknd</p>
+                <p class="album">After Hours</p>
+                <p class="year">2020</p>
 
-      <section id="exercise4" class="content-section">
-         <h2>Exercise 4: External Stylesheet</h2>
+                <p class="verse">I have been trying to call</p>
+                <p class="verse">I have been on my own for long enough</p>
+                <p class="chorus">Maybe you can show me how to love</p>
+                <p class="chorus">I am going through withdrawals</p>
+            </div>
 
-         <p>
-            The song presentation is stored in the external
-            <code>lyrics.css</code> file. The stylesheet is connected
-            using:
-         </p>
+            <div class="answer-card">
+                <h3>CSS Classes Used</h3>
+                <ul>
+                    <li><code>.artist</code></li>
+                    <li><code>.song-title</code></li>
+                    <li><code>.album</code></li>
+                    <li><code>.year</code></li>
+                    <li><code>.verse</code></li>
+                    <li><code>.chorus</code></li>
+                </ul>
+            </div>
+        </section>
 
-         <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
+        <section id="exercise-4" class="content-section">
+            <h2>Exercise 4: External Stylesheet</h2>
+            <p>The song lyric styles were moved into a separate file named <code>lyrics.css</code>.</p>
 
-         <p>
-            Since every exercise appears on one page, the chocolate
-            background is applied to the song container instead of the
-            complete body element.
-         </p>
+            <div class="answer-card">
+                <h3>Implementation</h3>
 
-         <h3>External Lyrics CSS</h3>
+                <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
 
-         <pre><code>.lyrics-demo {
-   background-color: chocolate;
-   font-family: Arial, sans-serif;
-   margin: 0;
-   padding: 20px;
+                <p>
+                    Separating the lyric styles keeps the HTML cleaner and allows
+                    the same formatting to be reused on other pages.
+                </p>
+            </div>
+        </section>
+
+        <section id="exercise-5" class="content-section">
+            <h2>Exercise 5: School Website Design</h2>
+            <p>A responsive school timetable created with HTML and CSS.</p>
+
+            <div class="concept-grid">
+                <article>
+                    <h3>Key Concepts</h3>
+                    <ul>
+                        <li>External CSS for consistent styling</li>
+                        <li>CSS variables for the green color scheme</li>
+                        <li>HTML tables for structured data</li>
+                        <li>Classes for different course types</li>
+                    </ul>
+                </article>
+
+                <article>
+                    <h3>Essential HTML and CSS</h3>
+                    <p>
+                        <strong>HTML:</strong> header, nav, main, section, table
+                    </p>
+                    <p>
+                        <strong>CSS:</strong> color, background-color, padding,
+                        margin, border
+                    </p>
+                </article>
+            </div>
+
+            <div class="timetable-wrapper">
+                <table class="timetable">
+                    <caption>Fall Semester Weekly Timetable</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Time</th>
+                            <th scope="col">Monday</th>
+                            <th scope="col">Tuesday</th>
+                            <th scope="col">Wednesday</th>
+                            <th scope="col">Thursday</th>
+                            <th scope="col">Friday</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">9:00 AM</th>
+                            <td class="computer-science">Computer Science</td>
+                            <td class="study">Study Time</td>
+                            <td class="computer-science">Computer Science</td>
+                            <td class="study">Study Time</td>
+                            <td class="computer-science">Computer Science</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">10:30 AM</th>
+                            <td class="math">Calculus</td>
+                            <td class="web">Web Programming</td>
+                            <td class="math">Calculus</td>
+                            <td class="web">Web Programming</td>
+                            <td class="math">Calculus</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">12:00 PM</th>
+                            <td class="lunch" colspan="5">Lunch Break</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">1:30 PM</th>
+                            <td class="writing">English Composition</td>
+                            <td class="lab">Programming Lab</td>
+                            <td class="writing">English Composition</td>
+                            <td class="lab">Programming Lab</td>
+                            <td class="study">Project Work</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">3:00 PM</th>
+                            <td class="study">Study Time</td>
+                            <td class="free">Open</td>
+                            <td class="study">Study Time</td>
+                            <td class="free">Open</td>
+                            <td class="study">Review</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="critical-thinking" class="content-section">
+            <h2>Critical Thinking Lab</h2>
+
+            <article class="investigation">
+                <h3>UG 01: Forensic Cascade Reconstruction</h3>
+
+                <p>
+                    Three conflicting color declarations target the paragraph
+                    below through an element selector, a class selector, and an
+                    ID selector.
+                </p>
+
+                <h4>Prediction</h4>
+                <p>
+                    The <code>#cascade-target</code> declaration should win
+                    because an ID selector has greater specificity than a class
+                    selector or an element selector. I predict the paragraph's
+                    computed color will be <code>rgb(106, 27, 154)</code>.
+                </p>
+
+                <div class="investigation-panel">
+                    <p id="cascade-target" class="cascade-sample">
+                        This paragraph is the cascade testing element.
+                    </p>
+                </div>
+
+                <h4>Exact CSS Tested</h4>
+
+                <pre><code>p {
+    color: #7f1d1d;
 }
 
-.artist {
-   font-size: 14pt;
-   font-family: Arial, sans-serif;
-   font-weight: bold;
-   color: moccasin;
+.cascade-sample {
+    color: #176b4d;
 }
 
-.song-title {
-   font-size: 14pt;
-   font-family: Arial, sans-serif;
-   font-weight: normal;
-   color: khaki;
-}
-
-.album {
-   font-size: 12pt;
-   font-family: Arial, sans-serif;
-   font-weight: normal;
-   color: khaki;
-}
-
-.year {
-   font-size: 12pt;
-   font-family: Arial, sans-serif;
-   font-weight: bold;
-   color: ivory;
-}
-
-.verse {
-   font-size: 14pt;
-   font-family: "Trebuchet MS", sans-serif;
-   font-weight: bold;
-   color: gold;
-   margin-left: 2cm;
-   margin-right: 2cm;
-}
-
-.chorus {
-   font-size: 14pt;
-   font-family: "Trebuchet MS", sans-serif;
-   font-weight: bold;
-   font-style: italic;
-   color: gold;
-   margin-left: 4cm;
-   margin-right: 4cm;
+#cascade-target {
+    color: #6a1b9a;
 }</code></pre>
-      </section>
 
-      <section id="exercise5" class="content-section">
-         <h2>Exercise 5: School Website Design</h2>
+                <h4>Specificity Ranking</h4>
 
-         <p>
-            This timetable uses semantic HTML, an external stylesheet,
-            CSS variables, and classes for different schedule activities.
-            Text abbreviations ensure that color is not the only way the
-            activity types are identified.
-         </p>
+                <ol>
+                    <li><code>#cascade-target</code>: 1-0-0</li>
+                    <li><code>.cascade-sample</code>: 0-1-0</li>
+                    <li><code>p</code>: 0-0-1</li>
+                </ol>
 
-         <div class="school-site">
-            <header class="school-header">
-               <div>
-                  <p class="school-label">Fall 2026</p>
-                  <h3>Computer Science Weekly Schedule</h3>
-                  <p>Georgia State University</p>
-               </div>
+                <h4>Computed Result</h4>
+                <p>
+                    The Computed panel reported
+                    <code>rgb(106, 27, 154)</code>. The ID rule won, while the
+                    class and element color declarations were overridden.
+                </p>
 
-               <div class="student-summary">
-                  <strong>Keny Nguyen</strong>
-                  <span>Graduate Student</span>
-               </div>
-            </header>
+                <h4>Reflection</h4>
+                <p>
+                    The browser result matched my prediction because the ID
+                    selector had the highest specificity. The Styles and
+                    Computed panels also showed that the two lower-specificity
+                    declarations still matched the paragraph, but their color
+                    values were overridden.
+                </p>
 
-            <nav class="school-nav" aria-label="School schedule navigation">
-               <a href="#weekly-timetable">Weekly Timetable</a>
-               <a href="#schedule-key">Schedule Key</a>
-            </nav>
+                <div class="evidence-grid">
+                    <figure>
+                        <img
+                            src="images/ug01-devtools.png"
+                            alt="Browser DevTools showing the computed color and overridden CSS rules"
+                        >
+                        <figcaption>
+                            DevTools evidence showing the winning ID rule,
+                            overridden declarations, computed color, and desktop
+                            timestamp.
+                        </figcaption>
+                    </figure>
 
-            <section class="schedule-section">
-               <h3 id="weekly-timetable">Weekly Timetable</h3>
+                    <figure>
+                        <img
+                            src="images/ug01-specificity.jpg"
+                            alt="Handwritten calculation comparing element, class, and ID selector specificity"
+                        >
+                        <figcaption>
+                            Handwritten specificity calculation ranking the three
+                            conflicting selectors.
+                        </figcaption>
+                    </figure>
+                </div>
+            </article>
+        </section>
 
-               <div class="table-wrapper">
-                  <table class="timetable">
-                     <caption>
-                        Weekly class, laboratory, study, and break schedule
-                     </caption>
+        <section id="submission" class="content-section">
+            <h2>Submission</h2>
 
-                     <thead>
-                        <tr>
-                           <th scope="col">Time</th>
-                           <th scope="col">Monday</th>
-                           <th scope="col">Tuesday</th>
-                           <th scope="col">Wednesday</th>
-                           <th scope="col">Thursday</th>
-                           <th scope="col">Friday</th>
-                        </tr>
-                     </thead>
+            <ul>
+                <li>All exercises are contained in one HTML document.</li>
+                <li>CSS is stored in external stylesheets.</li>
+                <li>Evidence images are stored in the images folder.</li>
+                <li>The completed page will be tested before submission.</li>
+            </ul>
+        </section>
+    </main>
 
-                     <tbody>
-                        <tr>
-                           <th scope="row">9:00 AM</th>
-                           <td class="schedule-course">
-                              <span class="activity-code">CLS</span>
-                              Programming Languages
-                           </td>
-                           <td class="schedule-study">
-                              <span class="activity-code">STD</span>
-                              Research
-                           </td>
-                           <td class="schedule-course">
-                              <span class="activity-code">CLS</span>
-                              Programming Languages
-                           </td>
-                           <td class="schedule-study">
-                              <span class="activity-code">STD</span>
-                              Research
-                           </td>
-                           <td class="schedule-course">
-                              <span class="activity-code">CLS</span>
-                              Programming Languages
-                           </td>
-                        </tr>
-
-                        <tr>
-                           <th scope="row">11:00 AM</th>
-                           <td class="schedule-lab">
-                              <span class="activity-code">LAB</span>
-                              Web Programming Lab
-                           </td>
-                           <td class="schedule-course">
-                              <span class="activity-code">CLS</span>
-                              Image Processing
-                           </td>
-                           <td class="schedule-lab">
-                              <span class="activity-code">LAB</span>
-                              Web Programming Lab
-                           </td>
-                           <td class="schedule-course">
-                              <span class="activity-code">CLS</span>
-                              Image Processing
-                           </td>
-                           <td class="schedule-lab">
-                              <span class="activity-code">LAB</span>
-                              Project Testing
-                           </td>
-                        </tr>
-
-                        <tr>
-                           <th scope="row">1:00 PM</th>
-                           <td class="schedule-break">
-                              <span class="activity-code">BRK</span>
-                              Lunch
-                           </td>
-                           <td class="schedule-break">
-                              <span class="activity-code">BRK</span>
-                              Lunch
-                           </td>
-                           <td class="schedule-break">
-                              <span class="activity-code">BRK</span>
-                              Lunch
-                           </td>
-                           <td class="schedule-break">
-                              <span class="activity-code">BRK</span>
-                              Lunch
-                           </td>
-                           <td class="schedule-break">
-                              <span class="activity-code">BRK</span>
-                              Lunch
-                           </td>
-                        </tr>
-
-                        <tr>
-                           <th scope="row">2:30 PM</th>
-                           <td class="schedule-study">
-                              <span class="activity-code">STD</span>
-                              Assignment Work
-                           </td>
-                           <td class="schedule-lab">
-                              <span class="activity-code">LAB</span>
-                              Image Processing Lab
-                           </td>
-                           <td class="schedule-study">
-                              <span class="activity-code">STD</span>
-                              Assignment Work
-                           </td>
-                           <td class="schedule-lab">
-                              <span class="activity-code">LAB</span>
-                              Image Processing Lab
-                           </td>
-                           <td class="schedule-study">
-                              <span class="activity-code">STD</span>
-                              Weekly Review
-                           </td>
-                        </tr>
-
-                        <tr>
-                           <th scope="row">4:30 PM</th>
-                           <td class="schedule-course">
-                              <span class="activity-code">CLS</span>
-                              Web Programming
-                           </td>
-                           <td class="schedule-study">
-                              <span class="activity-code">STD</span>
-                              Office Hours
-                           </td>
-                           <td class="schedule-course">
-                              <span class="activity-code">CLS</span>
-                              Web Programming
-                           </td>
-                           <td class="schedule-study">
-                              <span class="activity-code">STD</span>
-                              Office Hours
-                           </td>
-                           <td class="schedule-break">
-                              <span class="activity-code">BRK</span>
-                              Personal Time
-                           </td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
-            </section>
-
-            <section id="schedule-key" class="schedule-key">
-               <h3>Schedule Key</h3>
-
-               <ul>
-                  <li class="key-course">
-                     <span class="activity-code">CLS</span>
-                     Class meeting
-                  </li>
-                  <li class="key-lab">
-                     <span class="activity-code">LAB</span>
-                     Laboratory work
-                  </li>
-                  <li class="key-study">
-                     <span class="activity-code">STD</span>
-                     Independent study
-                  </li>
-                  <li class="key-break">
-                     <span class="activity-code">BRK</span>
-                     Break or personal time
-                  </li>
-               </ul>
-            </section>
-         </div>
-      </section>
-
-      <section id="critical-thinking" class="content-section">
-         <h2>Critical Thinking</h2>
-         <p>
-            The required investigations will be completed after the five
-            exercises are working.
-         </p>
-      </section>
-
-      <section id="evidence" class="content-section">
-         <h2>Evidence</h2>
-         <p>
-            Browser screenshots and measurements will be added during the
-            critical-thinking investigations.
-         </p>
-      </section>
-
-      <section id="sources" class="content-section">
-         <h2>Sources and Assistance</h2>
-         <p>
-            Course assignment instructions and browser developer tools
-            were used while completing this coursework.
-         </p>
-      </section>
-   </main>
-
-   <footer>
-      <p>CSC 6370 Web Programming | CW 03 | Keny Nguyen</p>
-   </footer>
+    <footer class="site-footer">
+        <p>© 2026 Keny Nguyen | Web Programming CW 03</p>
+    </footer>
 </body>
 </html>
