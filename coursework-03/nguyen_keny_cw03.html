@@ -5,6 +5,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>CW 03 CSS Foundations Lab</title>
    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="lyrics.css">
 </head>
 
 <body>
@@ -70,7 +71,6 @@
 
          <div class="example-panel">
             <h3>External CSS Demonstration</h3>
-
             <p>
                This paragraph inherits the dark-red text color from the
                body rule inside the external stylesheet.
@@ -110,59 +110,49 @@
 
             <article class="debug-finding">
                <h4>Finding 1: Body Text Color</h4>
-
                <p>
                   <strong>Original declaration:</strong>
                   <code>color: red</code>
                </p>
-
                <p>
                   <strong>Corrected declaration:</strong>
                   <code>color: red;</code>
                </p>
-
                <p>
-                  The original declaration does not include an ending
-                  semicolon. Adding the terminator prevents a later
-                  property from being parsed incorrectly.
+                  Adding the terminator prevents a later property from
+                  being parsed incorrectly.
                </p>
             </article>
 
             <article class="debug-finding">
                <h4>Finding 2: Container Box Sizing</h4>
-
                <p>
                   <strong>Original declaration:</strong>
                   <code>box-sizing: border-box</code>
                </p>
-
                <p>
                   <strong>Corrected declaration:</strong>
                   <code>box-sizing: border-box;</code>
                </p>
-
                <p>
-                  Adding the semicolon clearly separates the box-sizing
-                  declaration from any property added after it.
+                  Adding the semicolon separates the box-sizing declaration
+                  from any property added after it.
                </p>
             </article>
 
             <article class="debug-finding">
                <h4>Finding 3: Link Underline</h4>
-
                <p>
                   <strong>Original declaration:</strong>
                   <code>text-decoration: underline</code>
                </p>
-
                <p>
                   <strong>Corrected declaration:</strong>
                   <code>text-decoration: underline;</code>
                </p>
-
                <p>
-                  The final link declaration also needs a terminator so
-                  future declarations remain separate.
+                  The link declaration needs a terminator so future
+                  declarations remain separate.
                </p>
             </article>
          </div>
@@ -216,31 +206,24 @@ a {
                <p class="verse">
                   I been tryna call, I been on my own for long enough
                </p>
-
                <p class="verse">
                   Maybe you can show me how to love, maybe
                </p>
-
                <p class="chorus">
                   I'm going through a crisis, I thought I'd see the light
                </p>
-
                <p class="chorus">
                   But there's nothing but blinding lights
                </p>
-
                <p class="verse">
                   I'm looking for something that I can't see
                </p>
-
                <p class="verse">
                   Maybe you can show it to me, maybe
                </p>
-
                <p class="chorus">
                   I'm going through a crisis, I thought I'd see the light
                </p>
-
                <p class="chorus">
                   But there's nothing but blinding lights
                </p>
@@ -250,24 +233,16 @@ a {
          <h3>CSS Classes Used</h3>
 
          <ul class="class-list">
+            <li><code>.artist</code>: 14pt Arial, bold, and moccasin</li>
+            <li><code>.song-title</code>: 14pt Arial, normal, and khaki</li>
+            <li><code>.album</code>: 12pt Arial, normal, and khaki</li>
+            <li><code>.year</code>: 12pt Arial, bold, and ivory</li>
             <li>
-               <code>.artist</code>: 14pt, Arial, bold, and moccasin
-            </li>
-            <li>
-               <code>.song-title</code>: 14pt, Arial, normal, and khaki
-            </li>
-            <li>
-               <code>.album</code>: 12pt, Arial, normal, and khaki
-            </li>
-            <li>
-               <code>.year</code>: 12pt, Arial, bold, and ivory
-            </li>
-            <li>
-               <code>.verse</code>: 14pt, Trebuchet MS, bold, gold, and
+               <code>.verse</code>: 14pt Trebuchet MS, bold, gold, and
                2cm horizontal margins
             </li>
             <li>
-               <code>.chorus</code>: 14pt, Trebuchet MS, bold, italic,
+               <code>.chorus</code>: 14pt Trebuchet MS, bold, italic,
                gold, and 4cm horizontal margins
             </li>
          </ul>
@@ -275,12 +250,90 @@ a {
 
       <section id="exercise4" class="content-section">
          <h2>Exercise 4: External Stylesheet</h2>
-         <p>This exercise will be completed in the next commit.</p>
+
+         <p>
+            The song presentation is stored in the external
+            <code>lyrics.css</code> stylesheet rather than inside the HTML
+            document or the main website stylesheet.
+         </p>
+
+         <h3>External Stylesheet Link</h3>
+
+         <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
+
+         <p>
+            The link appears inside the document head. The browser loads
+            the song classes from <code>lyrics.css</code> and applies them
+            to the matching elements in Exercise 3.
+         </p>
+
+         <p>
+            Since all five exercises must appear in one HTML document, the
+            chocolate background is applied to the
+            <code>.lyrics-demo</code> container instead of the entire body.
+            This keeps the song design isolated from the main green theme.
+         </p>
+
+         <h3>External Lyrics CSS</h3>
+
+         <pre><code>.lyrics-demo {
+   background-color: chocolate;
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 20px;
+}
+
+.artist {
+   font-size: 14pt;
+   font-family: Arial, sans-serif;
+   font-weight: bold;
+   color: moccasin;
+}
+
+.song-title {
+   font-size: 14pt;
+   font-family: Arial, sans-serif;
+   font-weight: normal;
+   color: khaki;
+}
+
+.album {
+   font-size: 12pt;
+   font-family: Arial, sans-serif;
+   font-weight: normal;
+   color: khaki;
+}
+
+.year {
+   font-size: 12pt;
+   font-family: Arial, sans-serif;
+   font-weight: bold;
+   color: ivory;
+}
+
+.verse {
+   font-size: 14pt;
+   font-family: "Trebuchet MS", sans-serif;
+   font-weight: bold;
+   color: gold;
+   margin-left: 2cm;
+   margin-right: 2cm;
+}
+
+.chorus {
+   font-size: 14pt;
+   font-family: "Trebuchet MS", sans-serif;
+   font-weight: bold;
+   font-style: italic;
+   color: gold;
+   margin-left: 4cm;
+   margin-right: 4cm;
+}</code></pre>
       </section>
 
       <section id="exercise5" class="content-section">
          <h2>Exercise 5: School Website Design</h2>
-         <p>This exercise will be completed in a later commit.</p>
+         <p>This exercise will be completed in the next commit.</p>
       </section>
 
       <section id="critical-thinking" class="content-section">
