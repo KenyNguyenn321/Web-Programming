@@ -1,0 +1,55 @@
+CW 03: UG 04 Color Is Not the Message
+Keny Nguyen
+
+Audited Section
+
+I audited the color-coded timetable from Exercise 5.
+
+Contrast Pair 1
+
+Foreground: #123d2f
+Background: #d7f2e4
+Contrast ratio: 10.21:1
+Result: Passes WCAG AA and AAA for normal text
+
+Contrast Pair 2
+
+Foreground: #123d2f
+Background: #fff1bf
+Contrast ratio: 10.72:1
+Result: Passes WCAG AA and AAA for normal text
+
+Original Problem
+
+The timetable used different background colors to distinguish courses and
+activities. A user viewing the page in grayscale might not recognize the
+differences between similar background colors.
+
+Revised State System
+
+The revised timetable uses the following non-color cues:
+
+1. The full course or activity name
+2. A two-letter abbreviation inside a bordered marker
+3. Different solid, dashed, double, or dotted left borders
+4. Bold text for course and activity labels
+
+Grayscale Test
+
+The timetable labels, abbreviations, and border styles remained visible when
+the page was displayed in grayscale. The meaning of each state did not depend
+only on its background color.
+
+Peer Interpretation
+
+My peer identified the timetable states using the visible course names,
+abbreviation markers, and border patterns.
+
+Peer initials: LN
+
+Reflection
+
+The original colors made the timetable easier to scan, but color alone was
+not a reliable way to communicate meaning. The revised design remains
+understandable because the labels, abbreviation markers, and border patterns
+continue to communicate the states when color is removed.

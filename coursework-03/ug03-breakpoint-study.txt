@@ -1,0 +1,57 @@
+CW 03: UG 03 Breakpoint Failure Study
+Keny Nguyen
+
+Readability and Layout Test
+
+The layout passes when all three cards remain inside their container without
+horizontal overflow and the text remains readable. The layout fails when the
+minimum card widths force the grid outside the available content area.
+
+Testing Process
+
+I reduced the viewport from desktop size and tested the layout at multiple
+widths. The first tested odd-numbered viewport width that failed was 775px.
+
+Original CSS
+
+.breakpoint-demo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+Computed Cause
+
+Each card required a minimum width of 220px.
+
+3 cards x 220px = 660px
+2 gaps x 18px = 36px
+Minimum required grid width = 696px
+
+At a 775px viewport, the page margins and content-section padding left less
+than 696px for the grid. The minimum column widths therefore caused horizontal
+overflow.
+
+Repair
+
+@media (max-width: 775px) {
+    .breakpoint-demo {
+        grid-template-columns: 1fr;
+    }
+
+    .breakpoint-card {
+        min-width: 0;
+    }
+}
+
+Result
+
+The repaired layout displayed the three cards in one column at 775px without
+horizontal overflow. At 1201px, the layout continued to display three columns,
+confirming that the repair did not alter the desktop layout above 1000px.
+
+Reflection
+
+The failure was caused by the combined minimum column widths and gaps rather
+than the text itself. The media query removes the width conflict at smaller
+viewports while preserving the original desktop design.

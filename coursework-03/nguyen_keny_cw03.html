@@ -11,123 +11,93 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-content">
-            <h1>Web Programming</h1>
+    <header>
+        <h1>CW 03: CSS Foundations Lab</h1>
 
-            <nav aria-label="Main navigation">
-                <a href="#home">Home</a>
-                <a href="#exercise-1">Exercise 1</a>
-                <a href="#exercise-2">Exercise 2</a>
-                <a href="#exercise-3">Exercise 3</a>
-                <a href="#exercise-4">Exercise 4</a>
-                <a href="#exercise-5">Exercise 5</a>
-                <a href="#critical-thinking">Thinking Lab</a>
-                <a href="#submission">Submission</a>
-            </nav>
-        </div>
+        <p>
+            Keny Nguyen | Web Programming | September 2026
+        </p>
     </header>
 
-    <main id="home">
-        <section class="hero">
-            <p class="eyebrow">Web Programming • Applied Studio</p>
+    <nav aria-label="Assignment navigation">
+        <a href="#exercise-1">Exercise 1</a>
+        <a href="#exercise-2">Exercise 2</a>
+        <a href="#exercise-3">Exercise 3</a>
+        <a href="#exercise-4">Exercise 4</a>
+        <a href="#exercise-5">Exercise 5</a>
+        <a href="#ug-01">UG 01</a>
+        <a href="#ug-02">UG 02</a>
+        <a href="#ug-03">UG 03</a>
+        <a href="#ug-04">UG 04</a>
+    </nav>
 
-            <h2>CW 03: CSS Foundations Lab</h2>
-
-            <p>
-                Build, inspect, explain, and defend the CSS decisions behind a
-                responsive page.
-            </p>
-
-            <div class="overview-grid">
-                <article>
-                    <h3>Assignment Details</h3>
-
-                    <p><strong>Student:</strong> Keny Nguyen</p>
-                    <p><strong>Assignment:</strong> Coursework 03</p>
-                    <p><strong>Format:</strong> One organized HTML document</p>
-                </article>
-
-                <article>
-                    <h3>Exercises Overview</h3>
-
-                    <ul>
-                        <li>External style sheet and text color</li>
-                        <li>Debugging CSS code</li>
-                        <li>Song lyrics styling</li>
-                        <li>External lyrics stylesheet</li>
-                        <li>School timetable design</li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section id="exercise-1" class="content-section">
+    <main>
+        <section id="exercise-1">
             <h2>Exercise 1: External Style Sheet</h2>
 
-            <p>Changing text color to dark red using external CSS.</p>
+            <p>
+                This exercise changes the page's normal text color to dark red
+                using an external CSS file.
+            </p>
 
-            <div class="answer-card">
-                <h3>External CSS File</h3>
+            <h3>CSS</h3>
 
-                <pre><code>body {
+            <pre><code>body {
     color: darkred;
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }</code></pre>
 
-                <h3>Implementation</h3>
+            <h3>Explanation</h3>
 
-                <p>
-                    This page links to <code>styles.css</code> inside the
-                    document <code>&lt;head&gt;</code>. The body selector changes
-                    the normal text color to dark red.
-                </p>
-            </div>
+            <p>
+                The document links to <code>styles.css</code> inside the
+                <code>&lt;head&gt;</code>. The body selector applies the dark red
+                text color to normal page text.
+            </p>
         </section>
 
-        <section id="exercise-2" class="content-section">
+        <section id="exercise-2">
             <h2>Exercise 2: Debugging CSS</h2>
 
-            <p>Finding and correcting three common CSS mistakes.</p>
+            <p>
+                The original CSS contained three mistakes that needed to be
+                identified and corrected.
+            </p>
 
-            <div class="debug-container">
-                <h3>Debugging Analysis</h3>
+            <div class="debug-answer">
+                <h3>Mistake 1: Incorrect margin property</h3>
 
-                <article class="debug-item">
-                    <h4>Mistake 1: Incorrect margin property</h4>
+                <p>
+                    The original rule used <code>margin-left: 20%;</code> twice.
+                    The second declaration was corrected to
+                    <code>margin-right: 20%;</code>.
+                </p>
+            </div>
 
-                    <p>
-                        The original rule contained
-                        <code>margin-left: 20%;</code> twice. The second
-                        declaration was corrected to
-                        <code>margin-right: 20%;</code>.
-                    </p>
-                </article>
+            <div class="debug-answer">
+                <h3>Mistake 2: Missing unit</h3>
 
-                <article class="debug-item">
-                    <h4>Mistake 2: Missing unit</h4>
+                <p>
+                    The declaration <code>font-size: 2.5</code> was invalid
+                    because it did not include a unit. It was corrected to
+                    <code>font-size: 2.5em</code>.
+                </p>
+            </div>
 
-                    <p>
-                        The declaration <code>font-size: 2.5</code> was invalid
-                        because it did not include a unit. It was corrected to
-                        <code>font-size: 2.5em</code>.
-                    </p>
-                </article>
+            <div class="debug-answer">
+                <h3>Mistake 3: Missing semicolon</h3>
 
-                <article class="debug-item">
-                    <h4>Mistake 3: Missing semicolon</h4>
+                <p>
+                    The declaration <code>width: 100%</code> did not end with a
+                    semicolon. It was corrected to
+                    <code>width: 100%;</code>.
+                </p>
+            </div>
 
-                    <p>
-                        The declaration <code>width: 100%</code> did not end
-                        with a semicolon. It was corrected to
-                        <code>width: 100%;</code>.
-                    </p>
-                </article>
+            <h3>Corrected CSS</h3>
 
-                <h3>Corrected CSS</h3>
-
-                <pre><code>body {
+            <pre><code>body {
     font-family: "Times New Roman";
     margin-left: 20%;
     margin-right: 20%;
@@ -152,13 +122,15 @@ a {
     color: #0000ff;
     text-decoration: underline;
 }</code></pre>
-            </div>
         </section>
 
-        <section id="exercise-3" class="content-section">
+        <section id="exercise-3">
             <h2>Exercise 3: Song Lyrics Styling</h2>
 
-            <p>Styling song information using the required CSS classes.</p>
+            <p>
+                The following example uses separate classes for the artist,
+                title, album, year, verse, and chorus.
+            </p>
 
             <div class="lyrics-demo">
                 <p class="song-title">Blinding Lights</p>
@@ -166,89 +138,47 @@ a {
                 <p class="album">After Hours</p>
                 <p class="year">2020</p>
 
-                <p class="verse">
-                    I have been trying to call
-                </p>
-
-                <p class="verse">
-                    I have been on my own for long enough
-                </p>
-
-                <p class="chorus">
-                    Maybe you can show me how to love
-                </p>
-
-                <p class="chorus">
-                    I am going through withdrawals
-                </p>
+                <p class="verse">I have been trying to call</p>
+                <p class="verse">I have been on my own for long enough</p>
+                <p class="chorus">Maybe you can show me how to love</p>
+                <p class="chorus">I am going through withdrawals</p>
             </div>
 
-            <div class="answer-card">
-                <h3>CSS Classes Used</h3>
+            <h3>Classes Used</h3>
 
-                <ul>
-                    <li><code>.artist</code></li>
-                    <li><code>.song-title</code></li>
-                    <li><code>.album</code></li>
-                    <li><code>.year</code></li>
-                    <li><code>.verse</code></li>
-                    <li><code>.chorus</code></li>
-                </ul>
-            </div>
+            <ul>
+                <li><code>.artist</code></li>
+                <li><code>.song-title</code></li>
+                <li><code>.album</code></li>
+                <li><code>.year</code></li>
+                <li><code>.verse</code></li>
+                <li><code>.chorus</code></li>
+            </ul>
         </section>
 
-        <section id="exercise-4" class="content-section">
+        <section id="exercise-4">
             <h2>Exercise 4: External Stylesheet</h2>
 
             <p>
-                The song lyric styles were moved into a separate file named
+                The styles for Exercise 3 are stored in a separate file named
                 <code>lyrics.css</code>.
             </p>
 
-            <div class="answer-card">
-                <h3>Implementation</h3>
+            <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
 
-                <pre><code>&lt;link rel="stylesheet" href="lyrics.css"&gt;</code></pre>
-
-                <p>
-                    Separating the lyric styles keeps the HTML cleaner and
-                    allows the same formatting to be reused on other pages.
-                </p>
-            </div>
+            <p>
+                The external file keeps the HTML cleaner and allows the same
+                styles to be reused on other pages.
+            </p>
         </section>
 
-        <section id="exercise-5" class="content-section">
+        <section id="exercise-5">
             <h2>Exercise 5: School Website Design</h2>
 
             <p>
-                A responsive school timetable created with HTML and CSS.
+                This timetable uses semantic table elements, CSS classes, and
+                non-color labels to organize a weekly schedule.
             </p>
-
-            <div class="concept-grid">
-                <article>
-                    <h3>Key Concepts</h3>
-
-                    <ul>
-                        <li>External CSS for consistent styling</li>
-                        <li>CSS variables for the green color scheme</li>
-                        <li>HTML tables for structured data</li>
-                        <li>Classes for different course types</li>
-                    </ul>
-                </article>
-
-                <article>
-                    <h3>Essential HTML and CSS</h3>
-
-                    <p>
-                        <strong>HTML:</strong> header, nav, main, section, table
-                    </p>
-
-                    <p>
-                        <strong>CSS:</strong> color, background-color, padding,
-                        margin, border
-                    </p>
-                </article>
-            </div>
 
             <div class="timetable-wrapper">
                 <table class="timetable">
@@ -268,59 +198,137 @@ a {
                     <tbody>
                         <tr>
                             <th scope="row">9:00 AM</th>
-                            <td class="computer-science">
+
+                            <td class="computer-science course-cell">
+                                <span class="state-marker">CS</span>
                                 Computer Science
                             </td>
-                            <td class="study">Study Time</td>
-                            <td class="computer-science">
+
+                            <td class="study course-cell">
+                                <span class="state-marker">ST</span>
+                                Study Time
+                            </td>
+
+                            <td class="computer-science course-cell">
+                                <span class="state-marker">CS</span>
                                 Computer Science
                             </td>
-                            <td class="study">Study Time</td>
-                            <td class="computer-science">
+
+                            <td class="study course-cell">
+                                <span class="state-marker">ST</span>
+                                Study Time
+                            </td>
+
+                            <td class="computer-science course-cell">
+                                <span class="state-marker">CS</span>
                                 Computer Science
                             </td>
                         </tr>
 
                         <tr>
                             <th scope="row">10:30 AM</th>
-                            <td class="math">Calculus</td>
-                            <td class="web">Web Programming</td>
-                            <td class="math">Calculus</td>
-                            <td class="web">Web Programming</td>
-                            <td class="math">Calculus</td>
+
+                            <td class="math course-cell">
+                                <span class="state-marker">MA</span>
+                                Calculus
+                            </td>
+
+                            <td class="web course-cell">
+                                <span class="state-marker">WP</span>
+                                Web Programming
+                            </td>
+
+                            <td class="math course-cell">
+                                <span class="state-marker">MA</span>
+                                Calculus
+                            </td>
+
+                            <td class="web course-cell">
+                                <span class="state-marker">WP</span>
+                                Web Programming
+                            </td>
+
+                            <td class="math course-cell">
+                                <span class="state-marker">MA</span>
+                                Calculus
+                            </td>
                         </tr>
 
                         <tr>
                             <th scope="row">12:00 PM</th>
-                            <td class="lunch" colspan="5">Lunch Break</td>
+
+                            <td class="lunch course-cell" colspan="5">
+                                <span class="state-marker">LB</span>
+                                Lunch Break
+                            </td>
                         </tr>
 
                         <tr>
                             <th scope="row">1:30 PM</th>
-                            <td class="writing">English Composition</td>
-                            <td class="lab">Programming Lab</td>
-                            <td class="writing">English Composition</td>
-                            <td class="lab">Programming Lab</td>
-                            <td class="study">Project Work</td>
+
+                            <td class="writing course-cell">
+                                <span class="state-marker">EN</span>
+                                English Composition
+                            </td>
+
+                            <td class="lab course-cell">
+                                <span class="state-marker">PL</span>
+                                Programming Lab
+                            </td>
+
+                            <td class="writing course-cell">
+                                <span class="state-marker">EN</span>
+                                English Composition
+                            </td>
+
+                            <td class="lab course-cell">
+                                <span class="state-marker">PL</span>
+                                Programming Lab
+                            </td>
+
+                            <td class="study course-cell">
+                                <span class="state-marker">PW</span>
+                                Project Work
+                            </td>
                         </tr>
 
                         <tr>
                             <th scope="row">3:00 PM</th>
-                            <td class="study">Study Time</td>
-                            <td class="free">Open</td>
-                            <td class="study">Study Time</td>
-                            <td class="free">Open</td>
-                            <td class="study">Review</td>
+
+                            <td class="study course-cell">
+                                <span class="state-marker">ST</span>
+                                Study Time
+                            </td>
+
+                            <td class="free course-cell">
+                                <span class="state-marker">OP</span>
+                                Open
+                            </td>
+
+                            <td class="study course-cell">
+                                <span class="state-marker">ST</span>
+                                Study Time
+                            </td>
+
+                            <td class="free course-cell">
+                                <span class="state-marker">OP</span>
+                                Open
+                            </td>
+
+                            <td class="study course-cell">
+                                <span class="state-marker">RV</span>
+                                Review
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <section id="critical-thinking" class="content-section">
-            <h2>Critical Thinking Lab</h2>
+        <section id="critical-thinking">
+            <h2>Critical Thinking Investigations</h2>
 
-            <article class="investigation">
+            <article id="ug-01" class="investigation">
                 <h3>UG 01: Forensic Cascade Reconstruction</h3>
 
                 <p>
@@ -335,17 +343,17 @@ a {
                     The <code>#cascade-target</code> declaration should win
                     because an ID selector has greater specificity than a class
                     selector or an element selector. I predict that the
-                    paragraph's computed color will be
+                    computed color will be
                     <code>rgb(106, 27, 154)</code>.
                 </p>
 
-                <div class="investigation-panel">
+                <div class="cascade-test">
                     <p id="cascade-target" class="cascade-sample">
                         This paragraph is the cascade testing element.
                     </p>
                 </div>
 
-                <h4>Exact CSS Tested</h4>
+                <h4>CSS Tested</h4>
 
                 <pre><code>p {
     color: #7f1d1d;
@@ -367,57 +375,19 @@ a {
                     <li><code>p</code>: 0-0-1</li>
                 </ol>
 
-                <h4>Computed Result</h4>
+                <h4>Result and Reflection</h4>
 
                 <p>
                     The Computed panel reported
-                    <code>rgb(106, 27, 154)</code>. The ID rule won, while the
-                    class and element color declarations were overridden.
+                    <code>rgb(106, 27, 154)</code>. The result matched my
+                    prediction because the ID selector had the highest
+                    specificity. The class and element declarations still
+                    matched the paragraph, but their color values were
+                    overridden.
                 </p>
-
-                <h4>Reflection</h4>
-
-                <p>
-                    The browser result matched my prediction because the ID
-                    selector had the highest specificity. The Styles and
-                    Computed panels showed that the two lower-specificity
-                    declarations matched the paragraph, but their color values
-                    were overridden.
-                </p>
-
-                <div class="evidence-grid">
-                    <figure>
-                        <img
-                            src="images/ug01-devtools.png"
-                            alt="Browser DevTools showing the computed color and overridden CSS rules"
-                        >
-
-                        <figcaption>
-                            DevTools evidence showing the winning ID rule,
-                            overridden declarations, computed color, and
-                            desktop timestamp.
-                        </figcaption>
-                    </figure>
-
-                    <article class="text-evidence">
-                        <h4>Prediction and Specificity File</h4>
-
-                        <p>
-                            The prediction, specificity calculations, actual
-                            result, and reflection are documented in the
-                            following text file.
-                        </p>
-
-                        <p>
-                            <a href="ug01-prediction-and-specificity.txt">
-                                View UG 01 Prediction and Specificity Evidence
-                            </a>
-                        </p>
-                    </article>
-                </div>
             </article>
 
-            <article class="investigation">
+            <article id="ug-02" class="investigation">
                 <h3>UG 02: Pixel Budget Under Constraint</h3>
 
                 <p>
@@ -428,19 +398,12 @@ a {
 
                 <h4>Content-Box Version</h4>
 
-                <p>
-                    At a 900-pixel viewport, <code>40vw</code> equals 360
-                    pixels. The horizontal padding adds 54 pixels and the
-                    borders add 6 pixels, producing an outer width of 420
-                    pixels.
-                </p>
-
                 <div class="pixel-stage">
                     <div class="pixel-panel content-box-demo">
-                        <h4>Content-Box Panel</h4>
+                        <strong>Content-Box Panel</strong>
 
                         <p>
-                            The declared width controls only the content area.
+                            The declared width controls the content area.
                             Padding and borders are added outside that width.
                         </p>
                     </div>
@@ -454,25 +417,18 @@ a {
 }</code></pre>
 
                 <p class="calculation">
-                    360px content + 54px padding + 6px border = 420px outer width
+                    360px content + 54px padding + 6px border = 420px
                 </p>
 
                 <h4>Border-Box Version</h4>
 
-                <p>
-                    After switching to <code>border-box</code>, the declared
-                    width includes the content, padding, and borders. The
-                    declaration <code>calc(40vw + 60px)</code> evaluates to 420
-                    pixels at a 900-pixel viewport.
-                </p>
-
                 <div class="pixel-stage">
                     <div class="pixel-panel border-box-demo">
-                        <h4>Border-Box Panel</h4>
+                        <strong>Border-Box Panel</strong>
 
                         <p>
                             The padding and borders are included inside the
-                            declared width instead of being added outside it.
+                            declared width.
                         </p>
                     </div>
                 </div>
@@ -486,98 +442,190 @@ a {
 
                 <p class="calculation">
                     40vw at 900px = 360px<br>
-                    360px + 60px = 420px declared and outer width
+                    360px + 60px = 420px
                 </p>
 
-                <h4>Measured Results</h4>
+                <h4>Result and Reflection</h4>
+
+                <p>
+                    Both versions measured 420 pixels at a 900-pixel viewport.
+                    With <code>content-box</code>, padding and borders were added
+                    outside the content width. With <code>border-box</code>,
+                    those values were included inside the declared width.
+                </p>
+            </article>
+
+            <article id="ug-03" class="investigation">
+                <h3>UG 03: Breakpoint Failure Study</h3>
+
+                <p>
+                    I tested the following three-card layout while reducing the
+                    viewport from desktop size. The first tested odd-numbered
+                    width that failed my layout test was 775 pixels.
+                </p>
+
+                <h4>Readability Test</h4>
+
+                <p>
+                    The layout passes when every card remains inside its
+                    container without horizontal overflow. It fails when the
+                    minimum card widths force the grid beyond the available
+                    content width.
+                </p>
+
+                <div class="breakpoint-demo">
+                    <article class="breakpoint-card">
+                        <h4>Structure</h4>
+                        <p>Semantic HTML organizes the page content.</p>
+                    </article>
+
+                    <article class="breakpoint-card">
+                        <h4>Presentation</h4>
+                        <p>External CSS controls the visual design.</p>
+                    </article>
+
+                    <article class="breakpoint-card">
+                        <h4>Testing</h4>
+                        <p>Responsive testing identifies layout failures.</p>
+                    </article>
+                </div>
+
+                <h4>Original CSS</h4>
+
+                <pre><code>.breakpoint-demo {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 18px;
+}</code></pre>
+
+                <h4>Cause</h4>
+
+                <p>
+                    The three columns required 660 pixels and the two gaps
+                    required 36 pixels. The grid needed at least 696 pixels of
+                    internal space. At a 775-pixel viewport, the page margins
+                    and section padding left less than 696 pixels for the grid.
+                </p>
+
+                <h4>Repair</h4>
+
+                <pre><code>@media (max-width: 775px) {
+    .breakpoint-demo {
+        grid-template-columns: 1fr;
+    }
+
+    .breakpoint-card {
+        min-width: 0;
+    }
+}</code></pre>
+
+                <h4>Result and Reflection</h4>
+
+                <p>
+                    The repair stacked the cards at 775 pixels and removed the
+                    overflow. The desktop layout remained three columns at
+                    1201 pixels, so the repair did not affect layouts above
+                    1000 pixels.
+                </p>
+            </article>
+
+            <article id="ug-04" class="investigation">
+                <h3>UG 04: Color Is Not the Message</h3>
+
+                <p>
+                    I audited the color-coded timetable and redesigned its
+                    states so that color is not the only way to identify them.
+                </p>
+
+                <h4>Contrast Results</h4>
 
                 <ul>
                     <li>
-                        Content-box outer width at 900px:
-                        <strong>420px</strong>
+                        <code>#123d2f</code> on <code>#d7f2e4</code>:
+                        <strong>10.21:1</strong>
                     </li>
 
                     <li>
-                        Border-box outer width at 900px:
-                        <strong>420px</strong>
+                        <code>#123d2f</code> on <code>#fff1bf</code>:
+                        <strong>10.72:1</strong>
                     </li>
                 </ul>
 
-                <h4>Reflection</h4>
-
                 <p>
-                    With <code>content-box</code>, padding and borders increase
-                    the rendered size beyond the declared width, so I included
-                    them in the arithmetic. With <code>border-box</code>, those
-                    values are included inside the declared width, which makes
-                    controlling the outer size more direct.
+                    Both combinations exceed the WCAG AA requirement of 4.5:1
+                    for normal text.
                 </p>
 
-                <div class="evidence-grid">
-                    <figure>
-                        <img
-                            src="images/ug02-content-box.png"
-                            alt="DevTools box model showing the content-box panel measuring 420 pixels wide"
-                        >
+                <h4>Revised States</h4>
 
-                        <figcaption>
-                            Content-box measurement at a 900-pixel viewport.
-                        </figcaption>
-                    </figure>
+                <div class="state-samples">
+                    <div class="state-sample computer-science">
+                        <span class="state-marker">CS</span>
+                        Computer Science
+                    </div>
 
-                    <figure>
-                        <img
-                            src="images/ug02-border-box.png"
-                            alt="DevTools box model showing the border-box panel measuring 420 pixels wide"
-                        >
+                    <div class="state-sample math">
+                        <span class="state-marker">MA</span>
+                        Calculus
+                    </div>
 
-                        <figcaption>
-                            Border-box measurement at a 900-pixel viewport.
-                        </figcaption>
-                    </figure>
+                    <div class="state-sample lunch">
+                        <span class="state-marker">LB</span>
+                        Lunch Break
+                    </div>
+
+                    <div class="state-sample free">
+                        <span class="state-marker">OP</span>
+                        Open
+                    </div>
                 </div>
 
-                <article class="text-evidence">
-                    <h4>Box-Model Calculations</h4>
+                <h4>Non-Color Cues</h4>
 
-                    <p>
-                        The calculations and measured results are documented in
-                        the following text file.
-                    </p>
+                <ul>
+                    <li>Full course or activity name</li>
+                    <li>Two-letter abbreviation markers</li>
+                    <li>Solid, dashed, double, and dotted borders</li>
+                    <li>Bold course and activity labels</li>
+                </ul>
 
-                    <p>
-                        <a href="ug02-box-model-calculations.txt">
-                            View UG 02 Box-Model Calculations
-                        </a>
-                    </p>
-                </article>
+                <h4>Peer Interpretation</h4>
+
+                <p>
+                    My peer identified the timetable states using the visible
+                    course names, abbreviation markers, and border patterns
+                    while viewing the grayscale version.
+                </p>
+
+                <p>
+                    <strong>Peer initials:</strong>
+                    <span class="peer-initials">LN</span>
+                </p>
+
+                <h4>Result and Reflection</h4>
+
+                <p>
+                    Color makes the timetable easier to scan, but the revised
+                    text labels, markers, and border patterns preserve its
+                    meaning when color is removed.
+                </p>
             </article>
         </section>
 
-        <section id="submission" class="content-section">
-            <h2>Submission</h2>
+        <section id="submission">
+            <h2>Submission Checklist</h2>
 
             <ul>
-                <li>
-                    All exercises are contained in one HTML document.
-                </li>
-
-                <li>
-                    CSS is stored in external stylesheets.
-                </li>
-
-                <li>
-                    Evidence images are stored in the images folder.
-                </li>
-
-                <li>
-                    The completed page will be tested before submission.
-                </li>
+                <li>Exercises 1 through 5 are complete.</li>
+                <li>UG 01 through UG 04 are complete.</li>
+                <li>CSS is stored in external stylesheets.</li>
+                <li>Evidence is stored separately in the images folder.</li>
+                <li>The page will be tested before submission.</li>
             </ul>
         </section>
     </main>
 
-    <footer class="site-footer">
+    <footer>
         <p>© 2026 Keny Nguyen | Web Programming CW 03</p>
     </footer>
 </body>
