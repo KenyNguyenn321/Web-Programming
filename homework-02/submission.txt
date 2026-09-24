@@ -1,0 +1,15 @@
+Homework Assignment 2 Submission
+
+Name: Keny Nguyen
+
+Live URL:
+https://codd.cs.gsu.edu/~knguyen207/web/hw2/index.html
+
+GitHub Repository:
+https://github.com/KenyNguyenn321/Web-Programming/tree/main/homework-02
+
+Notes:
+The TMNT movie review page includes the required desktop layout, named CSS
+Grid areas, Flexbox reviewer components, responsive layouts for 700px and
+480px viewports, keyboard focus styles, a print stylesheet, critical-thinking
+responses, and testing evidence.
