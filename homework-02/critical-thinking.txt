@@ -1,0 +1,198 @@
+Homework Assignment 2: Critical Thinking Lab
+Keny Nguyen
+Web Programming
+
+Browser Used: Google Chrome
+
+UG01: Cascade Investigation
+
+Question:
+What happens when the background-color declaration is temporarily removed
+from one review box, and which CSS rule paints the box after it is restored?
+
+Answer:
+I temporarily disabled the background-color declaration in the
+.review-quote rule using Chrome DevTools. Before the declaration was disabled,
+the review box had the required light yellow background. After it was
+disabled, the review box became transparent and the page's background image
+showed through it.
+
+The restored rule is:
+
+.review-quote {
+    background-color: #e1d697;
+}
+
+The .review-quote selector has a specificity of 0-1-0 because it contains one
+class selector. No selector with greater specificity overrides this
+declaration. The declaration also appears in the active external stylesheet,
+so it wins the cascade and paints the review box light yellow. I restored the
+declaration before completing the assignment.
+
+Evidence:
+evidence/ug01-cascade.png
+
+The evidence image contains the yellow review box before the declaration was
+disabled and the transparent review box after it was disabled.
+
+
+UG02: Responsive Trade-off
+
+Question:
+At exactly 480px wide, what are the computed widths of the main review region
+and sidebar, and what trade-off prevents horizontal scrolling?
+
+Answer:
+At a 480px browser viewport, the outer .movie-review container has a computed
+width of 460px because the responsive rule uses:
+
+.movie-review {
+    width: calc(100% - 20px);
+}
+
+The container leaves 10px of space on each side. Its 4px left and right
+borders leave 452px for the internal Grid track. The .reviews region and
+.movie-overview sidebar each have a computed width of 452px because the
+responsive Grid changes to one column.
+
+The responsive rule is:
+
+@media screen and (max-width: 700px) {
+    .movie-review {
+        width: calc(100% - 20px);
+        grid-template-areas:
+            "rating"
+            "reviews"
+            "overview"
+            "counter";
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+The deliberate trade-off is that the 250px sidebar moves below the reviews
+instead of remaining beside them. This makes the page taller, but it preserves
+readable content widths and prevents horizontal scrolling.
+
+For comparison, I temporarily changed the responsive container width to
+800px. The page then extended beyond the 480px viewport and created horizontal
+overflow. The final calc(100% - 20px) value is better because it fits within
+the viewport while preserving space around the bordered container.
+
+Evidence:
+evidence/ug02-responsive.png
+
+The evidence image contains the final 480px computed widths and the temporary
+800px comparison showing horizontal overflow.
+
+
+GR03: Architecture Defense
+
+Question:
+Why does the major page structure use named Grid areas while the repeated
+reviewer metadata uses Flexbox?
+
+Answer:
+CSS Grid controls the major two-dimensional relationship between the rating,
+reviews, overview sidebar, and counter. On desktop, the named areas place the
+rating and reviews in the flexible left column, the overview in the 250px
+right column, and the counter across both columns.
+
+The desktop Grid is:
+
+.movie-review {
+    display: grid;
+    grid-template-areas:
+        "rating overview"
+        "reviews overview"
+        "counter counter";
+    grid-template-columns: minmax(0, 1fr) 250px;
+}
+
+At exactly 700px, the outer container measured 680px and the internal Grid
+track measured 672px. At exactly 480px, the outer container measured 460px and
+the internal Grid track measured 452px. No horizontal page overflow appeared
+at either size. The named areas changed to one column, which preserved the
+content hierarchy.
+
+Flexbox controls the one-dimensional relationship inside every .reviewer
+component:
+
+.reviewer {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+The computed flex-wrap value is nowrap. The critic icon remains 35px wide
+while the reviewer name and publication stay aligned beside it. At narrower
+sizes, text wraps inside the paragraph instead of pushing the icon out of
+alignment.
+
+Grid is appropriate for the page because it controls rows and columns.
+Flexbox is appropriate for reviewer metadata because it aligns an icon and
+text along one row.
+
+Evidence:
+evidence/gr03-architecture.png
+
+The evidence image contains the page and measured layout at exactly 700px and
+480px.
+
+
+GR04: Failure Analysis
+
+Question:
+What controlled defect was introduced, what caused it, and how was it
+corrected?
+
+Answer:
+I created a temporary separate copy of the page and added this test rule:
+
+.review-quote {
+    height: 40px;
+    overflow: hidden;
+}
+
+The defect clipped longer review text because the fixed 40px height was
+smaller than the height required by the paragraph. The overflow value then
+hid any content outside that fixed box. Chrome DevTools showed that the text
+continued past the box's content area but was not painted outside it.
+
+The root cause was combining a restrictive fixed height with hidden overflow
+on content whose length varies. The corrected page does not set a fixed
+height on .review-quote. It allows the box height to be determined by its
+content:
+
+.review-quote {
+    min-height: 0;
+    overflow: auto;
+}
+
+After removing the temporary defect, every review expanded to display its
+complete text. The original index.html and styles.css remained unchanged
+during the controlled test.
+
+Evidence:
+evidence/gr04-failure.png
+
+The evidence image contains the clipped defect state, the test rule in
+DevTools, and the corrected review box.
+
+
+Accessibility and Keyboard Audit
+
+I used the Tab key to move through the official movie site and both validator
+links. Each link received a visible blue focus outline from this rule:
+
+a:focus-visible {
+    outline: 3px solid #0000cc;
+    outline-offset: 2px;
+}
+
+The focus indicator remained visible against the green sidebar and validator
+buttons. All meaningful images have alternative text. Decorative critic
+icons use empty alternative text so a screen reader does not repeatedly
+announce the same decorative image.
+
+Evidence:
+evidence/accessibility-focus.png
