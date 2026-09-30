@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+    Name: Keny Nguyen
+    Category: Graduate
+    Assignment: In-Class Activity 06
+    Description: CSS-only animated Halloween scenes
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="The Haunted Harvest, a CSS-only animated Halloween experience."
+    >
+
+    <title>The Haunted Harvest</title>
+
+    <link rel="stylesheet" href="haunted-harvest.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">
+        Skip to the haunted scenes
+    </a>
+
+    <header class="site-header">
+        <div class="header-content">
+            <p class="eyebrow">A CSS-Only Halloween Experience</p>
+
+            <h1>🎃 The Haunted Harvest 🎃</h1>
+
+            <p class="intro">
+                Explore three strange chapters before the clock strikes
+                midnight. No JavaScript is hiding in these shadows.
+            </p>
+        </div>
+
+        <nav class="scene-navigation" aria-label="Halloween chapters">
+            <a href="#town">Town Square</a>
+            <a href="#graveyard">Graveyard</a>
+            <a href="#flight">Broomstick Ride</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="scenes">
+            <!-- town scene -->
+            <section id="town" class="scene town-scene">
+                <div class="scene-heading">
+                    <p class="chapter-label">Chapter One</p>
+                    <h2>Haunted Halloween Town Square</h2>
+
+                    <p>
+                        Trick-or-treaters cross the square while bats circle
+                        the moon and a mysterious hearse passes through town.
+                    </p>
+                </div>
+
+                <div class="sky" aria-hidden="true">
+                    <div class="moon"></div>
+
+                    <div class="cloud cloud-one"></div>
+                    <div class="cloud cloud-two"></div>
+
+                    <div class="bat bat-one">🦇</div>
+                    <div class="bat bat-two">🦇</div>
+                    <div class="bat bat-three">🦇</div>
+
+                    <div class="witch">🧙‍♀️</div>
+                </div>
+
+                <div class="town-buildings" aria-hidden="true">
+                    <div class="building haunted-house">
+                        <span class="roof"></span>
+                        <span class="window window-one"></span>
+                        <span class="window window-two"></span>
+                        <span class="door"></span>
+                    </div>
+
+                    <div class="building candy-shop">
+                        <span class="shop-sign">CANDY</span>
+                        <span class="shop-window"></span>
+                        <span class="shop-door"></span>
+                    </div>
+                </div>
+
+                <div class="town-ground">
+                    <div class="pumpkin-row" aria-label="Glowing pumpkins">
+                        <span class="pumpkin pumpkin-one">🎃</span>
+                        <span class="pumpkin pumpkin-two">🎃</span>
+                        <span class="pumpkin pumpkin-three">🎃</span>
+                    </div>
+
+                    <div
+                        class="trick-or-treaters"
+                        aria-label="Trick-or-treaters walking through town"
+                    >
+                        <span class="walker walker-one">🧛</span>
+                        <span class="walker walker-two">🧟</span>
+                        <span class="walker walker-three">👻</span>
+                        <span class="candy-bag">🍬</span>
+                    </div>
+
+                    <div class="black-cat" aria-label="A black cat">
+                        🐈‍⬛
+                    </div>
+
+                    <div class="hearse" aria-label="A hearse driving by">
+                        🚙
+                    </div>
+                </div>
+
+                <div class="fog-layer fog-one" aria-hidden="true"></div>
+                <div class="fog-layer fog-two" aria-hidden="true"></div>
+
+                <aside class="scene-card">
+                    <h3>The Mayor's Warning</h3>
+
+                    <p>
+                        The harvest bell has started ringing by itself.
+                        Collect your candy and leave the square before the
+                        final chime.
+                    </p>
+
+                    <a href="#graveyard">Follow the ghost trail</a>
+                </aside>
+            </section>
+
+            <!-- graveyard scene -->
+            <section id="graveyard" class="scene graveyard-scene">
+                <div class="scene-heading">
+                    <p class="chapter-label">Chapter Two</p>
+                    <h2>Midnight Graveyard Stroll</h2>
+
+                    <p>
+                        Beyond the town gates, an old storyteller waits among
+                        restless spirits and weathered gravestones.
+                    </p>
+                </div>
+
+                <div class="graveyard-sky" aria-hidden="true">
+                    <div class="graveyard-moon"></div>
+                    <div class="lightning lightning-one"></div>
+                    <div class="lightning lightning-two"></div>
+                    <div class="storm-cloud"></div>
+                    <div class="owl">🦉</div>
+                    <div class="crow">🐦‍⬛</div>
+                </div>
+
+                <div class="dead-tree" aria-hidden="true">
+                    <span class="tree-trunk"></span>
+                    <span class="branch branch-one"></span>
+                    <span class="branch branch-two"></span>
+                    <span class="branch branch-three"></span>
+                </div>
+
+                <div class="graveyard-ground">
+                    <div
+                        class="storyteller"
+                        aria-label="A storyteller holding a lantern"
+                    >
+                        <span class="storyteller-person">🧙</span>
+                        <span class="lantern">🏮</span>
+                    </div>
+
+                    <button class="grave grave-one" type="button">
+                        <span class="grave-name">E. VIL</span>
+                        <span class="hidden-ghost" aria-hidden="true">👻</span>
+                    </button>
+
+                    <button class="grave grave-two" type="button">
+                        <span class="grave-name">R. I. P.</span>
+                        <span class="hidden-ghost" aria-hidden="true">👻</span>
+                    </button>
+
+                    <button class="grave grave-three" type="button">
+                        <span class="grave-name">I. M. GONE</span>
+                        <span class="hidden-ghost" aria-hidden="true">👻</span>
+                    </button>
+
+                    <div class="graveyard-cat" aria-label="A black cat walking">
+                        🐈‍⬛
+                    </div>
+
+                    <div class="ghost-orb orb-one" aria-hidden="true"></div>
+                    <div class="ghost-orb orb-two" aria-hidden="true"></div>
+                    <div class="ghost-orb orb-three" aria-hidden="true"></div>
+                </div>
+
+                <div class="fog-layer fog-three" aria-hidden="true"></div>
+
+                <aside class="scene-card">
+                    <h3>The Storyteller's Clue</h3>
+
+                    <p>
+                        The last bell can only be silenced from the sky.
+                        Find the waiting broomstick and follow the moon.
+                    </p>
+
+                    <a href="#flight">Take the midnight flight</a>
+                </aside>
+            </section>
+
+            <!-- flight scene -->
+            <section id="flight" class="scene flight-scene">
+                <div class="scene-heading">
+                    <p class="chapter-label">Chapter Three</p>
+                    <h2>Midnight Broomstick Ride</h2>
+
+                    <p>
+                        Race above the sleeping forest with the wind, owls,
+                        clouds, and magical sparks following close behind.
+                    </p>
+                </div>
+
+                <div class="flight-sky" aria-hidden="true">
+                    <div class="giant-moon"></div>
+
+                    <div class="flight-cloud flight-cloud-one"></div>
+                    <div class="flight-cloud flight-cloud-two"></div>
+
+                    <div class="flying-witch">
+                        <span class="witch-rider">🧙‍♀️</span>
+                        <span class="broom">━</span>
+                        <span class="spark spark-one">✦</span>
+                        <span class="spark spark-two">✧</span>
+                        <span class="spark spark-three">✦</span>
+                    </div>
+
+                    <div class="flying-owl">🦉</div>
+
+                    <div class="flight-bats">
+                        <span>🦇</span>
+                        <span>🦇</span>
+                        <span>🦇</span>
+                    </div>
+                </div>
+
+                <div class="forest" aria-hidden="true">
+                    <span class="tree">▲</span>
+                    <span class="tree">▲</span>
+                    <span class="tree">▲</span>
+                    <span class="tree">▲</span>
+                    <span class="tree">▲</span>
+                    <span class="tree">▲</span>
+                    <span class="tree">▲</span>
+                </div>
+
+                <div class="hay-wagon" aria-label="A moving haunted hay wagon">
+                    <span class="wagon-riders">🧛 👻</span>
+                    <span class="wagon-body">🛻</span>
+                </div>
+
+                <aside class="scene-card final-card">
+                    <h3>The Harvest Is Safe</h3>
+
+                    <p>
+                        You reached the bell before midnight. The spirits
+                        return to their graves, but only until next Halloween.
+                    </p>
+
+                    <a href="#town">Return to town</a>
+                </aside>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>
+            Designed and developed by Keny Nguyen using only HTML and CSS.
+        </p>
+
+        <nav aria-label="Footer navigation">
+            <a href="#town">Town</a>
+            <a href="#graveyard">Graveyard</a>
+            <a href="#flight">Flight</a>
+        </nav>
+    </footer>
+</body>
+</html>
