@@ -2,7 +2,7 @@
     Name: Keny Nguyen
     Category: Graduate
     Assignment: In-Class Activity 06
-    Description: Responsive styles for The Haunted Harvest
+    Description: Responsive and animated Haunted Harvest styles
 */
 
 /* halloween colors */
@@ -19,9 +19,6 @@
     --grave-gray: #777583;
     --fog: rgba(246, 242, 248, 0.25);
     --panel: rgba(26, 20, 35, 0.88);
-    --space-small: 0.75rem;
-    --space-medium: 1.25rem;
-    --space-large: 2rem;
     --radius: 1rem;
 }
 
@@ -124,6 +121,7 @@ h1 {
     text-shadow:
         0 0 8px var(--pumpkin),
         3px 3px 0 var(--candy-purple);
+    animation: titleGlow 3s ease-in-out infinite;
 }
 
 .intro {
@@ -179,7 +177,7 @@ h1 {
     display: grid;
 }
 
-/* shared scene layout */
+/* shared scenes */
 
 .scene {
     position: relative;
@@ -240,18 +238,7 @@ h1 {
     margin: 0.65rem 0 1rem;
 }
 
-/* town square */
-
-.town-scene {
-    background:
-        linear-gradient(
-            to bottom,
-            #09071b 0%,
-            #1c1641 48%,
-            #30204a 65%,
-            #15111e 100%
-        );
-}
+/* shared sky */
 
 .sky,
 .graveyard-sky,
@@ -281,6 +268,7 @@ h1 {
     box-shadow:
         0 0 2rem rgba(255, 214, 10, 0.75),
         0 0 5rem rgba(255, 214, 10, 0.25);
+    animation: moonPulse 5s ease-in-out infinite;
 }
 
 .cloud,
@@ -296,14 +284,29 @@ h1 {
         6rem 0.3rem 0 rgba(246, 242, 248, 0.12);
 }
 
+/* town square */
+
+.town-scene {
+    background:
+        linear-gradient(
+            to bottom,
+            #09071b 0%,
+            #1c1641 48%,
+            #30204a 65%,
+            #15111e 100%
+        );
+}
+
 .cloud-one {
     top: 10rem;
     left: -2rem;
+    animation: cloudDrift 18s ease-in-out infinite alternate;
 }
 
 .cloud-two {
     top: 16rem;
     right: -3rem;
+    animation: cloudDriftReverse 22s ease-in-out infinite alternate;
 }
 
 .bat,
@@ -313,25 +316,33 @@ h1 {
     font-size: 2rem;
 }
 
+.bat {
+    transform-origin: center;
+}
+
 .bat-one {
     top: 9rem;
     left: 12%;
+    animation: batFlight 7s ease-in-out infinite;
 }
 
 .bat-two {
     top: 13rem;
     left: 28%;
+    animation: batFlight 5.5s ease-in-out 0.8s infinite;
 }
 
 .bat-three {
     top: 8rem;
     right: 16%;
+    animation: batFlight 6.5s ease-in-out 1.5s infinite;
 }
 
 .witch {
     top: 17rem;
-    left: 8%;
+    left: -6rem;
     font-size: 3.2rem;
+    animation: witchCrossing 15s linear infinite;
 }
 
 .town-buildings {
@@ -374,6 +385,7 @@ h1 {
     border: 3px solid #100d12;
     background: var(--candle-glow);
     box-shadow: 0 0 1rem var(--pumpkin);
+    animation: windowFlicker 2.8s ease-in-out infinite;
 }
 
 .window-one {
@@ -382,6 +394,7 @@ h1 {
 
 .window-two {
     right: 1.2rem;
+    animation-delay: 0.7s;
 }
 
 .door,
@@ -444,36 +457,65 @@ h1 {
     font-size: 2.4rem;
 }
 
+.pumpkin {
+    animation: pumpkinFlicker 2.5s ease-in-out infinite;
+}
+
+.pumpkin-two {
+    animation-delay: 0.5s;
+}
+
+.pumpkin-three {
+    animation-delay: 1s;
+}
+
 .trick-or-treaters {
     position: absolute;
     top: 1.5rem;
-    left: 16%;
+    left: -12rem;
     display: flex;
     align-items: end;
     gap: 0.3rem;
     font-size: 2.7rem;
+    animation: peopleWalk 18s linear infinite;
+}
+
+.walker {
+    display: inline-block;
+    animation: walkBounce 0.7s ease-in-out infinite alternate;
+}
+
+.walker-two {
+    animation-delay: 0.2s;
+}
+
+.walker-three {
+    animation-delay: 0.4s;
 }
 
 .candy-bag {
     font-size: 1.6rem;
+    animation: bagSwing 0.8s ease-in-out infinite alternate;
 }
 
 .black-cat {
     position: absolute;
-    right: 17%;
+    right: -5rem;
     bottom: 3rem;
     font-size: 2.5rem;
+    animation: catWalk 14s linear 3s infinite;
 }
 
 .hearse {
     position: absolute;
-    right: 4%;
+    right: -8rem;
     bottom: 0.5rem;
     padding: 0.3rem 1rem;
     border-radius: 1rem;
     background: #080808;
     font-size: 3rem;
     filter: grayscale(1);
+    animation: hearseDrive 13s linear infinite;
 }
 
 .fog-layer {
@@ -489,12 +531,14 @@ h1 {
 
 .fog-one {
     bottom: 6rem;
-    left: -10%;
+    left: -60%;
+    animation: fogDrift 15s linear infinite;
 }
 
 .fog-two {
-    right: -15%;
+    right: -60%;
     bottom: 1rem;
+    animation: fogDriftReverse 18s linear infinite;
 }
 
 /* graveyard */
@@ -521,6 +565,7 @@ h1 {
     top: 9rem;
     right: 5%;
     background: rgba(40, 38, 58, 0.85);
+    animation: cloudDriftReverse 12s ease-in-out infinite alternate;
 }
 
 .lightning {
@@ -538,6 +583,8 @@ h1 {
         42% 54%,
         0 54%
     );
+    opacity: 0;
+    animation: lightningFlash 6s linear infinite;
 }
 
 .lightning-one {
@@ -549,6 +596,7 @@ h1 {
     top: 15rem;
     right: 10%;
     height: 5rem;
+    animation-delay: 2.5s;
     transform: scale(0.7);
 }
 
@@ -562,11 +610,13 @@ h1 {
 .owl {
     top: 18rem;
     right: 12%;
+    animation: owlBob 2.5s ease-in-out infinite;
 }
 
 .crow {
     top: 22rem;
     left: 18%;
+    animation: crowHop 3s ease-in-out infinite;
 }
 
 .dead-tree {
@@ -576,6 +626,8 @@ h1 {
     z-index: 4;
     width: 12rem;
     height: 22rem;
+    transform-origin: bottom;
+    animation: treeSway 5s ease-in-out infinite alternate;
 }
 
 .tree-trunk,
@@ -619,10 +671,13 @@ h1 {
     top: 1rem;
     left: 6%;
     font-size: 3rem;
+    animation: storytellerBob 2s ease-in-out infinite alternate;
 }
 
 .lantern {
     font-size: 1.8rem;
+    filter: drop-shadow(0 0 0.7rem var(--candle-glow));
+    animation: lanternGlow 2s ease-in-out infinite;
 }
 
 .grave {
@@ -637,6 +692,15 @@ h1 {
     font: inherit;
     font-weight: 900;
     cursor: pointer;
+    transition:
+        background-color 200ms ease,
+        transform 200ms ease;
+}
+
+.grave:hover,
+.grave:focus-visible {
+    background: #9d9ba5;
+    transform: translateY(-0.4rem);
 }
 
 .grave-one {
@@ -676,9 +740,10 @@ h1 {
 
 .graveyard-cat {
     position: absolute;
-    right: 10%;
+    right: -5rem;
     bottom: 0.8rem;
     font-size: 2.5rem;
+    animation: graveCatWalk 15s linear infinite;
 }
 
 .ghost-orb {
@@ -688,6 +753,7 @@ h1 {
     border-radius: 50%;
     background: var(--ghost-white);
     box-shadow: 0 0 1rem var(--ghost-white);
+    animation: orbFloat 4s ease-in-out infinite;
 }
 
 .orb-one {
@@ -698,16 +764,19 @@ h1 {
 .orb-two {
     top: 5rem;
     left: 48%;
+    animation-delay: 1s;
 }
 
 .orb-three {
     top: 1rem;
     right: 12%;
+    animation-delay: 2s;
 }
 
 .fog-three {
     bottom: 3rem;
-    left: 10%;
+    left: -60%;
+    animation: fogDrift 17s linear infinite;
 }
 
 /* broomstick flight */
@@ -732,22 +801,29 @@ h1 {
 .flight-cloud-one {
     top: 12rem;
     left: -2rem;
+    animation: cloudDrift 14s ease-in-out infinite alternate;
 }
 
 .flight-cloud-two {
     top: 20rem;
     right: -4rem;
+    animation: cloudDriftReverse 16s ease-in-out infinite alternate;
 }
 
 .flying-witch {
     position: absolute;
     top: 18rem;
-    left: 8%;
+    left: -12rem;
     z-index: 5;
     display: flex;
     align-items: center;
     color: var(--candle-glow);
     font-size: 3.5rem;
+    animation: broomFlight 14s linear infinite;
+}
+
+.witch-rider {
+    animation: riderBounce 0.9s ease-in-out infinite alternate;
 }
 
 .broom {
@@ -762,6 +838,7 @@ h1 {
     left: -1rem;
     color: var(--candle-glow);
     font-size: 1.3rem;
+    animation: sparkFade 1.2s ease-out infinite;
 }
 
 .spark-one {
@@ -771,10 +848,12 @@ h1 {
 .spark-two {
     top: 2rem;
     left: -2rem;
+    animation-delay: 0.4s;
 }
 
 .spark-three {
     top: 4rem;
+    animation-delay: 0.8s;
 }
 
 .flying-owl {
@@ -783,6 +862,7 @@ h1 {
     left: 58%;
     z-index: 4;
     font-size: 3rem;
+    animation: flyingOwl 7s ease-in-out infinite;
 }
 
 .flight-bats {
@@ -792,6 +872,19 @@ h1 {
     display: flex;
     gap: 2rem;
     font-size: 2rem;
+    animation: flightBatGroup 6s ease-in-out infinite;
+}
+
+.flight-bats span {
+    animation: batFlap 0.5s ease-in-out infinite alternate;
+}
+
+.flight-bats span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.flight-bats span:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
 .forest {
@@ -809,19 +902,381 @@ h1 {
     white-space: nowrap;
 }
 
+.forest .tree:nth-child(even) {
+    transform: scale(0.8);
+}
+
 .hay-wagon {
     position: absolute;
-    right: 5%;
+    right: -10rem;
     bottom: 5rem;
     z-index: 8;
     display: grid;
     justify-items: center;
     font-size: 3rem;
+    animation: wagonDrive 17s linear infinite;
 }
 
 .wagon-riders {
     margin-bottom: -1.2rem;
     font-size: 2rem;
+    animation: ridersWave 1s ease-in-out infinite alternate;
+}
+
+/* animations */
+
+@keyframes titleGlow {
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.35);
+    }
+}
+
+@keyframes moonPulse {
+    0%,
+    100% {
+        box-shadow:
+            0 0 2rem rgba(255, 214, 10, 0.75),
+            0 0 5rem rgba(255, 214, 10, 0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 0 3rem rgba(255, 214, 10, 0.9),
+            0 0 7rem rgba(255, 214, 10, 0.4);
+    }
+}
+
+@keyframes cloudDrift {
+    from {
+        transform: translateX(-5vw);
+    }
+
+    to {
+        transform: translateX(25vw);
+    }
+}
+
+@keyframes cloudDriftReverse {
+    from {
+        transform: translateX(5vw);
+    }
+
+    to {
+        transform: translateX(-25vw);
+    }
+}
+
+@keyframes batFlight {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(-8deg);
+    }
+
+    35% {
+        transform: translate(3rem, -2rem) rotate(10deg);
+    }
+
+    70% {
+        transform: translate(6rem, 1rem) rotate(-5deg);
+    }
+}
+
+@keyframes witchCrossing {
+    from {
+        transform: translateX(-15vw) translateY(0);
+    }
+
+    50% {
+        transform: translateX(60vw) translateY(-2rem);
+    }
+
+    to {
+        transform: translateX(125vw) translateY(1rem);
+    }
+}
+
+@keyframes windowFlicker {
+    0%,
+    100% {
+        opacity: 1;
+        filter: brightness(1);
+    }
+
+    45% {
+        opacity: 0.75;
+        filter: brightness(0.75);
+    }
+
+    55% {
+        opacity: 0.95;
+        filter: brightness(1.3);
+    }
+}
+
+@keyframes pumpkinFlicker {
+    0%,
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 0.8rem var(--pumpkin));
+    }
+
+    50% {
+        opacity: 0.75;
+        filter: drop-shadow(0 0 0.25rem var(--pumpkin));
+    }
+}
+
+@keyframes peopleWalk {
+    from {
+        transform: translateX(-12rem);
+    }
+
+    to {
+        transform: translateX(125vw);
+    }
+}
+
+@keyframes walkBounce {
+    from {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    to {
+        transform: translateY(-0.35rem) rotate(2deg);
+    }
+}
+
+@keyframes bagSwing {
+    from {
+        transform: rotate(-12deg);
+    }
+
+    to {
+        transform: rotate(12deg);
+    }
+}
+
+@keyframes catWalk {
+    from {
+        transform: translateX(10rem);
+    }
+
+    to {
+        transform: translateX(-120vw);
+    }
+}
+
+@keyframes hearseDrive {
+    from {
+        transform: translateX(10rem);
+    }
+
+    to {
+        transform: translateX(-125vw);
+    }
+}
+
+@keyframes fogDrift {
+    from {
+        transform: translateX(-20%);
+    }
+
+    to {
+        transform: translateX(210%);
+    }
+}
+
+@keyframes fogDriftReverse {
+    from {
+        transform: translateX(20%);
+    }
+
+    to {
+        transform: translateX(-210%);
+    }
+}
+
+@keyframes lightningFlash {
+    0%,
+    88%,
+    92%,
+    100% {
+        opacity: 0;
+    }
+
+    89%,
+    91% {
+        opacity: 1;
+    }
+}
+
+@keyframes owlBob {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.7rem);
+    }
+}
+
+@keyframes crowHop {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-0.5rem) rotate(-8deg);
+    }
+}
+
+@keyframes treeSway {
+    from {
+        transform: rotate(-1.5deg);
+    }
+
+    to {
+        transform: rotate(1.5deg);
+    }
+}
+
+@keyframes storytellerBob {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-0.4rem);
+    }
+}
+
+@keyframes lanternGlow {
+    0%,
+    100% {
+        filter: drop-shadow(0 0 0.5rem var(--candle-glow));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 1.3rem var(--pumpkin));
+    }
+}
+
+@keyframes graveCatWalk {
+    from {
+        transform: translateX(10rem);
+    }
+
+    to {
+        transform: translateX(-120vw);
+    }
+}
+
+@keyframes orbFloat {
+    0%,
+    100% {
+        opacity: 0.4;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-4rem);
+    }
+}
+
+@keyframes broomFlight {
+    from {
+        transform: translateX(-15vw) translateY(2rem);
+    }
+
+    50% {
+        transform: translateX(65vw) translateY(-3rem);
+    }
+
+    to {
+        transform: translateX(130vw) translateY(1rem);
+    }
+}
+
+@keyframes riderBounce {
+    from {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    to {
+        transform: translateY(-0.45rem) rotate(3deg);
+    }
+}
+
+@keyframes sparkFade {
+    from {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-2.5rem) scale(0.3);
+    }
+}
+
+@keyframes flyingOwl {
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translate(5rem, -3rem) rotate(8deg);
+    }
+}
+
+@keyframes flightBatGroup {
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(8rem, 3rem);
+    }
+}
+
+@keyframes batFlap {
+    from {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    to {
+        transform: translateY(-0.35rem) rotate(8deg);
+    }
+}
+
+@keyframes wagonDrive {
+    from {
+        transform: translateX(10rem);
+    }
+
+    to {
+        transform: translateX(-125vw);
+    }
+}
+
+@keyframes ridersWave {
+    from {
+        transform: rotate(-3deg);
+    }
+
+    to {
+        transform: rotate(3deg);
+    }
 }
 
 /* footer */
@@ -884,7 +1339,6 @@ h1 {
     }
 
     .trick-or-treaters {
-        left: 28%;
         font-size: 3.5rem;
     }
 
@@ -936,5 +1390,32 @@ h1 {
 
     .dead-tree {
         left: 6rem;
+    }
+}
+
+/* reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .trick-or-treaters,
+    .black-cat,
+    .hearse,
+    .witch,
+    .graveyard-cat,
+    .flying-witch,
+    .hay-wagon {
+        transform: translateX(0);
     }
 }
