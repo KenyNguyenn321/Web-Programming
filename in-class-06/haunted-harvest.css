@@ -1,0 +1,940 @@
+/*
+    Name: Keny Nguyen
+    Category: Graduate
+    Assignment: In-Class Activity 06
+    Description: Responsive styles for The Haunted Harvest
+*/
+
+/* halloween colors */
+
+:root {
+    --pumpkin: #ff7518;
+    --candy-purple: #5a189a;
+    --spider-black: #1a1423;
+    --slime-green: #8ac926;
+    --ghost-white: #f6f2f8;
+    --candle-glow: #ffd60a;
+    --night-blue: #100d2b;
+    --storm-blue: #272255;
+    --grave-gray: #777583;
+    --fog: rgba(246, 242, 248, 0.25);
+    --panel: rgba(26, 20, 35, 0.88);
+    --space-small: 0.75rem;
+    --space-medium: 1.25rem;
+    --space-large: 2rem;
+    --radius: 1rem;
+}
+
+/* base styles */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background: var(--spider-black);
+    color: var(--ghost-white);
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--candle-glow);
+}
+
+a:hover {
+    color: var(--slime-green);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 4px solid var(--candle-glow);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--ghost-white);
+    color: var(--spider-black);
+    font-weight: 700;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* header */
+
+.site-header {
+    position: relative;
+    z-index: 20;
+    padding: 1.5rem 1rem;
+    border-bottom: 3px solid var(--pumpkin);
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(90, 24, 154, 0.6),
+            transparent 55%
+        ),
+        var(--spider-black);
+    text-align: center;
+}
+
+.header-content {
+    width: min(100%, 62rem);
+    margin: 0 auto;
+}
+
+.eyebrow,
+.chapter-label {
+    margin: 0 0 0.35rem;
+    color: var(--slime-green);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: anywhere;
+}
+
+h1 {
+    margin: 0;
+    color: var(--candle-glow);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 8vw, 4.5rem);
+    line-height: 1.1;
+    text-shadow:
+        0 0 8px var(--pumpkin),
+        3px 3px 0 var(--candy-purple);
+}
+
+.intro {
+    max-width: 44rem;
+    margin: 1rem auto;
+    color: var(--ghost-white);
+}
+
+.scene-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.scene-navigation a,
+.scene-card a {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border: 2px solid var(--pumpkin);
+    border-radius: 999px;
+    background: var(--candy-purple);
+    color: var(--ghost-white);
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.scene-navigation a:hover,
+.scene-navigation a:focus-visible,
+.scene-card a:hover,
+.scene-card a:focus-visible {
+    background: var(--pumpkin);
+    color: var(--spider-black);
+    transform: translateY(-2px);
+}
+
+/* css-only navigation */
+
+.scene {
+    display: none;
+}
+
+.scenes:not(:has(.scene:target)) .scene:first-child {
+    display: grid;
+}
+
+.scene:target {
+    display: grid;
+}
+
+/* shared scene layout */
+
+.scene {
+    position: relative;
+    isolation: isolate;
+    min-height: 46rem;
+    overflow: hidden;
+    grid-template-rows: auto 1fr auto;
+    padding: 1.25rem;
+}
+
+.scene-heading {
+    position: relative;
+    z-index: 12;
+    width: min(100%, 46rem);
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid rgba(246, 242, 248, 0.25);
+    border-radius: var(--radius);
+    background: var(--panel);
+    text-align: center;
+    backdrop-filter: blur(6px);
+}
+
+.scene-heading h2 {
+    margin: 0;
+    color: var(--pumpkin);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.7rem, 6vw, 3rem);
+}
+
+.scene-heading p:last-child {
+    margin-bottom: 0;
+}
+
+.scene-card {
+    position: relative;
+    z-index: 14;
+    align-self: end;
+    width: min(100%, 34rem);
+    margin: 1rem auto 0;
+    padding: 1.1rem;
+    border: 2px solid var(--pumpkin);
+    border-radius: var(--radius);
+    background: var(--panel);
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+}
+
+.scene-card h3 {
+    margin: 0;
+    color: var(--candle-glow);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.4rem;
+}
+
+.scene-card p {
+    margin: 0.65rem 0 1rem;
+}
+
+/* town square */
+
+.town-scene {
+    background:
+        linear-gradient(
+            to bottom,
+            #09071b 0%,
+            #1c1641 48%,
+            #30204a 65%,
+            #15111e 100%
+        );
+}
+
+.sky,
+.graveyard-sky,
+.flight-sky {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.moon,
+.graveyard-moon,
+.giant-moon {
+    position: absolute;
+    top: 7rem;
+    right: 8%;
+    width: clamp(6rem, 25vw, 12rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            var(--ghost-white),
+            var(--candle-glow) 65%,
+            #ff9f1c
+        );
+    box-shadow:
+        0 0 2rem rgba(255, 214, 10, 0.75),
+        0 0 5rem rgba(255, 214, 10, 0.25);
+}
+
+.cloud,
+.storm-cloud,
+.flight-cloud {
+    position: absolute;
+    width: 13rem;
+    height: 3.2rem;
+    border-radius: 999px;
+    background: rgba(246, 242, 248, 0.18);
+    box-shadow:
+        3rem -1rem 0 rgba(246, 242, 248, 0.14),
+        6rem 0.3rem 0 rgba(246, 242, 248, 0.12);
+}
+
+.cloud-one {
+    top: 10rem;
+    left: -2rem;
+}
+
+.cloud-two {
+    top: 16rem;
+    right: -3rem;
+}
+
+.bat,
+.witch {
+    position: absolute;
+    z-index: 3;
+    font-size: 2rem;
+}
+
+.bat-one {
+    top: 9rem;
+    left: 12%;
+}
+
+.bat-two {
+    top: 13rem;
+    left: 28%;
+}
+
+.bat-three {
+    top: 8rem;
+    right: 16%;
+}
+
+.witch {
+    top: 17rem;
+    left: 8%;
+    font-size: 3.2rem;
+}
+
+.town-buildings {
+    position: absolute;
+    right: 0;
+    bottom: 11rem;
+    left: 0;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(8rem, 15rem));
+    justify-content: space-around;
+    align-items: end;
+    padding: 0 1rem;
+}
+
+.building {
+    position: relative;
+    height: 13rem;
+    border: 4px solid #09070d;
+    background: #30263b;
+    box-shadow: 0 0 1.2rem rgba(0, 0, 0, 0.65);
+}
+
+.roof {
+    position: absolute;
+    top: -4rem;
+    left: -1rem;
+    width: calc(100% + 2rem);
+    height: 4rem;
+    background: #0d0a12;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.window,
+.shop-window {
+    position: absolute;
+    top: 3rem;
+    width: 2.6rem;
+    height: 3rem;
+    border: 3px solid #100d12;
+    background: var(--candle-glow);
+    box-shadow: 0 0 1rem var(--pumpkin);
+}
+
+.window-one {
+    left: 1.2rem;
+}
+
+.window-two {
+    right: 1.2rem;
+}
+
+.door,
+.shop-door {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 3rem;
+    height: 5rem;
+    border: 3px solid #09070d;
+    background: #170f22;
+    transform: translateX(-50%);
+}
+
+.candy-shop {
+    background: #4a244e;
+}
+
+.shop-sign {
+    display: block;
+    margin: 1rem;
+    padding: 0.3rem;
+    background: var(--pumpkin);
+    color: var(--spider-black);
+    font-weight: 900;
+    text-align: center;
+}
+
+.shop-window {
+    top: 4.5rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+}
+
+.town-ground,
+.graveyard-ground {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 6;
+    height: 12rem;
+    border-top: 5px solid #0a080d;
+    background:
+        repeating-linear-gradient(
+            100deg,
+            #18121d 0,
+            #18121d 2rem,
+            #211829 2rem,
+            #211829 4rem
+        );
+}
+
+.pumpkin-row {
+    position: absolute;
+    top: -2rem;
+    left: 5%;
+    display: flex;
+    gap: 0.3rem;
+    font-size: 2.4rem;
+}
+
+.trick-or-treaters {
+    position: absolute;
+    top: 1.5rem;
+    left: 16%;
+    display: flex;
+    align-items: end;
+    gap: 0.3rem;
+    font-size: 2.7rem;
+}
+
+.candy-bag {
+    font-size: 1.6rem;
+}
+
+.black-cat {
+    position: absolute;
+    right: 17%;
+    bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+.hearse {
+    position: absolute;
+    right: 4%;
+    bottom: 0.5rem;
+    padding: 0.3rem 1rem;
+    border-radius: 1rem;
+    background: #080808;
+    font-size: 3rem;
+    filter: grayscale(1);
+}
+
+.fog-layer {
+    position: absolute;
+    z-index: 10;
+    width: 80%;
+    height: 5rem;
+    border-radius: 50%;
+    background: var(--fog);
+    filter: blur(1rem);
+    pointer-events: none;
+}
+
+.fog-one {
+    bottom: 6rem;
+    left: -10%;
+}
+
+.fog-two {
+    right: -15%;
+    bottom: 1rem;
+}
+
+/* graveyard */
+
+.graveyard-scene {
+    background:
+        linear-gradient(
+            to bottom,
+            #080712 0%,
+            #232044 48%,
+            #20232d 65%,
+            #0d120e 100%
+        );
+}
+
+.graveyard-moon {
+    top: 8rem;
+    right: auto;
+    left: 7%;
+    opacity: 0.8;
+}
+
+.storm-cloud {
+    top: 9rem;
+    right: 5%;
+    background: rgba(40, 38, 58, 0.85);
+}
+
+.lightning {
+    position: absolute;
+    z-index: 3;
+    width: 1rem;
+    height: 8rem;
+    background: var(--candle-glow);
+    clip-path: polygon(
+        60% 0,
+        100% 0,
+        65% 42%,
+        100% 42%,
+        20% 100%,
+        42% 54%,
+        0 54%
+    );
+}
+
+.lightning-one {
+    top: 12rem;
+    right: 22%;
+}
+
+.lightning-two {
+    top: 15rem;
+    right: 10%;
+    height: 5rem;
+    transform: scale(0.7);
+}
+
+.owl,
+.crow {
+    position: absolute;
+    z-index: 5;
+    font-size: 2.4rem;
+}
+
+.owl {
+    top: 18rem;
+    right: 12%;
+}
+
+.crow {
+    top: 22rem;
+    left: 18%;
+}
+
+.dead-tree {
+    position: absolute;
+    bottom: 9rem;
+    left: 1rem;
+    z-index: 4;
+    width: 12rem;
+    height: 22rem;
+}
+
+.tree-trunk,
+.branch {
+    position: absolute;
+    display: block;
+    background: #080708;
+    transform-origin: bottom;
+}
+
+.tree-trunk {
+    bottom: 0;
+    left: 5rem;
+    width: 2.5rem;
+    height: 18rem;
+    border-radius: 50% 50% 0 0;
+}
+
+.branch {
+    bottom: 10rem;
+    left: 6rem;
+    width: 1rem;
+    height: 9rem;
+}
+
+.branch-one {
+    transform: rotate(55deg);
+}
+
+.branch-two {
+    transform: rotate(-55deg);
+}
+
+.branch-three {
+    bottom: 14rem;
+    transform: rotate(18deg);
+}
+
+.storyteller {
+    position: absolute;
+    top: 1rem;
+    left: 6%;
+    font-size: 3rem;
+}
+
+.lantern {
+    font-size: 1.8rem;
+}
+
+.grave {
+    position: absolute;
+    top: 2.5rem;
+    width: 6.5rem;
+    height: 7rem;
+    border: 3px solid #4c4b53;
+    border-radius: 50% 50% 0 0;
+    background: var(--grave-gray);
+    color: var(--spider-black);
+    font: inherit;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.grave-one {
+    left: 27%;
+}
+
+.grave-two {
+    left: 52%;
+}
+
+.grave-three {
+    right: 4%;
+}
+
+.grave-name {
+    display: block;
+}
+
+.hidden-ghost {
+    position: absolute;
+    right: 0;
+    bottom: 5rem;
+    left: 0;
+    font-size: 2.5rem;
+    opacity: 0;
+    transform: translateY(2rem);
+    transition:
+        opacity 200ms ease,
+        transform 200ms ease;
+}
+
+.grave:hover .hidden-ghost,
+.grave:focus-visible .hidden-ghost {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.graveyard-cat {
+    position: absolute;
+    right: 10%;
+    bottom: 0.8rem;
+    font-size: 2.5rem;
+}
+
+.ghost-orb {
+    position: absolute;
+    width: 1rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--ghost-white);
+    box-shadow: 0 0 1rem var(--ghost-white);
+}
+
+.orb-one {
+    top: 2rem;
+    left: 20%;
+}
+
+.orb-two {
+    top: 5rem;
+    left: 48%;
+}
+
+.orb-three {
+    top: 1rem;
+    right: 12%;
+}
+
+.fog-three {
+    bottom: 3rem;
+    left: 10%;
+}
+
+/* broomstick flight */
+
+.flight-scene {
+    background:
+        linear-gradient(
+            to bottom,
+            #080716 0%,
+            #2f195f 54%,
+            #241b35 72%,
+            #090b0a 100%
+        );
+}
+
+.giant-moon {
+    top: 8rem;
+    right: 5%;
+    width: clamp(9rem, 35vw, 18rem);
+}
+
+.flight-cloud-one {
+    top: 12rem;
+    left: -2rem;
+}
+
+.flight-cloud-two {
+    top: 20rem;
+    right: -4rem;
+}
+
+.flying-witch {
+    position: absolute;
+    top: 18rem;
+    left: 8%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    color: var(--candle-glow);
+    font-size: 3.5rem;
+}
+
+.broom {
+    margin-left: -1rem;
+    color: #c47f2c;
+    font-size: 5rem;
+    line-height: 1;
+}
+
+.spark {
+    position: absolute;
+    left: -1rem;
+    color: var(--candle-glow);
+    font-size: 1.3rem;
+}
+
+.spark-one {
+    top: 0;
+}
+
+.spark-two {
+    top: 2rem;
+    left: -2rem;
+}
+
+.spark-three {
+    top: 4rem;
+}
+
+.flying-owl {
+    position: absolute;
+    top: 15rem;
+    left: 58%;
+    z-index: 4;
+    font-size: 3rem;
+}
+
+.flight-bats {
+    position: absolute;
+    top: 10rem;
+    left: 12%;
+    display: flex;
+    gap: 2rem;
+    font-size: 2rem;
+}
+
+.forest {
+    position: absolute;
+    right: 0;
+    bottom: 7rem;
+    left: 0;
+    z-index: 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    color: #071008;
+    font-size: clamp(7rem, 20vw, 14rem);
+    line-height: 0.55;
+    white-space: nowrap;
+}
+
+.hay-wagon {
+    position: absolute;
+    right: 5%;
+    bottom: 5rem;
+    z-index: 8;
+    display: grid;
+    justify-items: center;
+    font-size: 3rem;
+}
+
+.wagon-riders {
+    margin-bottom: -1.2rem;
+    font-size: 2rem;
+}
+
+/* footer */
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border-top: 3px solid var(--pumpkin);
+    background: #0c0911;
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* tablet and desktop */
+
+@media (min-width: 48rem) {
+    .site-header {
+        padding: 2rem;
+    }
+
+    .scene {
+        min-height: 52rem;
+        padding: 2rem;
+    }
+
+    .scene-heading {
+        padding: 1.25rem 2rem;
+    }
+
+    .scene-card {
+        margin-right: 3rem;
+    }
+
+    .town-buildings {
+        grid-template-columns: repeat(2, 17rem);
+        justify-content: space-between;
+        padding: 0 8%;
+    }
+
+    .building {
+        height: 16rem;
+    }
+
+    .town-ground,
+    .graveyard-ground {
+        height: 14rem;
+    }
+
+    .trick-or-treaters {
+        left: 28%;
+        font-size: 3.5rem;
+    }
+
+    .hearse {
+        font-size: 4rem;
+    }
+
+    .grave {
+        width: 8rem;
+        height: 8.5rem;
+    }
+
+    .grave-one {
+        left: 30%;
+    }
+
+    .grave-two {
+        left: 51%;
+    }
+
+    .grave-three {
+        right: 10%;
+    }
+
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 3rem;
+        padding-left: 3rem;
+    }
+}
+
+@media (min-width: 70rem) {
+    .scene {
+        width: min(100%, 90rem);
+        min-height: 55rem;
+        margin: 0 auto;
+        border-right: 2px solid var(--candy-purple);
+        border-left: 2px solid var(--candy-purple);
+    }
+
+    .scene-card {
+        margin-right: 5rem;
+    }
+
+    .moon {
+        right: 14%;
+    }
+
+    .dead-tree {
+        left: 6rem;
+    }
+}
