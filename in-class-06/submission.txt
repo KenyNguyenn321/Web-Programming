@@ -1,0 +1,68 @@
+The Haunted Harvest Submission
+===============================
+
+Student Name:
+Keny Nguyen
+
+Team Name:
+Keny's Haunted Harvest
+
+Category:
+Graduate
+
+Team Members:
+Keny Nguyen
+
+GitHub Username:
+@KenyNguyenn321
+
+Primary Contribution:
+HTML, CSS, responsive design, animation, accessibility, testing,
+documentation, project coordination, and deployment.
+
+Team Status:
+This project was completed independently by Keny Nguyen.
+
+GitHub Repository:
+https://github.com/KenyNguyenn321/Web-Programming/tree/main/in-class-06
+
+Contribution Evidence:
+https://github.com/KenyNguyenn321/Web-Programming/commits/main/in-class-06
+
+Codd Server Deployment:
+https://codd.cs.gsu.edu/~knguyen207/WP/INC/06/index.html
+
+Scene Concept:
+One connected Halloween story containing three chapters:
+
+1. Haunted Halloween Town Square
+2. Midnight Graveyard Stroll
+3. Midnight Broomstick Ride
+
+Completed Requirements:
+[x] Semantic HTML5
+[x] External haunted-harvest.css stylesheet
+[x] HTML and CSS only
+[x] No JavaScript
+[x] Three distinct CSS-driven scenes
+[x] CSS :target navigation
+[x] CSS variables using the required Halloween palette
+[x] Responsive Grid and Flexbox layouts
+[x] Human activity
+[x] Animals
+[x] Weather elements
+[x] Realistic movement
+[x] Moving vehicles and objects
+[x] Halloween theme
+[x] Hover interactions
+[x] Keyboard focus interactions
+[x] Visible focus indicators
+[x] Reduced-motion support
+[x] GitHub commit history
+[x] Codd server deployment
+
+Additional Notes:
+The project uses CSS shapes and emoji for its artwork, so no downloaded image
+assets are required. Progress was separated into commits for project setup,
+HTML structure, responsive styling, animations, accessibility, testing, and
+documentation.
