@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Review robot readiness, power levels, classifications, records, and safety statuses in the NKeny Robot Arena."
+    >
+
+    <title>Robot Roster | NKeny Robot Arena Dashboard</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/roster.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a class="site-brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true">NK</span>
+
+                <span class="brand-text">
+                    <strong>NKeny</strong>
+                    <span>Robot Arena Dashboard</span>
+                </span>
+            </a>
+
+            <nav class="main-navigation" aria-label="Primary navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Arena Overview</a>
+                    </li>
+
+                    <li>
+                        <a class="active" href="roster.html" aria-current="page">
+                            Robot Roster
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="battle-log.html">Battle Log</a>
+                    </li>
+
+                    <li>
+                        <a href="control-panel.html">Control Panel</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="page-container page-hero-layout">
+                <div>
+                    <p class="eyebrow">Competitor Database</p>
+                    <h1>Robot Roster</h1>
+
+                    <p class="page-description">
+                        Compare each robot's role, battle record, power level,
+                        readiness status, and current safety classification.
+                    </p>
+                </div>
+
+                <div class="roster-count" aria-label="Roster summary">
+                    <span class="roster-count-number">6</span>
+
+                    <span>
+                        robots currently<br>
+                        registered
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="roster-summary-section" aria-labelledby="readiness-title">
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Readiness Check</p>
+                        <h2 id="readiness-title">Current Roster Status</h2>
+                    </div>
+
+                    <p>
+                        Status labels include text so readiness is not communicated
+                        through color alone.
+                    </p>
+                </div>
+
+                <div class="readiness-grid">
+                    <article class="readiness-card">
+                        <p class="readiness-value text-safe">4</p>
+                        <h3>Ready</h3>
+                        <p>Cleared to enter the arena.</p>
+                    </article>
+
+                    <article class="readiness-card">
+                        <p class="readiness-value text-warning">1</p>
+                        <h3>Charging</h3>
+                        <p>Restoring power before deployment.</p>
+                    </article>
+
+                    <article class="readiness-card">
+                        <p class="readiness-value text-danger">1</p>
+                        <h3>Maintenance</h3>
+                        <p>Temporarily unavailable for matches.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section section-muted" aria-labelledby="robots-title">
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Registered Competitors</p>
+                        <h2 id="robots-title">Arena Robots</h2>
+                    </div>
+
+                    <p>
+                        Power values represent each robot's current simulated
+                        battery level.
+                    </p>
+                </div>
+
+                <div class="roster-grid">
+                    <article class="roster-card" id="atlas-7">
+                        <div class="roster-card-top">
+                            <div class="robot-avatar robot-avatar-large" aria-hidden="true">
+                                A7
+                            </div>
+
+                            <span class="status-badge status-online">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Ready
+                            </span>
+                        </div>
+
+                        <div class="roster-card-heading">
+                            <div>
+                                <h3>Atlas-7</h3>
+                                <p>Heavy Defense Unit</p>
+                            </div>
+
+                            <span class="risk-label risk-low">Low Risk</span>
+                        </div>
+
+                        <p class="robot-description">
+                            A reinforced arena robot built to absorb heavy attacks
+                            and protect tactical support units.
+                        </p>
+
+                        <dl class="roster-stat-list">
+                            <div>
+                                <dt>Battle record</dt>
+                                <dd>18 wins, 4 losses</dd>
+                            </div>
+
+                            <div>
+                                <dt>Primary ability</dt>
+                                <dd>Barrier Shield</dd>
+                            </div>
+
+                            <div>
+                                <dt>Weight class</dt>
+                                <dd>Heavy</dd>
+                            </div>
+                        </dl>
+
+                        <div class="power-section">
+                            <div class="power-heading">
+                                <span>Current power</span>
+                                <strong>94%</strong>
+                            </div>
+
+                            <div
+                                class="power-track"
+                                role="progressbar"
+                                aria-label="Atlas-7 power"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="94"
+                            >
+                                <span class="power-fill power-94"></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="roster-card" id="nova-x">
+                        <div class="roster-card-top">
+                            <div class="robot-avatar robot-avatar-large" aria-hidden="true">
+                                NX
+                            </div>
+
+                            <span class="status-badge status-online">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Ready
+                            </span>
+                        </div>
+
+                        <div class="roster-card-heading">
+                            <div>
+                                <h3>Nova-X</h3>
+                                <p>Agile Combat Unit</p>
+                            </div>
+
+                            <span class="risk-label risk-medium">Medium Risk</span>
+                        </div>
+
+                        <p class="robot-description">
+                            A lightweight competitor that uses speed, rapid
+                            direction changes, and precise strikes.
+                        </p>
+
+                        <dl class="roster-stat-list">
+                            <div>
+                                <dt>Battle record</dt>
+                                <dd>16 wins, 6 losses</dd>
+                            </div>
+
+                            <div>
+                                <dt>Primary ability</dt>
+                                <dd>Velocity Dash</dd>
+                            </div>
+
+                            <div>
+                                <dt>Weight class</dt>
+                                <dd>Light</dd>
+                            </div>
+                        </dl>
+
+                        <div class="power-section">
+                            <div class="power-heading">
+                                <span>Current power</span>
+                                <strong>89%</strong>
+                            </div>
+
+                            <div
+                                class="power-track"
+                                role="progressbar"
+                                aria-label="Nova-X power"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="89"
+                            >
+                                <span class="power-fill power-89"></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="roster-card" id="sentinel-core">
+                        <div class="roster-card-top">
+                            <div class="robot-avatar robot-avatar-large" aria-hidden="true">
+                                SC
+                            </div>
+
+                            <span class="status-badge status-warning">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Charging
+                            </span>
+                        </div>
+
+                        <div class="roster-card-heading">
+                            <div>
+                                <h3>Sentinel Core</h3>
+                                <p>Tactical Support Unit</p>
+                            </div>
+
+                            <span class="risk-label risk-low">Low Risk</span>
+                        </div>
+
+                        <p class="robot-description">
+                            A support robot that analyzes arena activity and
+                            provides defensive assistance to allied units.
+                        </p>
+
+                        <dl class="roster-stat-list">
+                            <div>
+                                <dt>Battle record</dt>
+                                <dd>12 wins, 5 losses</dd>
+                            </div>
+
+                            <div>
+                                <dt>Primary ability</dt>
+                                <dd>Defense Scan</dd>
+                            </div>
+
+                            <div>
+                                <dt>Weight class</dt>
+                                <dd>Medium</dd>
+                            </div>
+                        </dl>
+
+                        <div class="power-section">
+                            <div class="power-heading">
+                                <span>Current power</span>
+                                <strong>68%</strong>
+                            </div>
+
+                            <div
+                                class="power-track"
+                                role="progressbar"
+                                aria-label="Sentinel Core power"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="68"
+                            >
+                                <span class="power-fill power-68"></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="roster-card" id="titan-edge">
+                        <div class="roster-card-top">
+                            <div class="robot-avatar robot-avatar-large" aria-hidden="true">
+                                TE
+                            </div>
+
+                            <span class="status-badge status-online">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Ready
+                            </span>
+                        </div>
+
+                        <div class="roster-card-heading">
+                            <div>
+                                <h3>Titan Edge</h3>
+                                <p>Power Combat Unit</p>
+                            </div>
+
+                            <span class="risk-label risk-high">High Risk</span>
+                        </div>
+
+                        <p class="robot-description">
+                            A high-power combat robot designed for short,
+                            forceful attacks and close-range arena control.
+                        </p>
+
+                        <dl class="roster-stat-list">
+                            <div>
+                                <dt>Battle record</dt>
+                                <dd>20 wins, 8 losses</dd>
+                            </div>
+
+                            <div>
+                                <dt>Primary ability</dt>
+                                <dd>Impact Strike</dd>
+                            </div>
+
+                            <div>
+                                <dt>Weight class</dt>
+                                <dd>Heavy</dd>
+                            </div>
+                        </dl>
+
+                        <div class="power-section">
+                            <div class="power-heading">
+                                <span>Current power</span>
+                                <strong>91%</strong>
+                            </div>
+
+                            <div
+                                class="power-track"
+                                role="progressbar"
+                                aria-label="Titan Edge power"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="91"
+                            >
+                                <span class="power-fill power-91"></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="roster-card" id="echo-3">
+                        <div class="roster-card-top">
+                            <div class="robot-avatar robot-avatar-large" aria-hidden="true">
+                                E3
+                            </div>
+
+                            <span class="status-badge status-online">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Ready
+                            </span>
+                        </div>
+
+                        <div class="roster-card-heading">
+                            <div>
+                                <h3>Echo-3</h3>
+                                <p>Reconnaissance Unit</p>
+                            </div>
+
+                            <span class="risk-label risk-low">Low Risk</span>
+                        </div>
+
+                        <p class="robot-description">
+                            A compact robot that identifies movement patterns and
+                            reports arena conditions before a match.
+                        </p>
+
+                        <dl class="roster-stat-list">
+                            <div>
+                                <dt>Battle record</dt>
+                                <dd>9 wins, 3 losses</dd>
+                            </div>
+
+                            <div>
+                                <dt>Primary ability</dt>
+                                <dd>Motion Scan</dd>
+                            </div>
+
+                            <div>
+                                <dt>Weight class</dt>
+                                <dd>Light</dd>
+                            </div>
+                        </dl>
+
+                        <div class="power-section">
+                            <div class="power-heading">
+                                <span>Current power</span>
+                                <strong>84%</strong>
+                            </div>
+
+                            <div
+                                class="power-track"
+                                role="progressbar"
+                                aria-label="Echo-3 power"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="84"
+                            >
+                                <span class="power-fill power-84"></span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="roster-card" id="volt-9">
+                        <div class="roster-card-top">
+                            <div class="robot-avatar robot-avatar-large" aria-hidden="true">
+                                V9
+                            </div>
+
+                            <span class="status-badge status-danger">
+                                <span class="status-dot" aria-hidden="true"></span>
+                                Maintenance
+                            </span>
+                        </div>
+
+                        <div class="roster-card-heading">
+                            <div>
+                                <h3>Volt-9</h3>
+                                <p>Energy Assault Unit</p>
+                            </div>
+
+                            <span class="risk-label risk-high">High Risk</span>
+                        </div>
+
+                        <p class="robot-description">
+                            An experimental competitor that redirects stored
+                            energy into controlled offensive bursts.
+                        </p>
+
+                        <dl class="roster-stat-list">
+                            <div>
+                                <dt>Battle record</dt>
+                                <dd>14 wins, 7 losses</dd>
+                            </div>
+
+                            <div>
+                                <dt>Primary ability</dt>
+                                <dd>Energy Surge</dd>
+                            </div>
+
+                            <div>
+                                <dt>Weight class</dt>
+                                <dd>Medium</dd>
+                            </div>
+                        </dl>
+
+                        <div class="power-section">
+                            <div class="power-heading">
+                                <span>Current power</span>
+                                <strong>42%</strong>
+                            </div>
+
+                            <div
+                                class="power-track"
+                                role="progressbar"
+                                aria-label="Volt-9 power"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="42"
+                            >
+                                <span class="power-fill power-42"></span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-container footer-layout">
+            <div>
+                <p class="footer-brand">NKeny Robot Arena Dashboard</p>
+                <p>CSC 4370/6370 Project 1</p>
+            </div>
+
+            <p>HTML and CSS robot operations interface</p>
+        </div>
+    </footer>
+</body>
+</html>
