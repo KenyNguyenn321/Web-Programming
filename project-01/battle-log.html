@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Review completed robot matches, arena results, and simulated performance forecasts in the NKeny Robot Arena Dashboard."
+    >
+
+    <title>Battle Log | NKeny Robot Arena Dashboard</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/battle-log.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a class="site-brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true">NK</span>
+
+                <span class="brand-text">
+                    <strong>NKeny</strong>
+                    <span>Robot Arena Dashboard</span>
+                </span>
+            </a>
+
+            <nav class="main-navigation" aria-label="Primary navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Arena Overview</a>
+                    </li>
+
+                    <li>
+                        <a href="roster.html">Robot Roster</a>
+                    </li>
+
+                    <li>
+                        <a class="active" href="battle-log.html" aria-current="page">
+                            Battle Log
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="control-panel.html">Control Panel</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="battle-hero">
+            <div class="page-container battle-hero-layout">
+                <div>
+                    <p class="eyebrow">Arena Records</p>
+                    <h1>Battle Log</h1>
+
+                    <p class="battle-description">
+                        Review recent match outcomes, round details, robot
+                        performance, and simulated forecasts for upcoming battles.
+                    </p>
+                </div>
+
+                <dl class="battle-summary">
+                    <div>
+                        <dt>Matches recorded</dt>
+                        <dd>24</dd>
+                    </div>
+
+                    <div>
+                        <dt>Rounds completed</dt>
+                        <dd>61</dd>
+                    </div>
+
+                    <div>
+                        <dt>Safety incidents</dt>
+                        <dd class="text-safe">0</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="recent-results-title">
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Completed Matches</p>
+                        <h2 id="recent-results-title">Recent Results</h2>
+                    </div>
+
+                    <p>
+                        Each result includes the winner, score, match length,
+                        and a short summary of the deciding action.
+                    </p>
+                </div>
+
+                <div class="battle-list">
+                    <article class="battle-entry">
+                        <div class="battle-number">
+                            <span>Match</span>
+                            <strong>024</strong>
+                        </div>
+
+                        <div class="battle-competitors">
+                            <div class="competitor winner">
+                                <span class="competitor-avatar" aria-hidden="true">A7</span>
+
+                                <div>
+                                    <p>Winner</p>
+                                    <h3>Atlas-7</h3>
+                                </div>
+                            </div>
+
+                            <div class="battle-score" aria-label="Atlas-7 won two rounds to one">
+                                <strong>2</strong>
+                                <span>to</span>
+                                <strong>1</strong>
+                            </div>
+
+                            <div class="competitor">
+                                <span class="competitor-avatar" aria-hidden="true">NX</span>
+
+                                <div>
+                                    <p>Runner-up</p>
+                                    <h3>Nova-X</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <dl class="battle-details">
+                            <div>
+                                <dt>Duration</dt>
+                                <dd>08:42</dd>
+                            </div>
+
+                            <div>
+                                <dt>Arena</dt>
+                                <dd>North Circuit</dd>
+                            </div>
+
+                            <div>
+                                <dt>Deciding action</dt>
+                                <dd>Barrier counter</dd>
+                            </div>
+                        </dl>
+
+                        <span class="result-label result-complete">Complete</span>
+                    </article>
+
+                    <article class="battle-entry">
+                        <div class="battle-number">
+                            <span>Match</span>
+                            <strong>023</strong>
+                        </div>
+
+                        <div class="battle-competitors">
+                            <div class="competitor winner">
+                                <span class="competitor-avatar" aria-hidden="true">TE</span>
+
+                                <div>
+                                    <p>Winner</p>
+                                    <h3>Titan Edge</h3>
+                                </div>
+                            </div>
+
+                            <div class="battle-score" aria-label="Titan Edge won two rounds to zero">
+                                <strong>2</strong>
+                                <span>to</span>
+                                <strong>0</strong>
+                            </div>
+
+                            <div class="competitor">
+                                <span class="competitor-avatar" aria-hidden="true">SC</span>
+
+                                <div>
+                                    <p>Runner-up</p>
+                                    <h3>Sentinel Core</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <dl class="battle-details">
+                            <div>
+                                <dt>Duration</dt>
+                                <dd>06:18</dd>
+                            </div>
+
+                            <div>
+                                <dt>Arena</dt>
+                                <dd>Central Ring</dd>
+                            </div>
+
+                            <div>
+                                <dt>Deciding action</dt>
+                                <dd>Impact strike</dd>
+                            </div>
+                        </dl>
+
+                        <span class="result-label result-complete">Complete</span>
+                    </article>
+
+                    <article class="battle-entry">
+                        <div class="battle-number">
+                            <span>Match</span>
+                            <strong>022</strong>
+                        </div>
+
+                        <div class="battle-competitors">
+                            <div class="competitor winner">
+                                <span class="competitor-avatar" aria-hidden="true">E3</span>
+
+                                <div>
+                                    <p>Winner</p>
+                                    <h3>Echo-3</h3>
+                                </div>
+                            </div>
+
+                            <div class="battle-score" aria-label="Echo-3 won two rounds to one">
+                                <strong>2</strong>
+                                <span>to</span>
+                                <strong>1</strong>
+                            </div>
+
+                            <div class="competitor">
+                                <span class="competitor-avatar" aria-hidden="true">V9</span>
+
+                                <div>
+                                    <p>Runner-up</p>
+                                    <h3>Volt-9</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <dl class="battle-details">
+                            <div>
+                                <dt>Duration</dt>
+                                <dd>09:07</dd>
+                            </div>
+
+                            <div>
+                                <dt>Arena</dt>
+                                <dd>East Platform</dd>
+                            </div>
+
+                            <div>
+                                <dt>Deciding action</dt>
+                                <dd>Motion evade</dd>
+                            </div>
+                        </dl>
+
+                        <span class="result-label result-review">Under Review</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="dashboard-section forecast-section"
+            aria-labelledby="forecast-title"
+        >
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Graduate Bonus Feature</p>
+                        <h2 id="forecast-title">Predictive Progress Dashboard</h2>
+                    </div>
+
+                    <p>
+                        These forecasts are static HTML and CSS simulations. They
+                        demonstrate a predictive interface but do not use a real
+                        artificial intelligence model.
+                    </p>
+                </div>
+
+                <div class="forecast-grid">
+                    <article class="forecast-card">
+                        <div class="forecast-card-heading">
+                            <div>
+                                <p class="forecast-label">Next Match Forecast</p>
+                                <h3>Atlas-7 vs. Titan Edge</h3>
+                            </div>
+
+                            <span class="confidence-label confidence-high">
+                                High confidence
+                            </span>
+                        </div>
+
+                        <div class="forecast-result">
+                            <span class="forecast-robot">Atlas-7</span>
+                            <strong>64%</strong>
+                            <span>projected win chance</span>
+                        </div>
+
+                        <div
+                            class="forecast-track"
+                            role="progressbar"
+                            aria-label="Atlas-7 projected win chance"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="64"
+                        >
+                            <span class="forecast-fill forecast-64"></span>
+                        </div>
+
+                        <div class="forecast-reasons">
+                            <h4>Why this forecast?</h4>
+
+                            <ul>
+                                <li>Higher current power level</li>
+                                <li>Stronger recent defensive performance</li>
+                                <li>Fewer maintenance alerts</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="forecast-card">
+                        <div class="forecast-card-heading">
+                            <div>
+                                <p class="forecast-label">Readiness Forecast</p>
+                                <h3>Sentinel Core</h3>
+                            </div>
+
+                            <span class="confidence-label confidence-medium">
+                                Medium confidence
+                            </span>
+                        </div>
+
+                        <div class="forecast-result">
+                            <span class="forecast-robot">Match ready</span>
+                            <strong>78%</strong>
+                            <span>within two hours</span>
+                        </div>
+
+                        <div
+                            class="forecast-track"
+                            role="progressbar"
+                            aria-label="Sentinel Core readiness forecast"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="78"
+                        >
+                            <span class="forecast-fill forecast-78"></span>
+                        </div>
+
+                        <div class="forecast-reasons">
+                            <h4>Why this forecast?</h4>
+
+                            <ul>
+                                <li>Charging cycle is more than halfway complete</li>
+                                <li>No active safety warnings</li>
+                                <li>Previous charging cycles completed normally</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="forecast-card">
+                        <div class="forecast-card-heading">
+                            <div>
+                                <p class="forecast-label">Maintenance Forecast</p>
+                                <h3>Volt-9</h3>
+                            </div>
+
+                            <span class="confidence-label confidence-low">
+                                Limited confidence
+                            </span>
+                        </div>
+
+                        <div class="forecast-result">
+                            <span class="forecast-robot">Return estimate</span>
+                            <strong>46%</strong>
+                            <span>within four hours</span>
+                        </div>
+
+                        <div
+                            class="forecast-track"
+                            role="progressbar"
+                            aria-label="Volt-9 maintenance return forecast"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                            aria-valuenow="46"
+                        >
+                            <span class="forecast-fill forecast-46"></span>
+                        </div>
+
+                        <div class="forecast-reasons">
+                            <h4>Why this forecast?</h4>
+
+                            <ul>
+                                <li>Power system remains under inspection</li>
+                                <li>Recent energy output was inconsistent</li>
+                                <li>Additional test results are still pending</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="forecast-notice" aria-labelledby="forecast-notice-title">
+                    <div class="notice-icon" aria-hidden="true">i</div>
+
+                    <div>
+                        <h3 id="forecast-notice-title">Forecast limitations</h3>
+
+                        <p>
+                            Forecast percentages are sample values used to
+                            demonstrate interface design. Arena operators should
+                            review power, maintenance, and safety information
+                            before making a decision.
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="round-title">
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Performance Breakdown</p>
+                        <h2 id="round-title">Latest Match Rounds</h2>
+                    </div>
+
+                    <p>
+                        Round details from Match 024 between Atlas-7 and Nova-X.
+                    </p>
+                </div>
+
+                <div class="round-grid">
+                    <article class="round-card">
+                        <p class="round-number">Round 1</p>
+                        <h3>Nova-X</h3>
+                        <p>
+                            Nova-X used its speed advantage to avoid Atlas-7's
+                            opening defense.
+                        </p>
+                        <span>Winner: Nova-X</span>
+                    </article>
+
+                    <article class="round-card">
+                        <p class="round-number">Round 2</p>
+                        <h3>Atlas-7</h3>
+                        <p>
+                            Atlas-7 absorbed a rapid attack and responded with a
+                            successful barrier counter.
+                        </p>
+                        <span>Winner: Atlas-7</span>
+                    </article>
+
+                    <article class="round-card">
+                        <p class="round-number">Round 3</p>
+                        <h3>Atlas-7</h3>
+                        <p>
+                            Atlas-7 maintained arena position and completed the
+                            match with higher remaining power.
+                        </p>
+                        <span>Winner: Atlas-7</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-container footer-layout">
+            <div>
+                <p class="footer-brand">NKeny Robot Arena Dashboard</p>
+                <p>CSC 4370/6370 Project 1</p>
+            </div>
+
+            <p>HTML and CSS robot operations interface</p>
+        </div>
+    </footer>
+</body>
+</html>
