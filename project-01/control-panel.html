@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Review simulated arena controls, operational alerts, and AI ethics and safety notices in the NKeny Robot Arena Dashboard."
+    >
+
+    <title>Control Panel | NKeny Robot Arena Dashboard</title>
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/control-panel.css">
+</head>
+
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+        <div class="header-container">
+            <a class="site-brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true">NK</span>
+
+                <span class="brand-text">
+                    <strong>NKeny</strong>
+                    <span>Robot Arena Dashboard</span>
+                </span>
+            </a>
+
+            <nav class="main-navigation" aria-label="Primary navigation">
+                <ul>
+                    <li>
+                        <a href="index.html">Arena Overview</a>
+                    </li>
+
+                    <li>
+                        <a href="roster.html">Robot Roster</a>
+                    </li>
+
+                    <li>
+                        <a href="battle-log.html">Battle Log</a>
+                    </li>
+
+                    <li>
+                        <a
+                            class="active"
+                            href="control-panel.html"
+                            aria-current="page"
+                        >
+                            Control Panel
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="control-hero">
+            <div class="page-container control-hero-layout">
+                <div>
+                    <p class="eyebrow">Operations Interface</p>
+                    <h1>Control Panel</h1>
+
+                    <p class="control-description">
+                        Review arena modes, simulated control states, active
+                        alerts, safety risks, and recommended operator actions.
+                    </p>
+                </div>
+
+                <div class="system-state">
+                    <span class="system-state-dot" aria-hidden="true"></span>
+
+                    <div>
+                        <p>Current system state</p>
+                        <strong>Arena Operational</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="controls-title">
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">CSS-Only Interaction</p>
+                        <h2 id="controls-title">Arena Controls</h2>
+                    </div>
+
+                    <p>
+                        These controls demonstrate interface states with HTML
+                        form elements and CSS. They do not operate real equipment.
+                    </p>
+                </div>
+
+                <div class="control-grid">
+                    <form class="control-card">
+                        <fieldset>
+                            <legend>Arena Mode</legend>
+
+                            <p class="control-help">
+                                Select the simulated operating mode for the arena.
+                            </p>
+
+                            <div class="mode-options">
+                                <input
+                                    class="control-input"
+                                    type="radio"
+                                    name="arena-mode"
+                                    id="training-mode"
+                                    checked
+                                >
+                                <label for="training-mode">
+                                    <span class="control-symbol" aria-hidden="true">T</span>
+
+                                    <span>
+                                        <strong>Training</strong>
+                                        <small>Reduced power and speed</small>
+                                    </span>
+                                </label>
+
+                                <input
+                                    class="control-input"
+                                    type="radio"
+                                    name="arena-mode"
+                                    id="competition-mode"
+                                >
+                                <label for="competition-mode">
+                                    <span class="control-symbol" aria-hidden="true">C</span>
+
+                                    <span>
+                                        <strong>Competition</strong>
+                                        <small>Standard match settings</small>
+                                    </span>
+                                </label>
+
+                                <input
+                                    class="control-input"
+                                    type="radio"
+                                    name="arena-mode"
+                                    id="maintenance-mode"
+                                >
+                                <label for="maintenance-mode">
+                                    <span class="control-symbol" aria-hidden="true">M</span>
+
+                                    <span>
+                                        <strong>Maintenance</strong>
+                                        <small>Robot movement disabled</small>
+                                    </span>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                    <form class="control-card">
+                        <fieldset>
+                            <legend>System Controls</legend>
+
+                            <p class="control-help">
+                                Toggle the simulated state of supporting arena
+                                systems.
+                            </p>
+
+                            <div class="toggle-list">
+                                <div class="toggle-row">
+                                    <div>
+                                        <strong>Arena barriers</strong>
+                                        <span>Keep protective barriers locked</span>
+                                    </div>
+
+                                    <input
+                                        class="toggle-input"
+                                        type="checkbox"
+                                        id="barrier-toggle"
+                                        checked
+                                    >
+
+                                    <label
+                                        class="toggle-switch"
+                                        for="barrier-toggle"
+                                        aria-label="Toggle arena barriers"
+                                    >
+                                        <span></span>
+                                    </label>
+                                </div>
+
+                                <div class="toggle-row">
+                                    <div>
+                                        <strong>Match lighting</strong>
+                                        <span>Use full competition lighting</span>
+                                    </div>
+
+                                    <input
+                                        class="toggle-input"
+                                        type="checkbox"
+                                        id="lighting-toggle"
+                                        checked
+                                    >
+
+                                    <label
+                                        class="toggle-switch"
+                                        for="lighting-toggle"
+                                        aria-label="Toggle match lighting"
+                                    >
+                                        <span></span>
+                                    </label>
+                                </div>
+
+                                <div class="toggle-row">
+                                    <div>
+                                        <strong>Diagnostic scan</strong>
+                                        <span>Display additional robot diagnostics</span>
+                                    </div>
+
+                                    <input
+                                        class="toggle-input"
+                                        type="checkbox"
+                                        id="scan-toggle"
+                                    >
+
+                                    <label
+                                        class="toggle-switch"
+                                        for="scan-toggle"
+                                        aria-label="Toggle diagnostic scan"
+                                    >
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                    <article class="control-card emergency-card">
+                        <div>
+                            <p class="control-category">Emergency Control</p>
+                            <h3>Pause Arena Activity</h3>
+
+                            <p>
+                                This demonstration button represents an emergency
+                                pause control. It does not send or process a real
+                                command.
+                            </p>
+                        </div>
+
+                        <a class="emergency-button" href="#pause-confirmation">
+                            Request Arena Pause
+                        </a>
+                    </article>
+                </div>
+
+                <aside
+                    class="pause-confirmation"
+                    id="pause-confirmation"
+                    aria-labelledby="pause-title"
+                >
+                    <div class="confirmation-icon" aria-hidden="true">!</div>
+
+                    <div>
+                        <h3 id="pause-title">Pause request demonstrated</h3>
+
+                        <p>
+                            The CSS <code>:target</code> state displayed this
+                            confirmation. No real arena command was submitted.
+                        </p>
+                    </div>
+
+                    <a href="#controls-title" aria-label="Close pause confirmation">
+                        Close
+                    </a>
+                </aside>
+            </div>
+        </section>
+
+        <section
+            class="dashboard-section alerts-section"
+            aria-labelledby="alerts-title"
+        >
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">System Monitoring</p>
+                        <h2 id="alerts-title">Operational Alerts</h2>
+                    </div>
+
+                    <p>
+                        Alerts are organized by priority and include recommended
+                        operator actions.
+                    </p>
+                </div>
+
+                <div class="alert-grid">
+                    <article class="alert-card alert-medium">
+                        <div class="alert-heading">
+                            <span class="alert-icon" aria-hidden="true">!</span>
+
+                            <div>
+                                <p>Medium Priority</p>
+                                <h3>Sentinel Core charging</h3>
+                            </div>
+                        </div>
+
+                        <p>
+                            Current power is below the recommended level for a
+                            full-length competition match.
+                        </p>
+
+                        <div class="recommended-action">
+                            <strong>Recommended action</strong>
+                            <span>Keep the robot at Charging Station 03.</span>
+                        </div>
+                    </article>
+
+                    <article class="alert-card alert-high">
+                        <div class="alert-heading">
+                            <span class="alert-icon" aria-hidden="true">!</span>
+
+                            <div>
+                                <p>High Priority</p>
+                                <h3>Volt-9 maintenance required</h3>
+                            </div>
+                        </div>
+
+                        <p>
+                            The energy system produced inconsistent output during
+                            the previous inspection.
+                        </p>
+
+                        <div class="recommended-action">
+                            <strong>Recommended action</strong>
+                            <span>Keep Volt-9 unavailable until testing finishes.</span>
+                        </div>
+                    </article>
+
+                    <article class="alert-card alert-low">
+                        <div class="alert-heading">
+                            <span class="alert-icon" aria-hidden="true">i</span>
+
+                            <div>
+                                <p>Low Priority</p>
+                                <h3>Inspection scheduled</h3>
+                            </div>
+                        </div>
+
+                        <p>
+                            A routine inspection of the North Circuit barriers is
+                            scheduled after the current match.
+                        </p>
+
+                        <div class="recommended-action">
+                            <strong>Recommended action</strong>
+                            <span>Complete the inspection before Match 025.</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section
+            class="dashboard-section ethics-section"
+            aria-labelledby="ethics-title"
+        >
+            <div class="page-container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Graduate Bonus Feature</p>
+                        <h2 id="ethics-title">AI Ethics and Safety Notice System</h2>
+                    </div>
+
+                    <p>
+                        These notices explain risks and mitigations for the
+                        simulated forecast interface shown in the Battle Log.
+                    </p>
+                </div>
+
+                <div class="ethics-introduction">
+                    <div class="ethics-introduction-icon" aria-hidden="true">
+                        AI
+                    </div>
+
+                    <div>
+                        <h3>Responsible use notice</h3>
+
+                        <p>
+                            The dashboard presents sample forecast percentages as
+                            an interface demonstration. The values are not
+                            generated by a real AI model and should not replace
+                            human safety review.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="ethics-grid">
+                    <article class="ethics-card">
+                        <div class="ethics-card-heading">
+                            <span class="risk-marker risk-marker-high">
+                                High Risk
+                            </span>
+
+                            <span class="ethics-number">01</span>
+                        </div>
+
+                        <h3>Automated match approval</h3>
+
+                        <p>
+                            A forecast could incorrectly suggest that a robot is
+                            safe or ready for competition.
+                        </p>
+
+                        <div class="mitigation">
+                            <h4>Mitigation</h4>
+
+                            <p>
+                                Require an operator to review power, maintenance,
+                                and safety records before approving a match.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="ethics-card">
+                        <div class="ethics-card-heading">
+                            <span class="risk-marker risk-marker-medium">
+                                Medium Risk
+                            </span>
+
+                            <span class="ethics-number">02</span>
+                        </div>
+
+                        <h3>Incomplete performance data</h3>
+
+                        <p>
+                            Forecasts based only on wins and losses may overlook
+                            repairs, arena conditions, or recent equipment changes.
+                        </p>
+
+                        <div class="mitigation">
+                            <h4>Mitigation</h4>
+
+                            <p>
+                                Display the factors behind every forecast and label
+                                uncertain or incomplete information.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="ethics-card">
+                        <div class="ethics-card-heading">
+                            <span class="risk-marker risk-marker-low">
+                                Low Risk
+                            </span>
+
+                            <span class="ethics-number">03</span>
+                        </div>
+
+                        <h3>Overreliance on percentages</h3>
+
+                        <p>
+                            Operators may treat a high percentage as a guarantee
+                            instead of an estimate with limitations.
+                        </p>
+
+                        <div class="mitigation">
+                            <h4>Mitigation</h4>
+
+                            <p>
+                                Pair each percentage with a confidence label,
+                                explanation, and visible limitations notice.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="human-review-notice">
+                    <div>
+                        <p class="eyebrow">Required Review</p>
+                        <h3>Human decision-making remains necessary</h3>
+                    </div>
+
+                    <p>
+                        Final match approval should always come from a trained
+                        operator who has reviewed current robot and arena
+                        conditions.
+                    </p>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="page-container footer-layout">
+            <div>
+                <p class="footer-brand">NKeny Robot Arena Dashboard</p>
+                <p>CSC 4370/6370 Project 1</p>
+            </div>
+
+            <p>HTML and CSS robot operations interface</p>
+        </div>
+    </footer>
+</body>
+</html>
